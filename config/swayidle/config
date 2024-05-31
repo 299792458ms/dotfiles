@@ -1,0 +1,6 @@
+lock "pidof hyprlock || hyprlock"
+before-sleep "pidof hyprlock || hyprlock"
+after-resume "pkill -SIGUSR2 hyprlock"
+# after-resume "brightnessctl -r"
+# timeout 300 "brighnessctl -s set 4000" resume "brighnessctl -r"
+# timeout 600 "systemctl suspend"

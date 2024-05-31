@@ -1,0 +1,40 @@
+* {
+    outline: none;
+}
+
+#outer-box {
+    margin-bottom: 15px;
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-top: 4px;
+}
+
+#window {
+    border: 2px solid;
+    border-color: rgba(216,222,233,0.87);
+    border-radius: 17px;
+}
+
+#input {
+    border-radius: 20px;
+    margin: 5px 5px 5px 5px;
+}
+
+#text {
+    padding-left: 3px;
+}
+
+#entry:selected {
+    background: linear-gradient(90deg, rgba(46,52,64,0.2) 40%, rgba(129,161,193,1) 100%);
+    border-left: 2px solid rgba(0,0,0,0);
+    padding-right: 2px;
+}
+
+#entry {
+    border-left: 2px solid rgba(0,0,0,0);
+}
+
+#img {
+    margin: 3px 5px 3px 3px;
+}
+
