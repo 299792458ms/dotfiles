@@ -1,0 +1,147 @@
+# ··· KEYBINDS ···
+
+# sway
+bindsym $mod+Shift+r reload
+bindsym $mod+Shift+backspace exec swaymsg exit
+bindsym $mod+l exec loginctl lock-session
+
+# monitor control
+mode "monitor-control" {
+    bindsym right exec shikanectl switch 'hdmi-hotplug-right' &
+    bindsym left exec shikanectl switch 'hdmi-hotplug-left' &
+    bindsym shift+right exec shikanectl switch 'switcheroo' &
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+shift+bar mode "monitor-control"
+
+# panels
+bindsym $mod+minus exec swaync-client -t
+bindsym $mod+o exec nwg-bar -t logout_sway.json -s logout_square.css
+
+# launch
+bindsym $mod+d exec $menu
+bindsym $mod+i exec $term -e htop
+bindsym $mod+b exec $browser 
+bindsym $mod+shift+return exec $term
+bindsym $mod+return exec $termclient
+bindsym $mod+p exec $display
+bindsym $mod+n exec $termclient -e yazi
+bindsym $mod+m exec $filemanager
+bindsym $mod+k exec $notes
+
+# windows
+bindsym $mod+c kill
+bindsym $mod+shift+c [workspace=__focused__] kill
+bindsym $mod+left focus left
+bindsym $mod+down focus down
+bindsym $mod+up focus up
+bindsym $mod+right focus right
+bindsym $mod+a focus parent
+bindsym $mod+s focus child
+bindsym $mod+shift+Left move left
+bindsym $mod+shift+Down move down
+bindsym $mod+shift+Up move up
+bindsym $mod+shift+Right move right
+bindsym $mod+h splith
+bindsym $mod+v splitv
+bindsym $mod+f fullscreen
+bindsym $mod+j layout toggle split
+bindsym $mod+space floating toggle
+bindsym $mod+shift+space focus mode_toggle
+bindsym $mod+ctrl+Left resize shrink width 10px
+bindsym $mod+ctrl+Up resize grow height 10px
+bindsym $mod+ctrl+Down resize shrink height 10px
+bindsym $mod+ctrl+Right resize grow width 10px
+floating_modifier $mod normal
+
+# workspaces
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+bindsym $mod+ctrl+1 move container to workspace number 1
+bindsym $mod+ctrl+2 move container to workspace number 2
+bindsym $mod+ctrl+3 move container to workspace number 3
+bindsym $mod+ctrl+4 move container to workspace number 4
+bindsym $mod+ctrl+5 move container to workspace number 5
+bindsym $mod+ctrl+6 move container to workspace number 6
+bindsym $mod+ctrl+7 move container to workspace number 7
+bindsym $mod+ctrl+8 move container to workspace number 8
+bindsym $mod+ctrl+9 move container to workspace number 9
+bindsym $mod+ctrl+0 move container to workspace number 10
+bindsym $mod+shift+1 move container to workspace number 1, workspace 1
+bindsym $mod+shift+2 move container to workspace number 2, workspace 2
+bindsym $mod+shift+3 move container to workspace number 3, workspace 3
+bindsym $mod+shift+4 move container to workspace number 4, workspace 4
+bindsym $mod+shift+5 move container to workspace number 5, workspace 5
+bindsym $mod+shift+6 move container to workspace number 6, workspace 6
+bindsym $mod+shift+7 move container to workspace number 7, workspace 7
+bindsym $mod+shift+8 move container to workspace number 8, workspace 8 
+bindsym $mod+shift+9 move container to workspace number 9, workspace 9
+bindsym $mod+shift+0 move container to workspace number 10, workspace 10
+bindsym $mod+ctrl+alt+1 [workspace=__focused__] move to workspace number 1
+bindsym $mod+ctrl+alt+2 [workspace=__focused__] move to workspace number 2
+bindsym $mod+ctrl+alt+3 [workspace=__focused__] move to workspace number 3
+bindsym $mod+ctrl+alt+4 [workspace=__focused__] move to workspace number 4
+bindsym $mod+ctrl+alt+5 [workspace=__focused__] move to workspace number 5
+bindsym $mod+ctrl+alt+6 [workspace=__focused__] move to workspace number 6
+bindsym $mod+ctrl+alt+7 [workspace=__focused__] move to workspace number 7
+bindsym $mod+ctrl+alt+8 [workspace=__focused__] move to workspace number 8
+bindsym $mod+ctrl+alt+9 [workspace=__focused__] move to workspace number 9
+bindsym $mod+ctrl+alt+0 [workspace=__focused__] move to workspace number 10
+bindsym $mod+shift+alt+1 [workspace=__focused__] move to workspace number 1, workspace 1
+bindsym $mod+shift+alt+2 [workspace=__focused__] move to workspace number 2, workspace 2
+bindsym $mod+shift+alt+3 [workspace=__focused__] move to workspace number 3, workspace 3
+bindsym $mod+shift+alt+4 [workspace=__focused__] move to workspace number 4, workspace 4
+bindsym $mod+shift+alt+5 [workspace=__focused__] move to workspace number 5, workspace 5
+bindsym $mod+shift+alt+6 [workspace=__focused__] move to workspace number 6, workspace 6
+bindsym $mod+shift+alt+7 [workspace=__focused__] move to workspace number 7, workspace 7
+bindsym $mod+shift+alt+8 [workspace=__focused__] move to workspace number 8, workspace 8
+bindsym $mod+shift+alt+9 [workspace=__focused__] move to workspace number 9, workspace 9
+bindsym $mod+shift+alt+0 [workspace=__focused__] move to workspace number 10, workspace 10
+bindsym $mod+ctrl+delete [workspace=] kill
+bindgesture swipe:3:down workspace next
+bindgesture swipe:3:up workspace prev
+
+# scratchpad
+bindsym $mod+shift+tab move container to scratchpad
+bindsym $mod+tab scratchpad show
+# bindgesture swipe:3:down scratchpad show
+# bindgesture swipe:3:up move container to scratchpad
+
+# pulseaudio
+bindsym XF86AudioRaiseVolume exec wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+
+bindsym XF86AudioLowerVolume exec wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+# brightness
+bindsym XF86MonBrightnessUp exec brillo -qA 2 -u 200000
+bindsym XF86MonBrightnessDown exec brillo -qU 2 -u 200000
+
+# screenshots
+bindsym  alt+print         exec  ~/scripts/screenshots/sway/allmonitors.sh
+bindsym  print             exec  ~/scripts/screenshots/sway/activemonitor.sh
+bindsym  shift+print       exec  ~/scripts/screenshots/sway/window.sh
+bindsym  ctrl+print        exec  ~/scripts/screenshots/sway/area.sh
+bindsym  $mod+alt+print    exec  ~/scripts/screenshots/sway/allmonitors-edit.sh
+bindsym  $mod+print        exec  ~/scripts/screenshots/sway/activemonitor-edit.sh
+bindsym  $mod+shift+print  exec  ~/scripts/screenshots/sway/window-edit.sh
+bindsym  $mod+ctrl+print   exec  ~/scripts/screenshots/sway/area-edit.sh
+
+# music
+bindsym $mod+q exec mpc prev
+bindsym $mod+w exec mpc toggle
+bindsym $mod+e exec mpc next
+bindsym $mod+shift+q exec mpc seek -10
+bindsym $mod+shift+w exec mpc stop
+bindsym $mod+shift+e exec mpc seek +10
+bindsym $mod+control+q exec mpc seek 0
+

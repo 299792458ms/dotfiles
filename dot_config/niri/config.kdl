@@ -1,0 +1,258 @@
+// config.kdl
+
+// routine
+spawn-at-startup "foot" "-s"
+spawn-at-startup "gammastep"
+spawn-at-startup "hyprpaper" "-c" "/home/alec/.config/hypr/hyprpaper/hp-vw.conf"
+//spawn-at-startup "hyprpaper" "-c" "/home/alec/.config/hypr/hyprpaper-forest.conf"
+spawn-at-startup "waybar" "-c" "/home/alec/.config/waybar/niri/v-config-niri.jsonc" "-s" "/home/alec/.config/waybar/niri/v-style-niri.css"
+spawn-at-startup "swayidle" "-w" "-C" "/home/alec/.config/swayidle/ensure-lock-hyprlock-vw"
+spawn-at-startup "swayidle" "-C" "/home/alec/.config/swayidle/idle"
+spawn-at-startup "swaync"
+spawn-at-startup "wbg" "/home/alec/Pictures/wallpapers/cartoons/courage.jpg"
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+
+// options
+
+screenshot-path "~/Pictures/screenshots/niri %Y-%m-%d %H-%M-%S.png"
+prefer-no-csd
+
+input {
+    keyboard {
+        xkb {
+            layout "latam"
+        }
+        repeat-delay 300
+        repeat-rate 50
+    }
+
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+        accel-speed 1.0
+        accel-profile "flat"
+    }
+
+    mouse {
+        accel-speed 0.6
+        accel-profile "flat"
+    }
+    warp-mouse-to-focus
+    focus-follows-mouse
+}
+
+output "eDP-1" {
+    mode "1920x1080@60.056"
+    scale 1
+    transform "normal"
+    position x=0 y=0
+}
+
+output "HDMI-A-1" {
+    mode "1920x1080@60.00"
+    scale 1
+    transform "normal"
+    position x=1920 y=0
+}
+
+
+layout {
+    gaps 6
+    center-focused-column "never"
+    default-column-width { proportion 0.33333; }
+
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    focus-ring {
+        off
+        width 3
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+    }
+
+    border {
+        width 2
+        // tokyonight-storm
+        active-color "#BB9AF7FF"
+        inactive-color "#24283BB3"
+        active-gradient from="#BB9AF7FF" to="#7DCFFFFF" angle=45 relative-to="workspace-view"
+        inactive-gradient from="#BB9AF755" to="#7DCFFF55" angle=45 relative-to="workspace-view"
+
+        // everforest-dark
+        // active-color "#d699b6ff"
+        // inactive-color "#2b3339ff"
+        // active-gradient from="#d699b6ff" to="#83c092ff" angle=45 relative-to="workspace-view"
+
+    }
+
+    struts {
+        left 0
+        right 0
+        top 0
+        bottom 0
+    }
+}
+
+animations {
+    // slowdown 3.0 // default -> slowdown 1.0
+}
+
+// RULES
+
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id="foot"
+    opacity 0.9
+}
+
+window-rule {
+    match app-id="ymuse"
+    opacity 0.9
+}
+
+window-rule {
+    match app-id="com.rafaelmardojai.Blanket"
+    opacity 0.9
+}
+
+
+window-rule {
+    match app-id="LibreWolf"
+    default-column-width { proportion 0.5; }
+    // open-maximized true
+}
+
+binds {
+    // help
+    Mod+Shift+H { show-hotkey-overlay; }
+
+    // niri
+    Super+L { spawn "loginctl" "lock-session"; }
+    Mod+Shift+O { quit; }
+
+    // windows and columns
+    Mod+Shift+F { fullscreen-window; }
+    Mod+F { maximize-column; }
+    Mod+C { close-window; }
+    Mod+Left  { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Down  { focus-window-or-workspace-down; }
+    Mod+Up    { focus-window-or-workspace-up; }
+    Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Down  { move-column-to-workspace-down; }
+    Mod+Shift+Up    { move-column-to-workspace-up; }
+
+    Mod+Alt+Left { consume-or-expel-window-left; }
+    Mod+Alt+Right { consume-or-expel-window-right; }
+    Mod+Alt+Down { move-window-down-or-to-workspace-down; }
+    Mod+Alt+Up { move-window-up-or-to-workspace-up; }
+
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+    Mod+Ctrl+Home { move-column-to-first; }
+    Mod+Ctrl+End  { move-column-to-last; }
+
+    // monitors
+    Mod+Ctrl+Left { focus-monitor-left; }
+    Mod+Ctrl+Right { focus-monitor-right; }
+
+    Mod+Shift+Ctrl+Left { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+Down { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+Up { move-column-to-monitor-up; }
+
+    Mod+Ctrl+Alt+Left { move-window-to-monitor-left; }
+    Mod+Ctrl+Alt+Right { move-window-to-monitor-right; }
+    Mod+Ctrl+Alt+Down { move-window-to-monitor-down; }
+    Mod+Ctrl+Alt+Up { move-window-to-monitor-up; }
+
+    // Mod+Ctrl+Left { set-column-width "-10%"; }
+    // Mod+Ctrl+Right { set-column-width "+10%"; }
+    // Mod+Ctrl+Down { set-window-height "-10%"; }
+    // Mod+Ctrl+Up { set-window-height "+10%"; }
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { reset-window-height; }
+
+    // workspaces
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+8 { move-column-to-workspace 8; }
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+Period { focus-workspace-down; }
+    Mod+Comma { focus-workspace-up; }
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+
+
+    // launch
+    Mod+Return { spawn "footclient"; }
+    // Mod+D { spawn "fuzzel"; }
+    Mod+D { spawn "fuzzel"; }
+    Mod+B { spawn "librewolf"; }
+    Mod+N { spawn "foot" "-e" "yazi"; }
+    Mod+M { spawn "nautilus"; }
+    Mod+Minus { spawn "swaync-client" "-t"; }
+
+    // brightness
+    XF86MonBrightnessUp { spawn "brillo" "-qA" "2" "-u" "200000"; }
+    XF86MonBrightnessDown { spawn "brillo" "-qU" "2" "-u" "200000"; }
+
+    // volume
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "/home/alec/scripts/vol_up.sh"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "/home/alec/scripts/vol_dw.sh"; }
+    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+
+    //music
+    Mod+Q { spawn "mpc" "prev"; }
+    Mod+W { spawn "mpc" "toggle"; }
+    Mod+E { spawn "mpc" "next"; }
+
+    // screenshots
+    Print { screenshot-screen; }
+    Ctrl+Print { screenshot; }
+    Shift+Print { screenshot-window; }
+
+    Mod+Shift+P { power-off-monitors; }
+
+    // Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    // Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+    // Mod+WheelScrollRight      { focus-column-right; }
+
+    // Mod+WheelScrollLeft       { focus-column-left; }
+    // Mod+Ctrl+WheelScrollRight { move-column-right; }
+    // Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+    // 
+    // Mod+Shift+WheelScrollDown      { focus-column-right; }
+    // Mod+Shift+WheelScrollUp        { focus-column-left; }
+    // Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    // Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+}
+
+
+

@@ -1,0 +1,23 @@
+theme = "tokyonight"
+
+[editor]
+mouse = true
+cursorline = false
+cursorcolumn = false
+
+[editor.cursor-shape]
+insert = "block"
+
+[editor.indent-guides]
+render = true
+character = "┆" # Some characters that work well: "▏", "┆", "┊", "⸽","╎""
+skip-levels = 0
+
+[editor.statusline]
+left = ["mode","file-name", "spinner","version-control"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
+

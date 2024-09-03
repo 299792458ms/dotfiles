@@ -1,0 +1,70 @@
+# shikane.toml
+
+[[profile]]
+name = "laptop-builtin"
+exec = ["notify-send shikane \"profile $SHIKANE_PROFILE_NAME has been applied\" -u low -i /usr/share/icons/Papirus-Dark/16x16/devices/laptop.svg"]
+    [[profile.output]]
+    search = "eDP-1"
+    mode = "1920x1080@60.06Hz"
+    scale = 1.0
+    adaptive_sync = true
+    enable = true
+
+[[profile]]
+name = "hdmi-hotplug-right"
+exec = ["notify-send shikane \"profile $SHIKANE_PROFILE_NAME has been applied\" -u low -i /usr/share/icons/Papirus-Dark/16x16/devices/display.svg"]
+    [[profile.output]]
+    search = "/DP-[1-9]"
+    position = "0,0"
+    mode = "best"
+    scale = 1.0
+    adaptive_sync = true
+    enable = true
+
+    [[profile.output]]
+    search = "n%HDMI-"
+    position = "1920,0"
+    mode = "best"
+    scale = 1
+    adaptive_sync = true
+    enable = true
+
+[[profile]]
+name = "hdmi-hotplug-left"
+exec = ["notify-send shikane \"profile $SHIKANE_PROFILE_NAME has been applied\" -u low -i /usr/share/icons/Papirus-Dark/16x16/devices/display.svg"]
+    [[profile.output]]
+    search = "/DP-[1-9]"
+    position = "0,0"
+    mode = "best"
+    scale = 1.0
+    adaptive_sync = true
+    enable = true
+
+    [[profile.output]]
+    search = "n%HDMI-"
+    position = "-1920,0"
+    mode = "best"
+    scale = 1
+    adaptive_sync = true
+    enable = true
+
+[[profile]]
+name = "switcheroo"
+exec = ["notify-send shikane \"profile $SHIKANE_PROFILE_NAME has been applied\" -u low -i /usr/share/icons/Papirus-Dark/16x16/devices/display.svg"]
+    [[profile.output]]
+    search = "/DP-[1-9]"
+    position = "0,0"
+    mode = "best"
+    scale = 1.0
+    adaptive_sync = true
+    enable = false
+
+    [[profile.output]]
+    search = "n%HDMI-"
+    position = "1920,0"
+    mode = "best"
+    scale = 1
+    adaptive_sync = true
+    enable = true
+
+

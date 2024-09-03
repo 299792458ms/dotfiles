@@ -1,0 +1,34 @@
+# ··· RULES ···
+
+# float
+for_window [app_id="blueberry.py"] floating enable, border pixel
+for_window [app_id="iwgtk"] floating enable, resize set 600 700
+for_window [app_id="nwg-displays"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="galculator"] floating enable
+for_window [app_id="gcr-prompter"] floating enable, border pixel
+for_window [app_id="hyprland-share-picker"] floating enable
+for_window [title="Picture-in-Picture"] floating enable
+for_window [title="Open File"] floating enable, resize set 1000 650
+for_window [title="Open Folder"] floating enable, resize set 1000 650
+for_window [title="File Upload"] floating enable, resize set 1000 1000
+for_window [title="Select File"] floating enable, resize set 1000 650
+for_window [title="Save As"] floating enable, resize set 1000 650
+for_window [title="Save Image"] floating enable, resize set 1000 650
+for_window [title="Library"] floating enable, resize set 1000 650
+for_window [title="Unlock Keyring"] floating enable
+for_window [title="Enter name of file to save to..."] floating enable, resize set 1000 650
+
+# opacity
+set $op 0.9
+for_window [app_id="footclient"] opacity $op
+for_window [app_id="pavucontrol"] opacity $op
+for_window [app_id="nwg-displays"] opacity $op
+for_window [app_id="nwg-look"] opacity $op
+for_window [app_id="nautilus"] opacity $op
+for_window [app_id="fuzzel"] opacity $op
+for_window [app_id="obsidian"] opacity $op
+for_window [app_id="Logseq"] opacity $op
+for_window [app_id="blueberry.py"] opacity $op
+for_window [app_id="io.github.amit9838.mousam"] opacity $op
+

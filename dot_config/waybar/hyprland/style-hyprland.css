@@ -1,0 +1,226 @@
+/* style.css */
+
+@import "../colors/tokyonight-night.css";
+
+* {
+    font-size: 19px; /* 18 px font -> 31 height // 16px font -> 28 height*/
+    font-family: "Jet Brains Mono Nerd Font";
+    font-weight: bold;
+}
+
+tooltip {
+    color: @fg;
+    background-color: @bg;
+    text-shadow: none;
+    border: solid 2px @dimfg;
+}
+
+window#waybar {
+    background-color: @bg;
+    border-bottom: 2px solid @dimfg;
+    color: @fg;
+}
+
+/* left modules */
+#custom-logo {
+    color: @blue;
+    padding: 0 6px 2px 10px;
+}
+
+#workspaces {
+    color: @fg;
+    margin: 0 4px;
+    padding: 0 6px 0 6px;
+}
+
+#workspaces button {
+    color: @fg;
+    padding: 0 5px;
+    border: none;
+    transition: 0.23s;
+}
+
+#workspaces button.empty {
+    color: @dimfg;
+}
+
+
+#workspaces button.special {
+    color: @fg;
+    background: none;
+}
+
+#workspaces button.visible {
+    color: @green;
+    border-radius: 0;
+    border-bottom: 2px solid @green;
+    margin-top: 2px;
+}
+
+#workspaces button.active {
+    color: @fg;
+    border-radius: 0;
+    border-bottom: 2px solid @fg;
+    margin-top: 2px;
+}
+
+#workspaces button:hover {
+    box-shadow: none;
+    text-shadow: none;
+    background:none;
+    transition: none;
+    color: @blue;
+    border-color: @blue;
+}
+
+/* #workspaces button.urgent { */
+    /* color: @red; */
+    /* border-radius: 0; */
+/* } */
+
+/* center modules */
+
+#clock {
+    color: @fg;
+    padding: 0 10px 2px 10px;
+    font-weight: bolder;
+}
+
+/* right modules*/
+
+#tray,
+#custom-updates,
+#idle_inhibitor,
+#power-profiles-daemon,
+#pulseaudio.pa1,
+#pulseaudio.pa2,
+#backlight,
+#custom-brightness,
+#network,
+#battery,
+#bluetooth,
+#custom-power,
+#custom-quit,
+#custom-lock,
+#custom-suspend,
+#custom-reboot {
+    padding: 0 6px 2px 6px;
+    color: @fg;
+    margin: 0 5px 0 5px;
+}
+
+#idle_inhibitor.deactivated {
+    color: @dimfg;
+}
+
+#power-profiles-daemon.performance {
+    color: @red;
+}
+
+#power-profiles-daemon.balanced {
+    color: @dimfg;
+}
+
+#power-profiles-daemon.power-saver {
+    color: @green;
+}
+
+#bluetooth.off,
+#bluetooth.disconnected,
+#bluetooth.disabled {
+    color: @dimfg;
+}
+
+#network.disconnected {
+    color: @warning;
+}
+
+#network.disabled {
+    color: @warning;
+}
+
+#pulseaudio.pa1.muted {
+    color: @dimfg;
+}
+
+#pulseaudio.pa1.bluetooth {
+    color: @blue;
+}
+
+#pulseaudio.pa1.bluetooth.muted {
+    color: @dimfg;
+}
+
+#pulseaudio.pa2.source-muted {
+    color: @dimfg;
+}
+
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.critical.charging,
+#battery.warning.charging,
+#battery.good.charging,
+#battery.good.plugged {
+    color: @green;
+}
+
+#battery.limit.charging, #battery.limit.plugged {
+    color: @limit;
+    animation-name: blink-limit;
+    animation-duration: 3s;
+}
+
+#battery.warning.discharging {
+    color: @warning;
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    color: @critical;
+    border-radius: 0;
+/*
+    border-bottom: 2px solid @critical;
+    margin-top: 2px;
+*/
+    transition: none;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#tray.menu {
+    color: @fg;
+    background-color: @bg;
+}
+
+#custom-power {
+    color: @red;
+    padding-right: 10px;
+}
+
+/* blinking animation */
+
+@keyframes blink-warning {
+    50% {
+        opacity: 0.5;
+        color: @warning;
+    }
+}
+
+@keyframes blink-critical {
+    50% {
+        opacity: 0.5;
+        color: @critical;
+    }
+}
+
+@keyframes blink-limit {
+    50% {
+        opacity: 0.5;
+        color: @limit;
+    }
+}

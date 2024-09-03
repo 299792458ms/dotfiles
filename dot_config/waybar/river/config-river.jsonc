@@ -1,0 +1,220 @@
+// W A Y B A R   C O N F I G
+
+{
+    "reload_style_on_change": true,
+    "layer": "top",
+    "height": 35,// 18 px font -> 31 height // 16px font -> 28 height
+    "spacing": 0,
+    "start_hidden": false,
+    "modules-left": [
+        "custom/logo",
+        "clock",
+        "river/tags"
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        //"custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
+        "tray",
+        "idle_inhibitor",
+        "power-profiles-daemon",
+        "pulseaudio#pa1",
+        "pulseaudio#pa2",
+        "bluetooth",
+        "network",
+        "battery",
+        "backlight",
+        "group/powermenu"
+    ],
+    "custom/logo": {
+        "format": "󰣇",
+        "tooltip": false
+    },
+    "river/tags": {
+        "num-tags": 9,
+        "set-tags": [
+            2147483649,
+            2147483650,
+            2147483652,
+            2147483656,
+            2147483664,
+            2147483680,
+            2147483712,
+            2147483776,
+            2147483904
+        ],
+        "tag-labels": [
+            "www",
+            "trm",
+            "3rd",
+            "4th",
+            "5th",
+            "6th",
+            "7th",
+            "8th",
+            "msc"
+        ]
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        //"format": "{:%Y-%m-%d %H:%M:%S}",
+        // "format-alt": "{:%Y-%m-%d}",
+        "interval": 60,
+        "calendar": {
+            "mode"          : "month",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#C0CAF5'><b>{}</b></span>",
+                "days":       "<span color='#C0CAF5'><b>{}</b></span>",
+                "weeks":      "<span color='#E0AF68'><b>W{}</b></span>",
+                "weekdays":   "<span color='#E0AF68'><b>{}</b></span>",
+                "today":      "<span color='#F7768E'><b><u>{}</u></b></span>"
+            }
+        },
+        "tooltip": true,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+    "custom/updates": {
+        "format": "{icon}{}",
+        "return-type": "json",
+        "format-icons": {
+            "pending-updates": " ",
+            "updated": ""
+        },
+        "exec-if": "which waybar-updates",
+        "exec": "waybar-updates -l 100"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "idl",
+            "deactivated": "idl"
+        },
+        "tooltip": false
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "ppd",
+            "performance": "ppd",
+            "balanced": "ppd",
+            "power-saver": "ppd"
+        },
+        "tooltip": false,
+        "tooltip-format": "<tt><small>{profile}</small></tt>"
+        //"tooltip-format": "{profile}"
+    },
+    "pulseaudio#pa1": {
+        "format": "vol:{volume}%",
+        "format-bluetooth": "vol:{volume}%",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+",
+        "on-scroll-down": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-",
+        "scroll-step": 5,
+        "tooltip": false
+
+    },
+    "pulseaudio#pa2": {
+        "format": "{format_source}",
+        "format-source": "mic:{volume}%",
+        "format-source-muted": "mic:{volume}%",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.05+",
+        "on-scroll-down": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.05-",
+        "scroll-step": 5,
+        "tooltip": false,
+        "tooltip-format": "<tt><small>{desc}</small></tt>"
+
+    },
+    "bluetooth": {
+        "format-off" : "blu:off",
+        "format-on" : "blu:on",
+        "format-connected": "blu:con",
+        "format-disconnected": "blu:dis",
+        "format-disabled": "blue:rfk",
+        "on-click-right": "blueberry",
+        "tooltip": true,
+        "tooltip-format": "{device_alias} {device_battery_percentage}%"
+    },
+    "network": {
+        "format": "{icon}",
+        "format-wifi": "net:{signalStrength}%",
+        "format-disconnected": "net:dis",
+        "format-disabled": "net:rfk",
+        // "format-icons": {
+        //     "wifi": "net: wl0",
+        //     "disconnected": "net: dis",
+        //     "disabled": "net: rfk"
+        // },
+        "interval": 30,
+        "on-click-right": "iwgtk",
+        "tooltip": true,
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-disconnected":  ""
+    },
+    "battery": {
+        "states": {
+            "limit": 100,
+            "good": 80,
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "bat:{capacity}%",
+        "interval": 120,
+        "tooltip": true
+    },
+    "backlight": {
+        "format": "bri:{percent}%",
+        "on-scroll-up": "brillo -qA 1 -u 200000",
+        "on-scroll-down": "brillo -qU 1 -u 200000",
+        "tooltip": false
+    },
+    "tray": {
+        "spacing": 20
+    },
+    "group/powermenu": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/power",
+            "custom/lock",
+            "custom/quit",
+            "custom/suspend",
+            "custom/reboot"
+        ]
+    },
+    "custom/lock": {
+        "format": "󰌾",
+        "tooltip": false,
+        "on-click": "loginctl lock-session"
+    },
+    "custom/quit": {
+        "format": "󰁒",
+        "tooltip": false,
+        "on-click": "riverctl exit"
+    },
+    "custom/suspend": {
+        "format": "󰍶",
+        "tooltip": false,
+        "on-click": "systemctl suspend"
+    },
+    "custom/reboot": {
+        "format": "󱍷",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+    "custom/power": {
+        "format": "󰠠",
+        "tooltip": false,
+        "on-click": "shutdown now"
+    }
+}

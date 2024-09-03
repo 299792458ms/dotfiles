@@ -1,0 +1,18 @@
+[
+    {
+        "label": "󰁒",
+        "exec": "swaymsg exit"
+    },
+    {
+        "label": "󰍶",
+        "exec": "systemctl suspend"
+    },
+    {
+        "label": "󱍷",
+        "exec": "reboot"
+    },
+    {
+        "label": "󰠠",
+        "exec": "shutdown now"
+    }
+]

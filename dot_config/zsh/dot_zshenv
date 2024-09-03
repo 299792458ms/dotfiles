@@ -1,0 +1,23 @@
+XDG_DATA_HOME="$HOME/.local/share"
+XDG_STATE_HOME="$HOME/.local/state"
+XDG_CACHE_HOME="$HOME/.cache"
+XDG_CONFIG_HOME="$HOME/.config"
+
+export XDG_SESSION_TYPE='wayland'
+export QT_QPA_PLATFORM='wayland'
+export SDL_VIDEODRIVER= 'wayland'
+export _JAVA_AWT_WM_NONREPARENTING='1'
+export SUDO_EDITOR='/usr/bin/helix'
+export EDITOR='helix'
+export VISUAL='helix'
+export BROWSER='librewolf'
+export TERMINAL='foot'
+export ELECTRON_OZONE_PLATFORM_HINT='wayland'
+export ZDOTDIR="$HOME"/.config/zsh
+export HISTFILE="$XDG_STATE_HOME"/zsh/history
+export GOPATH="$XDG_DATA_HOME"/go
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export SHIKANE_LOG='trace'
+export STARSHIP_CONFIG="$HOME"/.config/starship/starship.toml
+
+

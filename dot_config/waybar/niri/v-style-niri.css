@@ -1,0 +1,197 @@
+/* W A Y B A R    S T Y L E */
+
+@import "../colors/tokyonight-storm.css";
+
+* {
+    font-size: 18px; /* 18 px font -> 31 height // 16px font -> 28 height*/
+    font-family: "Jet Brains Mono Nerd Font";
+}
+
+tooltip {
+    color: @fg;
+    background-color: @bg;
+    text-shadow: none;
+    border: solid 2px @dimfg;
+}
+
+window#waybar {
+    background-color: @bg;
+    border-right: 2px solid @dimfg;
+    color: #d8dee9;
+}
+
+/* left modules */
+#custom-logo {
+    color: @blue;
+    padding: 10px 4px 10px 0px;
+}
+
+
+/* center modules */
+
+#clock {
+    color: @fg;
+    padding: 10px 2px 10px 0;
+    font-weight: bolder;
+
+}
+
+/* right modules*/
+
+#custom-updates,
+#idle_inhibitor,
+#power-profiles-daemon,
+#pulseaudio.pa1,
+#pulseaudio.pa2,
+#backlight,
+#custom-brightness,
+#network,
+#battery,
+#bluetooth,
+#tray,
+#custom-power,
+#custom-quit,
+#custom-lock,
+#custom-suspend,
+#custom-reboot {
+    padding: 5px 2px 5px 0;
+    color: @fg;
+    margin: 4px 0 4px 0;
+}
+
+#idle_inhibitor.activated {
+    border-right: 2px solid @fg;
+    margin-left: 2px;
+}
+
+#idle_inhibitor.deactivated {
+    color: @dimfg;
+}
+
+#power-profiles-daemon.performance {
+    color: @red;
+    border-right: 2px solid @red;
+    margin-left: 2px;
+}
+
+#power-profiles-daemon.balanced {
+    color: @dimfg;
+}
+
+#power-profiles-daemon.power-saver {
+    color: @green;
+    border-right: 2px solid @green;
+    margin-left: 2px;
+}
+
+#pulseaudio.pa1 {
+    margin-left: 2px;
+    border-right: 2px solid @fg;
+}
+
+#pulseaudio.pa1.muted {
+    color: @dimfg;
+    border: none;
+    margin-left: 2px;
+}
+
+
+#bluetooth.disabled {
+    color: @dimfg;
+}
+
+#pulseaudio.pa1.bluetooth {
+    color: @blue;
+    border-right: 2px solid @blue;
+}
+
+#pulseaudio.pa1.bluetooth.muted {
+    color: @dimfg;
+    border: none;
+}
+
+#pulseaudio.pa2 {
+    margin-left: 2px;
+    border-right: 2px solid @fg;
+}
+
+#pulseaudio.pa2.source-muted {
+    color: @dimfg;
+    border: none;
+    margin-right: 2px;
+}
+
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.critical.charging,
+#battery.warning.charging,
+#battery.good.charging,
+#battery.good.plugged {
+    color: @green;
+    border-right: 2px solid @green;
+    margin-left: 2px;
+}
+
+#battery.limit.charging, #battery.limit.plugged {
+    color: @limit;
+    border-right: 2px solid @limit;
+    margin-left: 2px;
+    animation-name: blink-limit;
+    animation-duration: 3s;
+}
+
+#battery.warning.discharging {
+    color: @warning;
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    color: @critical;
+    border-radius: 0;
+/*
+    border-bottom: 2px solid @critical;
+    margin-top: 2px;
+*/
+    transition: none;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#tray.menu {
+    color: @fg;
+    background-color: @bg;
+}
+
+#custom-power {
+    color: @red;
+    background-color: rgba(0,0,0,0)
+}
+
+/* blinking animation */
+
+@keyframes blink-warning {
+    50% {
+        opacity: 0.5;
+        color: @warning;
+    }
+}
+
+@keyframes blink-critical {
+    50% {
+        opacity: 0.5;
+        color: @critical;
+    }
+}
+
+@keyframes blink-limit {
+    50% {
+        opacity: 0.5;
+        color: @limit;
+    }
+}
+

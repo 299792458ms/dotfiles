@@ -1,0 +1,129 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "padding": {
+            "right": 3,
+            "top": 2
+        },
+    },
+    "general": {
+        "multithreading": true
+    },
+    "display": {
+        "separator": "  "
+    },
+    "modules": [
+        "break",
+        {
+            "type": "title",
+            "format": "{1}{7}{2}",
+            "paddingLeft": 10
+        },
+        "break",
+        {
+            "key": "╭─",
+            "keyColor": "blue",
+            "type": "os"
+        },
+        {
+            "key": "├─󰞸",
+            "keyColor": "blue",
+            "type": "kernel",
+            "format": "{2}"
+        },
+        {
+            "key": "├─",
+            "keyColor": "blue",
+            "type": "wm",
+            "format": "{1}"
+        },
+        {
+            "key": "├─",
+            "keyColor": "blue",
+            "type": "packages"
+        },
+        {
+            "key": "├─",
+            "keyColor": "blue",
+            "type": "terminal",
+            "format": "{5}"
+        },
+        {
+            "key": "╰─",
+            "keyColor": "blue",
+            "type": "shell",
+            "format": "{6}"
+        },
+        {
+            "key": "╭─󰌢",
+            "keyColor": "cyan",
+            "type": "host",
+            "format": "{3}"
+        },
+        {
+            "key": "├─󰹑",
+            "keyColor": "cyan",
+            "type": "display"
+        },
+        {
+            "key": "├─",
+            "keyColor": "cyan",
+            "type": "cpu",
+            "format": "{1}"//"{1} ({5}) @ {7} GHz"
+        },
+        {
+            "key": "├─",
+            "keyColor": "cyan",
+            "type": "cpuusage",
+            "format": "{1}"
+        },
+        {
+            "key": "├─",
+            "keyColor": "cyan",
+            "type": "gpu",
+            "format": "{1} {2}"
+        },
+        {
+            "key": "├─",
+            "keyColor": "cyan",
+            "type": "memory",
+        },
+        {
+            "type": "command",
+            "key": "├─",
+            "keyColor": "cyan",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+        },
+        {
+            "key": "╰─󰥔",
+            "keyColor": "cyan",
+            "type": "uptime"
+        },
+        {
+            "key": "╭─󰛓",
+            "keyColor": "green",
+            "type": "font",
+            "format": "{3}"
+        },
+        {
+            "key": "├─",
+            "keyColor": "green",
+            "type": "icons",
+            "compact": true
+        },
+        {
+            "key": "╰─󰆿",
+            "keyColor": "green",
+            "type": "cursor"
+        },
+        "break",
+        {
+            "type": "colors",
+            "paddingLeft": 10,
+            "symbol": "circle",
+            "block": {
+                "width": 10
+            }
+        }
+    ]
+}

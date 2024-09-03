@@ -1,0 +1,15 @@
+/* nord colors */
+@define-color bg #2E3440;
+@define-color fg #D8DEE9;
+@define-color dimfg rgba(216,222,233,0.33);
+@define-color red #BF616A;
+@define-color green #A3BE8C;
+@define-color yellow #EBCB8B;
+@define-color blue #81A1C1;
+@define-color magenta #B48EAD;
+@define-color cyan #88C0D0;
+@define-color white #E5E9F0;
+@define-color warning #EBCB8B; /* yellow */
+@define-color critical #BF616A; /* red */
+@define-color limit #B48EAD; /* magenta */
+

@@ -1,0 +1,1 @@
+before-sleep "pgrep hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-minimal.conf"

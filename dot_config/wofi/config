@@ -1,0 +1,10 @@
+### W O F I   C O N F I G
+prompt=
+width=320
+height=320
+insensitive=true
+allow_images=true
+image_size=28
+no_actions=true
+hide_scroll=true
+term=foot

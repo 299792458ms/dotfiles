@@ -1,0 +1,59 @@
+/* WOFI */
+
+@define-color  bg         rgba(36,   40,   59,   1);                  
+@define-color  fg         rgba(192,  202,  245,  1);                  
+@define-color  dimfg      rgba(192,  202,  245,  0.33);               
+@define-color  red        rgba(247,  118,  142,  1);                  
+@define-color  green      rgba(158,  206,  106,  1);                  
+@define-color  yellow     rgba(224,  175,  104,  1);                  
+@define-color  dimyellow  rgba(224,  175,  104,  0.33);               
+@define-color  blue       rgba(122,  162,  247,  1);                  
+@define-color  magenta    rgba(187,  154,  247,  1);                  
+@define-color  cyan       rgba(125,  207,  255,  1);                  
+@define-color  dimcyan    rgba(125,  207,  255,  0.33);               
+@define-color  white      rgba(169,  177,  214,  1);                  
+@define-color  warning    rgba(224,  175,  104,  1);     /*  yellow   */
+@define-color  critical   rgba(247,  118,  142,  1);     /*  red      */
+@define-color  limit      rgba(187,  154,  247,  1);     /*  magenta  */
+
+* {
+    outline: none;
+}
+
+#outer-box {
+    margin-bottom: 15px;
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-top: 4px;
+    background-color: @bg;
+    border-radius: 20px;
+}
+#window {
+    border: 2px solid;
+    border-color: @magenta;
+    border-radius: 10px;
+}
+
+#input {
+    border-radius: 20px;
+    margin: 5px 5px 5px 5px;
+}
+
+#text {
+    padding-left: 3px;
+}
+
+#entry:selected {
+    background-color: @dimcyan;
+    border-left: 2px solid rgba(0,0,0,0);
+    padding-right: 2px;
+}
+
+#entry {
+    border-left: 2px solid rgba(0,0,0,0);
+}
+
+#img {
+    margin: 3px 5px 3px 3px;
+}
+

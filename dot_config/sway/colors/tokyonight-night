@@ -1,0 +1,17 @@
+# tokyonight-night
+
+set  $bg        #24283BFF
+set  $fg        #C0CAF5FF
+set  $dimfg     #5C6691FF
+set  $red       #F7768EFF
+set  $green     #9ECE6AFF
+set  $yellow    #E0AF68FF
+set  $blue      #7AA2F7FF
+set  $magenta   #BB9AF7FF
+set  $cyan      #7FCFFFFF
+set  $white     #A9B1D6FF
+set  $warning   #E0AF68FF
+set  $critical  #F7768EFF
+set  $limit     #BB9AF7FF
+set  $inv       #00000000
+

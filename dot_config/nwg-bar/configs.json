@@ -1,0 +1,62 @@
+[
+    {
+        "label": "hyprland",
+        "exec": "footclient -e nvim /home/alec/.config/hypr/hyprland.conf"
+    },
+    {
+        "label": "hyprlock",
+        "exec": "footclient -e nvim /home/alec/.config/hypr/hyprlock.conf"
+    },
+    {
+        "label": "hypridle",
+        "exec": "footclient -e nvim /home/alec/.config/hypr/hypridle.conf"
+    },
+    {
+        "label": "monitors",
+        "exec": "footclient -e nvim /home/alec/.config/hypr/monitors.conf"
+    },
+    {
+        "label": "workspaces",
+        "exec": "footclient -e nvim /home/alec/.config/hypr/workspaces.conf"
+    },
+    {
+        "label": "hyprpaper",
+        "exec": "footclient -e nvim /home/alec/.config/hypr/hyprpaper.conf"
+    },
+    {
+        "label": "waybar",
+        "exec": "footclient -e nvim /home/alec/.config/waybar/config.jsonc"
+    },
+    {
+        "label": "waybar style",
+        "exec": "footclient -e nvim /home/alec/.config/waybar/style.css"
+    },
+    {
+        "label": "wofi",
+        "exec": "footclient -e nvim /home/alec/.config/wofi/config"
+    },
+    {
+        "label": "wofi style",
+        "exec": "footclient -e nvim /home/alec/.config/wofi/style.css"
+    },
+    {
+        "label": "alacritty",
+        "exec": "footclient -e nvim /home/alec/.config/alacritty/alacritty.toml"
+    },
+    {
+        "label": "footclient",
+        "exec": "footclient -e nvim /home/alec/.config/foot/foot.ini"
+    },
+    {
+        "label": "nvim init",
+        "exec": "footclient -e nvim /home/alec/.config/nvim/init.lua"
+    },
+    {
+        "label": "gammastep",
+        "exec": "footclient -e nvim /home/alec/.config/gammastep/config.ini"
+    },
+    {
+        "label": "configs menu",
+        "exec": "footclient -e nvim /home/alec/.config/nwg-bar/configs.json"
+    }
+]

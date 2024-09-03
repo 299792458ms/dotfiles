@@ -1,0 +1,13 @@
+# config
+
+# ··· FILES ···
+
+include /etc/sway/config.d/*
+include ~/.config/sway/colors/tokyonight-night
+include ~/.config/sway/variables
+include ~/.config/sway/keybinds
+include ~/.config/sway/rules
+include ~/.config/sway/routine
+include ~/.config/sway/options
+include ~/.config/sway/monitors
+

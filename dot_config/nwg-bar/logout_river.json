@@ -1,0 +1,18 @@
+[
+    {
+        "label": "󰁒",
+        "exec": "rivercctl exit"
+    },
+    {
+        "label": "󰍶",
+        "exec": "systemctl suspend"
+    },
+    {
+        "label": "󱍷",
+        "exec": "reboot"
+    },
+    {
+        "label": "󰠠",
+        "exec": "shutdown now"
+    }
+]

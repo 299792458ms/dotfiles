@@ -1,0 +1,205 @@
+#!/bin/sh
+
+# VARIABLES
+mod=Super
+term=footclient
+browser=librewolf
+email=geary
+termfilemanager=yazi
+filemanager=nautilus
+menu="fuzzel --config ~/.config/fuzzel/fuzzel-square.ini"
+notes=logseq
+system_monitor=htop
+music=ymuse
+
+# ENVIRONMENT VARIABLES
+export XDG_SESSION_TYPE='wayland'
+export XDG_SESSION_DESKTOP='river'
+export XDG_CURRENT_DESKTOP='river'
+export QT_QPA_PLATFORM='wayland'
+export SDL_VIDEODRIVER='wayland'
+export _JAVA_AWT_WM_NONREPARENTING='1'
+export SUDO_EDITOR='/usr/bin/nvim'
+export EDITOR='nvim'
+export VISUAL='nvim'
+export BROWSER='librewolf'
+export TERMINAL='foot'
+export PATH="$PATH:/home/alec/.local/bin"
+
+
+# ROUTINE
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+foot -s &
+waybar -c ~/.config/waybar/river/config-river.jsonc -s ~/.config/waybar/river/style-river.css &
+# wbg ~/Pictures/wallpapers/digital/weird_ass_cube.jpg &
+gammastep &
+swayidle -w -C ~/.config/swayidle/ensure-lock-minimal &
+swayidle -C ~/.config/swayidle/idle-minimal &
+swaync -s ~/.config/swaync/style_square.css &
+udiskie -a &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+
+# OPTIONS
+#riverctl background-color 0x24283BFF # tokyonight-storm
+riverctl background-color 0x1A1B26FF # tokyonight-night
+riverctl border-color-focused 0x9ECE6AFF # green
+riverctl border-color-unfocused 0xC0CAF555 # dim fg
+riverctl focus-follows-cursor normal
+riverctl default-layout rivertile
+rivertile -view-padding 3 -outer-padding 3 &
+# riverctl default-layout bsp-layout
+# river-bsp-layout --inner-gap 5 --outer-gap 10 --split-perc 0.5 &
+
+
+# INPUT
+
+# pointer
+riverctl hide-cursor timeout 10000
+riverctl input pointer-1133-16471-Logitech_M280/320/275 pointer-accel -0.35
+
+# keyboard
+riverctl keyboard-layout latam
+riverctl hide-cursor when-typing enabled
+riverctl set-cursor-warp on-focus-change
+riverctl set-repeat 40 300
+
+# touchpad
+riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad pointer-accel 1.0
+riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad accel-profile flat
+riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad tap enabled
+riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad tap-button-map left-right-middle
+riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad natural-scroll enabled
+riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad scroll-factor 0.2
+riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad drag enabled
+
+# BINDS
+
+# launch
+riverctl map normal $mod B spawn $browser
+riverctl map normal $mod D spawn "$menu"
+riverctl map normal $mod M spawn $filemanager
+riverctl map normal $mod N spawn "$term $termfilemanager"
+riverctl map normal $mod I spawn "$term $system_monitor"
+riverctl map normal $mod Z spawn $music
+riverctl map normal $mod Return spawn $term
+
+# river
+riverctl map normal $mod+Shift Backspace exit
+riverctl map normal $mod L spawn "hyprlock -c ~/.config/hypr/hyprlock/hl-minimal.conf"
+
+# panels
+riverctl map normal $mod Minus spawn "swaync-client -t"
+#riverctl map normal $mod T spawn "pkill -SIGUSR1 waybar" # river did not like that
+riverctl map normal $mod O spawn "nwg-bar -t logout_river.json -s logout_square.css"
+
+# windows
+riverctl map normal $mod C close
+riverctl map normal $mod Up focus-view up
+riverctl map normal $mod Right focus-view right
+riverctl map normal $mod Down focus-view down
+riverctl map normal $mod Left focus-view left
+riverctl map normal $mod+Shift Up swap up
+riverctl map normal $mod+Shift Right swap right
+riverctl map normal $mod+Shift Down swap down
+riverctl map normal $mod+Shift Left swap left
+riverctl map normal $mod F toggle-fullscreen
+riverctl map normal $mod V toggle-float
+riverctl map normal $mod Period focus-view next
+riverctl map normal $mod Comma focus-view previous
+riverctl map normal $mod+Shift Period swap next
+riverctl map normal $mod+Shift Comma swap previous
+riverctl map-pointer normal $mod BTN_LEFT move-view
+riverctl map-pointer normal $mod BTN_RIGHT resize-view
+riverctl map-pointer normal $mod BTN_MIDDLE toggle-float
+riverctl map normal $mod braceleft send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal $mod braceright send-layout-cmd rivertile "main-ratio +0.05"
+riverctl map normal $mod+Shift braceleft send-layout-cmd rivertile "main-count +1"
+riverctl map normal $mod+Shift braceright send-layout-cmd rivertile "main-count -1"
+
+# windows → monitors
+riverctl map normal $mod+Alt Right focus-output right
+riverctl map normal $mod+Alt Left focus-output left
+riverctl map normal $mod+Control Left send-to-output -current-tags left
+riverctl map normal $mod+Control Right send-to-output -current-tags right
+
+# huh
+riverctl map normal Super R send-to-previous-tags  
+
+# tags
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+    riverctl map normal $mod $i set-focused-tags $tags
+    riverctl map normal $mod+Control $i set-view-tags $tags
+    riverctl map normal $mod+Shift $i toggle-focused-tags $tags
+    riverctl map normal $mod+Alt $i toggle-view-tags $tags
+done
+
+all_tags=$(((1 << 32) - 1))
+riverctl map normal $mod 0 set-focused-tags $all_tags
+riverctl map normal $mod+Control 0 set-view-tags $all_tags
+
+# window manager inception³
+riverctl declare-mode passthrough
+riverctl map normal $mod F11 enter-mode passthrough
+riverctl map passthrough $mod F11 enter-mode normal
+
+# volume & brightness
+for mode in normal locked
+do
+    # volume
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-'
+    riverctl map $mode None XF86AudioMute         spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'
+    riverctl map $mode None XF86AudioMicMute      spawn "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+
+    # brightness
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'brillo -qA 2 -u 200000'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'brillo -qU 2 -u 200000'
+
+    # screnshots
+    riverctl map $mode None Print spawn 'grim; notify-send "screenshot taken" -u low'
+    riverctl map $mode None+Shift Print spawn 'grim -g "$(slurp)"'
+done
+
+# music
+riverctl map normal $mod Q spawn 'mpc prev'
+riverctl map normal $mod W spawn 'mpc toggle'
+riverctl map normal $mod E spawn 'mpc next'
+riverctl map normal $mod+Shift Q spawn 'mpc seek -10'
+riverctl map normal $mod+Shift W spawn 'mpc stop'
+riverctl map normal $mod+Shift E spawn 'mpc seek +10'
+
+# RULES
+
+# decorations
+riverctl rule-add ssd
+
+# float
+riverctl rule-add -app-id 'org.twosheds.iwgtk' float
+riverctl rule-add -app-id 'blueberry.py' float
+riverctl rule-add -app-id 'hyprland-share-picker' float
+riverctl rule-add -app-id 'galculator' float
+riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
+riverctl rule-add -title 'Open File' float
+riverctl rule-add -title 'Open Folder' float
+riverctl rule-add -title 'File Upload' float
+riverctl rule-add -title 'Select File' float
+riverctl rule-add -title 'Browse Files' float
+riverctl rule-add -title 'Save As' float
+riverctl rule-add -title 'Save Image' float
+riverctl rule-add -title 'Library' float
+riverctl rule-add -title 'Unlock Keyring' float
+riverctl rule-add -title 'Enter name of file to save to…' float
+riverctl rule-add -title 'hyprland-share-picker' float
+riverctl rule-add -title 'gcr-prompter' float
+
+# size
+riverctl rule-add -app-id 'org.twosheds.iwgtk' dimensions 550 700
+riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' dimensions 700 500
+
+# location
+riverctl rule-add -app-id 'ymuse' tags 256
+riverctl rule-add -app-id 'geary' tags 16
+

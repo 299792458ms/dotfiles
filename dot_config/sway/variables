@@ -1,0 +1,13 @@
+# ··· VARIABLES ···
+
+set $mod Mod4
+set $browser librewolf
+set $term foot
+set $termclient footclient
+set $menu fuzzel --config ~/.config/fuzzel/fuzzel-square.ini | xargs swaymsg exec --
+set $display nwg-displays
+set $terminalfilemanager yazi
+set $filemanager nautilus
+set $notes logseq
+set $system-monitor htop
+

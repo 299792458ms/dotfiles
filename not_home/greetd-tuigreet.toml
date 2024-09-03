@@ -1,0 +1,8 @@
+# /etc/greetd/config.toml
+[terminal]
+vt = 1
+
+[default_session]
+command = "tuigreet -r -t --asterisks --cmd sway --theme border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red"
+user = "greeter"
+

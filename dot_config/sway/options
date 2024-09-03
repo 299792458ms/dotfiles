@@ -1,0 +1,53 @@
+# ··· OPTIONS ···
+
+include touchpad
+xwayland enable
+font pango:Jet Brains Mono Nerd Font 14
+default_orientation auto
+mouse_warping container
+focus_wrapping no
+gaps inner 8
+smart_borders no
+smart_gaps off
+default_border pixel 2
+default_floating_border pixel 2
+workspace_auto_back_and_forth no
+# auto_back_and_forth fucks up moving all container workspace to workspace
+
+input type:keyboard {
+    xkb_layout    "latam"
+    xkb_model     "pc105"
+    repeat_delay  300
+    repeat_rate   50
+}
+
+input type:pointer {
+    pointer_accel 0.1
+    accel_profile flat
+
+
+}
+
+input type:touchpad {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    tap_button_map lrm
+    accel_profile flat
+    drag enabled
+    pointer_accel 1.0
+    scroll_factor 0.2
+}
+
+#class                   border     backgr.    text  indicator  child_border
+client.focused           $blue      $blue      $bg   $blue      $blue
+client.focused_inactive  $dimfg     $dimfg     $bg   $dimfg     $dimfg
+client.unfocused         $dimfg     $dimfg     $bg   $dimfg     $dimfg
+client.urgent            $critical  $critical  $bg   $critical  $critical
+client.placeholder       $inv       $dimfg     $bg   $inv       $dimfg
+
+# bar
+bar {
+    swaybar_command "waybar"
+}
+

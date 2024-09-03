@@ -1,0 +1,220 @@
+// config.jsonc
+
+{
+    "reload_style_on_change": true,
+    "layer": "top",
+    "height": 35,// 18 px font -> 31 height // 16px font -> 28 height
+    "spacing": 0,
+    "start_hidden": false,
+    "modules-left": [
+        "custom/logo",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        //"custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
+        "tray",
+        "idle_inhibitor",
+        "power-profiles-daemon",
+        "pulseaudio#pa1",
+        "pulseaudio#pa2",
+        "bluetooth",
+        "network",
+        "battery",
+        "backlight",
+        "group/group-power"
+    ],
+    "custom/logo": {
+        "format": "",
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "all-outputs": true,
+        "show-special": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        },
+        "format-icons": {
+            "magic": "󱑷",
+            "music": "󰝚",
+            "email": "󰁥",
+            "matrix": "󰭹",
+            "quickterm": "",
+            "quickmath": "󰪚"
+        }
+    },
+    "clock": {
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#C0CAF5'><b>{}</b></span>",
+                "days":       "<span color='#C0CAF5'><b>{}</b></span>",
+                "weeks":      "<span color='#E0AF68'><b>W{}</b></span>",
+                "weekdays":   "<span color='#E0AF68'><b>{}</b></span>",
+                "today":      "<span color='#F7768E'><b><u>{}</u></b></span>"
+            }
+        },
+        "tooltip": true
+    },
+    "custom/updates": {
+        "format": "{icon}{}",
+        "return-type": "json",
+        "format-icons": {
+            "pending-updates": " ",
+            "updated": ""
+        },
+        "exec-if": "which waybar-updates",
+        "exec": "waybar-updates -l 100"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰛊"
+        },
+        "tooltip": false
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip": false,
+        "format-icons": {
+            "default": "󰊚",
+            "performance": "󰡴",
+            "balanced": "󰊚",
+            "power-saver": "󰡳"
+        }
+    },
+    "pulseaudio#pa1": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-muted": "󰸈",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": "󰸈",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+",
+        "on-scroll-down": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-",
+        "on-click-right": "pavucontrol",
+        "tooltip": false
+
+    },
+    "pulseaudio#pa2": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "󰍭",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-up": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.05+",
+        "on-scroll-down": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.05-",
+        "on-click-right": "pavucontrol",
+        "tooltip": false
+
+    },
+    "bluetooth": {
+        "format-off" : "{icon}",
+        "format-on" : "{icon}",
+        "format-connected": "{icon}",
+        "format-disconnected": "{icon}",
+        "format-disabled": "{icon}",
+        "format-icons": {
+            "on": "󰂯",
+            "connected": "󰂱",
+            "off": "󰂯", 
+            "disabled": "󰂲"
+        },
+        "on-click-right": "footclient -T 'bluetooth420' -e bluetui",
+        "tooltip": true,
+        "tooltip-format": "{device_alias} {device_battery_percentage}%"
+
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-icons": [ "󰢿", "󰢼", "󰢽", "󰢾"],
+        "format-disconnected": "",
+        "interval": 30,
+        "on-click-right": "footclient -T 'wifi420' -e impala",
+        "tooltip": true,
+        "tooltip-format": "{essid}"
+    },
+    "battery": {
+        "states": {
+            "limit": 100,
+            "good": 80,
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon}",
+        "format-full": "{icon}󱐋 {capacity}%",
+        "format-charging": "{icon}󱐋 {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "interval": 120,
+        "tooltip": true,
+        "tooltip-format": "{capacity}% {timeTo}"
+    },
+    "backlight": {
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brillo -qA 1 -u 200000",
+        "on-scroll-down": "brillo -qU 1 -u 200000",
+        "tooltip": true,
+        "tooltip-format": "{percent}%"
+    },
+    "tray": {
+        "spacing": 20
+    },
+    "group/group-power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/power",
+            "custom/lock",
+            "custom/quit",
+            "custom/suspend",
+            "custom/reboot"
+        ]
+    },
+    "custom/lock": {
+        "format": "󰌾",
+        "tooltip": false,
+        "on-click": "loginctl lock-session"
+    },
+    "custom/quit": {
+        "format": "󰁒",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/suspend": {
+        "format": "󰏥",
+        "tooltip": false,
+        "on-click": "systemctl suspend"
+    },
+    "custom/reboot": {
+        "format": "󱍷",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+    "custom/power": {
+        "format": "󰠠",
+        "tooltip": false,
+        "on-click": "shutdown now"
+    }
+}

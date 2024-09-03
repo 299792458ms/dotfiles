@@ -1,0 +1,53 @@
+#.zshrc
+
+#options
+HISTFILE=~/.local/state/zsh/history/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd beep nomatch
+unsetopt extendedglob notify
+bindkey -e
+zstyle :compinstall filename '/home/alec/.zshrc'
+autoload -Uz compinit
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+
+# keybinds
+bindkey -s '^o' 'helix $(fzf)^M' # "^M" auto-enter
+bindkey -s '^p' 'sudoedit $(fzf)^M'
+bindkey '^z' undo
+bindkey '^b' backward-kill-word
+
+# aliases
+alias sudo='sudo '
+alias y='yazi'
+alias hlx='helix'
+alias tree='eza -T --icons=always'
+alias ls='eza --group-directories-first --color=always --icons=always'
+alias ff='fastfetch'
+alias ffb='fastfetch -c ~/.config/fastfetch/custom/config-bolt.jsonc'
+alias cz='chezmoi'
+alias hc='truncate -s 0 "$HISTFILE"'
+alias ff-bepp='ff --logo ~/Pictures/memes/bepp-tnn.png --logo-type sixel'
+alias ffp='pokeget random --hide-name | fastfetch --file-raw -'
+
+# files
+source <(fzf --zsh)
+
+# run
+eval "$(register-python-argcomplete pipx)"
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
+
+# wrappers
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# path
+export PATH="$PATH:/home/alec/.local/bin"
+export PATH="$PATH:/home/alec/.cargo/bin"

@@ -1,0 +1,2 @@
+lock "swaylock -f -C ~/.config/swaylock/neon-alley"
+before-sleep "swaylock -f C ~/.config/seaylock/neon-alley"

@@ -1,0 +1,216 @@
+// W A Y B A R   C O N F I G
+
+{
+    "reload_style_on_change": true,
+    "position": "left",
+    "layer": "top",
+    "spacing": 0,
+    "width": 30,
+    "modules-left": [
+        //"custom/logo",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        //"custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
+        "idle_inhibitor", // it is currently not working for hypridle
+        "power-profiles-daemon",
+        "pulseaudio#pa1",
+        "pulseaudio#pa2",
+        "bluetooth",
+        "network",
+        "battery",
+        "backlight",
+        "tray",
+        "group/group-power"
+    ],
+    "custom/logo": {
+        "format": "󰣇",
+        "tooltip": false,
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "enable-bar-scroll": true,
+        "all-outputs": true,
+        "show-special": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        },
+        "format-icons": {
+            "special": ""
+        }
+    },
+    "clock": {
+        "format": "{:%H\n%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%y\n%m\n%d}",
+        "calendar": {
+            "mode"          : "month",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#CDD6F4'><b>{}</b></span>",
+                "days":       "<span color='#CDD6F4'><b>{}</b></span>",
+                "weeks":      "<span color='#F9E2AF'><b>W{}</b></span>",
+                "weekdays":   "<span color='#F9E2AF'><b>{}</b></span>",
+                "today":      "<span color='#F38BA8'><b><u>{}</u></b></span>"
+            }
+        },
+        "tooltip": true
+    },
+    "custom/updates": {
+        "format": "{icon}{}",
+        "return-type": "json",
+        "format-icons": {
+            "pending-updates": " ",
+            "updated": ""
+        },
+        "exec-if": "which waybar-updates",
+        "exec": "waybar-updates -l 100"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰛊"
+        },
+        "tooltip": false
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip": false,
+        "format-icons": {
+            "default": "󰊚",
+            "performance": "󰡴",
+            "balanced": "󰊚",
+            "power-saver": "󰡳"
+        }
+    },
+    "pulseaudio#pa1": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-muted": "󰸈",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": "󰸈",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -ui 2",
+        "on-scroll-down": "pamixer -ud 2",
+        "on-click-right": "pavucontrol",
+        "tooltip": false
+
+    },
+    "pulseaudio#pa2": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "󰍭",
+        "on-click": "pamixer -t --source 0",
+        "on-scroll-up": "pamixer -ui 2 --source 0",
+        "on-scroll-down": "pamixer -ud 2 --source 0",
+        "on-click-right": "pavucontrol",
+        "tooltip": false
+
+    },
+    "bluetooth": {
+        "format-off" : "{icon}",
+        "format-on" : "{icon}",
+        "format-connected": "{icon}",
+        "format-disconnected": "{icon}",
+        "format-disabled": "{icon}",
+        "format-alt": "{icon} {device_alias} {device_battery_percentage}%",
+        "format-icons": {
+            "on": "󰂯",
+            "connected": "󰂱",
+            "off": "󰂲", 
+            "disabled": "󰂲"
+        },
+        "on-click-right": "blueberry"
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-icons": [ "󰢿", "󰢼", "󰢽", "󰢾"],
+        "format-disconnected": "",
+        "format-alt": "{icon} {essid}",
+        "interval": 30,
+        "on-click-right": "iwgtk",
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            "limit": 100,
+            "good": 80,
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon}",
+        "format-full": "{icon}󱐋 {capacity}%",
+        "format-charging": "{icon}󱐋 {capacity}%",
+        "format-alt": "{icon} {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "interval": 120,
+        "tooltip": true
+    },
+    "backlight": {
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "format-alt": "{icon} {percent}%",
+        "on-scroll-up": "brillo -qA 1 -u 200000",
+        "on-scroll-down": "brillo -qU 1 -u 200000",
+        "tooltip": false
+    },
+    "tray": {
+        "spacing": 20
+    },
+    "group/group-power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/power",
+            "custom/lock",
+            "custom/quit",
+            "custom/suspend",
+            "custom/reboot"
+        ]
+    },
+    "custom/lock": {
+        "format": "󰌾",
+        "tooltip": false,
+        "on-click": "loginctl lock-session"
+    },
+    "custom/quit": {
+        "format": "󰁒",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/suspend": {
+        "format": "󰍶",
+        "tooltip": false,
+        "on-click": "systemctl suspend"
+    },
+    "custom/reboot": {
+        "format": "󱍷",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+    "custom/power": {
+        "format": "󰠠",
+        "tooltip": false,
+        "on-click": "shutdown now"
+    }
+}
