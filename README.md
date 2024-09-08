@@ -9,11 +9,23 @@ Check this [list](/assets/swlist.md) of programs I use if something caught your 
 
 ## Looks
 
-- **Hyprland**: [neon-leaves(tokyonight)](https://lemmy.zip/post/18840778) [cold-mountains(nord)](https://codeberg.org/299792458ms/hyprland-cold-mountains)
-- **River**: [tokyonight](https://lemmy.zip/post/19773171)
-- **Sway**: [nord](https://feddit.cl/post/2584023)
-- **i3** [tokyonight](https://feddit.cl/post/2290324)
-- **Gnome**: [noob-setup](https://feddit.cl/post/2584023)
+**Hyprland**
+
+- neon-leaves: [lemmy_post](https://lemmy.zip/post/18840778), [repo](https://codeberg.org/299792458ms/hyprland-neon-leaves)
+- cold-mountains: [repo](https://codeberg.org/299792458ms/hyprland-cold-mountains)
+
+**River**
+
+- funky-car: [lemmy_post](https://lemmy.zip/post/19773171)
+- minimal: [repo](https://codeberg.org/299792458ms/river-dotfiles)
+
+**Sway**
+
+- cold-mountains: [lemmy_post](https://feddit.cl/post/2584023)
+
+**Gnome**
+
+- noob-setup: [lemmy_post](https://feddit.cl/post/2584023)
 
 ## Inspirations
 
