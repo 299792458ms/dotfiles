@@ -113,12 +113,10 @@ window#waybar {
     color: @green;
 }
 
+#bluetooth.off,
+#bluetooth.disconnected,
 #bluetooth.disabled {
     color: @dimfg;
-}
-
-#network.disconnected {
-    color: @warning;
 }
 
 #network.disabled {

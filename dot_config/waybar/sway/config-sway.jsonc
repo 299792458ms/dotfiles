@@ -138,7 +138,7 @@
             "off": "󰂲", 
             "disabled": "󰂲"
         },
-        "on-click-right": "blueberry",
+        "on-click-right": "footclient -T 'bluetooth420' -e bluetui",
         "tooltip": true,
         "tooltip-format": "{device_alias} {device_battery_percentage}%"
 
@@ -149,7 +149,7 @@
         "format-disconnected": "",
         // "format-alt": "{icon} {essid}",
         "interval": 30,
-        "on-click-right": "iwgtk",
+        "on-click-right": "footclient -T 'wifi420' -e sudo impala",
         "tooltip": true,
         "tooltip-format": "{essid}"
     },
