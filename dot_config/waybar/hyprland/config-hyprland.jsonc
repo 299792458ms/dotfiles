@@ -56,6 +56,8 @@
         }
     },
     "clock": {
+        // "format": "{:%H:%M:%S}",
+        // "interval": 1,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode"          : "month",
@@ -147,7 +149,7 @@
         "format-icons": [ "󰢿", "󰢼", "󰢽", "󰢾"],
         "format-disconnected": "",
         "interval": 30,
-        "on-click-right": "footclient -T 'wifi420' -e impala",
+        "on-click-right": "footclient -T 'wifi420' -e sudo impala",
         "tooltip": true,
         "tooltip-format": "{essid}"
     },
