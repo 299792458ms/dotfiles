@@ -52,16 +52,16 @@ window#waybar {
 }
 
 #workspaces button.visible {
-    color: @yellow;
-    border-bottom: 2px solid @yellow;
+    color: @blue;
+    border-bottom: 2px solid @blue;
     border-radius: 0;
     margin-top: 2px;
 }
 
 #workspaces button.focused {
-    color: @fg;
+    color: @magenta;
     border-radius: 0;
-    border-bottom: 2px solid @fg;
+    border-bottom: 2px solid @magenta;
     margin-top: 2px;
     transition: none;
 }
@@ -117,6 +117,8 @@ window#waybar {
     color: @green;
 }
 
+#bluetooth.off,
+#bleutooth.disconnected,
 #bluetooth.disabled {
     color: @dimfg;
 }

@@ -11,7 +11,7 @@ smart_borders no
 smart_gaps off
 default_border pixel 2
 default_floating_border pixel 2
-workspace_auto_back_and_forth no
+workspace_auto_back_and_forth yes
 # auto_back_and_forth fucks up moving all container workspace to workspace
 
 input type:keyboard {
@@ -24,8 +24,6 @@ input type:keyboard {
 input type:pointer {
     pointer_accel 0.1
     accel_profile flat
-
-
 }
 
 input type:touchpad {
@@ -40,7 +38,7 @@ input type:touchpad {
 }
 
 #class                   border     backgr.    text  indicator  child_border
-client.focused           $blue      $blue      $bg   $blue      $blue
+client.focused           $magenta   $magenta   $bg   $magenta   $magenta
 client.focused_inactive  $dimfg     $dimfg     $bg   $dimfg     $dimfg
 client.unfocused         $dimfg     $dimfg     $bg   $dimfg     $dimfg
 client.urgent            $critical  $critical  $bg   $critical  $critical

@@ -6,14 +6,7 @@ bindsym $mod+Shift+backspace exec swaymsg exit
 bindsym $mod+l exec loginctl lock-session
 
 # monitor control
-mode "monitor-control" {
-    bindsym right exec shikanectl switch 'hdmi-hotplug-right' &
-    bindsym left exec shikanectl switch 'hdmi-hotplug-left' &
-    bindsym shift+right exec shikanectl switch 'switcheroo' &
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+shift+bar mode "monitor-control"
+bindsym $mod+shift+bar exec wlr-which-key ~/.config/wlr-which-key/monitorctl_square.yaml
 
 # panels
 bindsym $mod+minus exec swaync-client -t
@@ -96,19 +89,19 @@ bindsym $mod+ctrl+alt+7 [workspace=__focused__] move to workspace number 7
 bindsym $mod+ctrl+alt+8 [workspace=__focused__] move to workspace number 8
 bindsym $mod+ctrl+alt+9 [workspace=__focused__] move to workspace number 9
 bindsym $mod+ctrl+alt+0 [workspace=__focused__] move to workspace number 10
-bindsym $mod+shift+alt+1 [workspace=__focused__] move to workspace number 1, workspace 1
-bindsym $mod+shift+alt+2 [workspace=__focused__] move to workspace number 2, workspace 2
-bindsym $mod+shift+alt+3 [workspace=__focused__] move to workspace number 3, workspace 3
-bindsym $mod+shift+alt+4 [workspace=__focused__] move to workspace number 4, workspace 4
-bindsym $mod+shift+alt+5 [workspace=__focused__] move to workspace number 5, workspace 5
-bindsym $mod+shift+alt+6 [workspace=__focused__] move to workspace number 6, workspace 6
-bindsym $mod+shift+alt+7 [workspace=__focused__] move to workspace number 7, workspace 7
-bindsym $mod+shift+alt+8 [workspace=__focused__] move to workspace number 8, workspace 8
-bindsym $mod+shift+alt+9 [workspace=__focused__] move to workspace number 9, workspace 9
-bindsym $mod+shift+alt+0 [workspace=__focused__] move to workspace number 10, workspace 10
+bindsym $mod+shift+alt+1 [workspace=__focused__] move to workspace number 1, workspace --no-auto-back-and-forth number 1
+bindsym $mod+shift+alt+2 [workspace=__focused__] move to workspace number 2, workspace --no-auto-back-and-forth number 2
+bindsym $mod+shift+alt+3 [workspace=__focused__] move to workspace number 3, workspace --no-auto-back-and-forth number 3
+bindsym $mod+shift+alt+4 [workspace=__focused__] move to workspace number 4, workspace --no-auto-back-and-forth number 4
+bindsym $mod+shift+alt+5 [workspace=__focused__] move to workspace number 5, workspace --no-auto-back-and-forth number 5
+bindsym $mod+shift+alt+6 [workspace=__focused__] move to workspace number 6, workspace --no-auto-back-and-forth number 6
+bindsym $mod+shift+alt+7 [workspace=__focused__] move to workspace number 7, workspace --no-auto-back-and-forth number 7
+bindsym $mod+shift+alt+8 [workspace=__focused__] move to workspace number 8, workspace --no-auto-back-and-forth number 8
+bindsym $mod+shift+alt+9 [workspace=__focused__] move to workspace number 9, workspace --no-auto-back-and-forth number 9
+bindsym $mod+shift+alt+0 [workspace=__focused__] move to workspace number 10, workspace number --no-auto-back-and-forth 10
 bindsym $mod+ctrl+delete [workspace=] kill
-bindgesture swipe:3:down workspace next
-bindgesture swipe:3:up workspace prev
+bindgesture swipe:3:left workspace next
+bindgesture swipe:3:right workspace prev
 
 # scratchpad
 bindsym $mod+shift+tab move container to scratchpad
@@ -121,31 +114,37 @@ bindsym $mod+delete exec footclient -T 'bluetooth420' -e bluetui
 bindsym $mod+insert exec footclient -T 'wifi420' -e sudo impala
 
 # pulseaudio
-bindsym XF86AudioRaiseVolume exec wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+
-bindsym XF86AudioLowerVolume exec wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-
-bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym --locked XF86AudioRaiseVolume exec wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+
+bindsym --locked XF86AudioLowerVolume exec wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-
+bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 # brightness
-bindsym XF86MonBrightnessUp exec brillo -qA 2 -u 200000
-bindsym XF86MonBrightnessDown exec brillo -qU 2 -u 200000
+bindsym --locked XF86MonBrightnessUp exec brillo -qA 2 -u 200000
+bindsym --locked XF86MonBrightnessDown exec brillo -qU 2 -u 200000
 
 # screenshots
-bindsym  alt+print         exec  ~/scripts/screenshots/sway/allmonitors.sh
-bindsym  print             exec  ~/scripts/screenshots/sway/activemonitor.sh
-bindsym  shift+print       exec  ~/scripts/screenshots/sway/window.sh
-bindsym  ctrl+print        exec  ~/scripts/screenshots/sway/area.sh
-bindsym  $mod+alt+print    exec  ~/scripts/screenshots/sway/allmonitors-edit.sh
-bindsym  $mod+print        exec  ~/scripts/screenshots/sway/activemonitor-edit.sh
-bindsym  $mod+shift+print  exec  ~/scripts/screenshots/sway/window-edit.sh
-bindsym  $mod+ctrl+print   exec  ~/scripts/screenshots/sway/area-edit.sh
+bindsym --locked alt+print         exec  ~/scripts/screenshots/sway/allmonitors.sh
+bindsym --locked print             exec  ~/scripts/screenshots/sway/activemonitor.sh
+bindsym --locked shift+print       exec  ~/scripts/screenshots/sway/window.sh
+bindsym --locked ctrl+print        exec  ~/scripts/screenshots/sway/area.sh
+bindsym --locked $mod+alt+print    exec  ~/scripts/screenshots/sway/allmonitors-edit.sh
+bindsym --locked $mod+print        exec  ~/scripts/screenshots/sway/activemonitor-edit.sh
+bindsym --locked $mod+shift+print  exec  ~/scripts/screenshots/sway/window-edit.sh
+bindsym --locked $mod+ctrl+print   exec  ~/scripts/screenshots/sway/area-edit.sh
 
 # music
-bindsym $mod+q exec mpc prev
-bindsym $mod+w exec mpc toggle
-bindsym $mod+e exec mpc next
-bindsym $mod+shift+q exec mpc seek -10
-bindsym $mod+shift+w exec mpc stop
-bindsym $mod+shift+e exec mpc seek +10
-bindsym $mod+control+q exec mpc seek 0
+bindsym --locked $mod+q exec mpc prev
+bindsym --locked $mod+w exec mpc toggle
+bindsym --locked $mod+e exec mpc next
+bindsym --locked $mod+shift+q exec mpc seek -10
+bindsym --locked $mod+shift+w exec mpc stop
+bindsym --locked $mod+shift+e exec mpc seek +10
+bindsym --locked $mod+control+q exec mpc seek 0
+
+
+
+# testing stuff
+bindsym $mod+plus exec /home/alec/scripts/launch/workpaces/launch-music-ws.sh
+
 

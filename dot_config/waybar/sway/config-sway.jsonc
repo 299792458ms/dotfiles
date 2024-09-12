@@ -37,6 +37,9 @@
         "disable-scroll-wraparound": true,
         "enable-bar-scroll" : true,
         "warp-on-scroll": false,
+        "format-icons": {
+            "music": "󰝚"
+        },
         "persistent-workspaces": {
             "1": [],
             "2": [],
@@ -195,11 +198,6 @@
             "custom/suspend",
             "custom/reboot"
         ]
-    },
-    "custom/lock": {
-        "format": "󰌾",
-        "tooltip": false,
-        "on-click": "loginctl lock-session"
     },
     "custom/quit": {
         "format": "󰁒",
