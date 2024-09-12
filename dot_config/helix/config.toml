@@ -4,6 +4,7 @@ theme = "tokyonight"
 mouse = true
 cursorline = false
 cursorcolumn = false
+line-number = "relative"
 
 [editor.cursor-shape]
 insert = "block"
