@@ -51,16 +51,16 @@ window#waybar {
 }
 
 #workspaces button.visible {
-    color: @green;
+    color: @blue;
     border-radius: 0;
-    border-bottom: 2px solid @green;
+    border-bottom: 2px solid @blue;
     margin-top: 2px;
 }
 
 #workspaces button.active {
-    color: @fg;
+    color: @green;
     border-radius: 0;
-    border-bottom: 2px solid @fg;
+    border-bottom: 2px solid @green;
     margin-top: 2px;
 }
 

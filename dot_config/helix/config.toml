@@ -4,7 +4,7 @@ theme = "tokyonight"
 mouse = true
 cursorline = false
 cursorcolumn = false
-line-number = "relative"
+line-number = "absolute"
 
 [editor.cursor-shape]
 insert = "block"
@@ -22,3 +22,5 @@ mode.normal = "NOR"
 mode.insert = "INS"
 mode.select = "SEL"
 
+[editor.soft-wrap]
+enable = true

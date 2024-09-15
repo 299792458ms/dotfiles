@@ -118,7 +118,7 @@ window#waybar {
 }
 
 #bluetooth.off,
-#bleutooth.disconnected,
+#bluetooth.disconnected,
 #bluetooth.disabled {
     color: @dimfg;
 }

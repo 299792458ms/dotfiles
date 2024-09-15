@@ -38,7 +38,8 @@
         "enable-bar-scroll" : true,
         "warp-on-scroll": false,
         "format-icons": {
-            "music": "󰝚"
+            "music": "󰝚",
+            "mail": "󰁥"
         },
         "persistent-workspaces": {
             "1": [],

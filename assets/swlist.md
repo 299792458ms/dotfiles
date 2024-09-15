@@ -90,12 +90,13 @@ All programs are listed by their package name and are available for Arch in Extr
 - [**hyprpaper**](https://github.com/hyprwm/hyprpaper)[^4]: Set wallpapers and change them through the command-line.
 - [̣**wbg**](https://codeberg.org/dnkl/wbg)[^1]: Very simple wallpaper utility meant only to se wallpaper once.
 
-## Bars & Panels
+## Bars, Panels & Menus
 
 - [**nwg-bar**](https://github.com/nwg-piotr/nwg-bar): Simple logout bar, but you can use it as anything. (Time ago I used it to make a panel to open common files)
 - [**waybar**](https://github.com/Alexays/Waybar): Most popular status bar out there, modular, many options and super themable.
 - [**wofi**](https://sr.ht/~scoopta/wofi/)[^1]: Not actively maintained by its developer, but its was my favourite menu for a long time.
 - [**fuzzel**](https://codeberg.org/dnkl/fuzzel): Fast fuzzy search menu with icons.
+- [**wlr-which-key**](https://github.com/MaxVerevkin/wlr-which-key): Keymap manager for wlroots compositors. I use it as a menu for controling mnitors.
 
 ## File Managers
 

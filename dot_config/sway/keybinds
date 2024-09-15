@@ -103,6 +103,10 @@ bindsym $mod+ctrl+delete [workspace=] kill
 bindgesture swipe:3:left workspace next
 bindgesture swipe:3:right workspace prev
 
+# named workspaces
+bindsym $mod+plus exec /home/alec/scripts/launch/workpaces/launch-music-ws.sh
+bindsym $mod+braceleft exec /home/alec/scripts/launch/workpaces/launch-mail-ws.sh
+
 # scratchpad
 bindsym $mod+shift+tab move container to scratchpad
 bindsym $mod+tab scratchpad show
@@ -141,10 +145,4 @@ bindsym --locked $mod+shift+q exec mpc seek -10
 bindsym --locked $mod+shift+w exec mpc stop
 bindsym --locked $mod+shift+e exec mpc seek +10
 bindsym --locked $mod+control+q exec mpc seek 0
-
-
-
-# testing stuff
-bindsym $mod+plus exec /home/alec/scripts/launch/workpaces/launch-music-ws.sh
-
 
