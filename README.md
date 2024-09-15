@@ -5,7 +5,7 @@ Check this [list](/assets/swlist.md) of programs I use if something caught your 
 
 > [!Note]
 > - Files and links could be outdated
-> - Chezmoi prefixes executables with `executable_`, `private_` for files it deems to be private and substituting `.` with `dot_` for dotfiles.
+> - Chezmoi [renames files](https://www.chezmoi.io/reference/source-state-attributes/) depending on the attributes of the file.
 
 ## Looks
 

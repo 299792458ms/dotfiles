@@ -35,7 +35,7 @@ for_window [title="bluetooth420"] floating enable, resize set 750 500
 # for_window [app_id="blueberry.py"] opacity $op
 # for_window [app_id="io.github.amit9838.mousam"] opacity $op
 # for_window [app_id="org.gnome.Podcasts"] opacity $op
-
+# 
 # location
 assign [app_id="music420"] workspace music
 assign [app_id="geary"] workspace mail

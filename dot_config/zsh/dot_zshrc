@@ -11,11 +11,16 @@ zstyle :compinstall filename '/home/alec/.zshrc'
 autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 
+zmodload zsh/zle
+
 # keybinds
 bindkey -s '^o' 'helix $(fzf)^M' # "^M" auto-enter
 bindkey -s '^p' 'sudoedit $(fzf)^M'
+bindkey -s '^y' 'yazi $(fzf)^M'
+bindkey -s '^[y' 'yazi $(fzf-cd-widget)^M'
 bindkey '^z' undo
 bindkey '^b' backward-kill-word
+bindkey '^f' kill-word
 
 # aliases
 alias sudo='sudo '
@@ -48,6 +53,7 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
-# path
-export PATH="$PATH:/home/alec/.local/bin"
-export PATH="$PATH:/home/alec/.cargo/bin"
+_fzf_dir_completion() {
+  __fzf_generic_path_completion "$1" "$2" _fzf_compgen_dir \
+    "" "/" ""
+}
