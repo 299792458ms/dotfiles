@@ -3,7 +3,7 @@
 # sway
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+backspace exec swaymsg exit
-bindsym $mod+l exec loginctl lock-session
+bindsym $mod+alt+l exec loginctl lock-session
 
 # monitor control
 bindsym $mod+shift+bar exec wlr-which-key ~/.config/wlr-which-key/monitorctl_square.yaml
@@ -21,7 +21,7 @@ bindsym $mod+return exec $termclient
 bindsym $mod+p exec $display
 bindsym $mod+n exec $termclient -e yazi
 bindsym $mod+m exec $filemanager
-bindsym $mod+k exec $notes
+# bindsym $mod+k exec $notes
 
 # windows
 bindsym $mod+c kill
@@ -30,17 +30,18 @@ bindsym $mod+left focus left
 bindsym $mod+down focus down
 bindsym $mod+up focus up
 bindsym $mod+right focus right
-bindsym $mod+a focus parent
-bindsym $mod+s focus child
+bindsym $mod+z focus parent
+bindsym $mod+x focus child
 bindsym $mod+shift+Left move left
 bindsym $mod+shift+Down move down
 bindsym $mod+shift+Up move up
 bindsym $mod+shift+Right move right
-bindsym $mod+h splith
-bindsym $mod+v splitv
+bindsym $mod+s layout toggle split
+bindsym $mod+t layout toggle tabbed split
+bindsym $mod+a splitt
 bindsym $mod+f fullscreen
-bindsym $mod+j layout toggle split
 bindsym $mod+space floating toggle
+bindsym $mod+u sticky toggle
 bindsym $mod+shift+space focus mode_toggle
 bindsym $mod+ctrl+Left resize shrink width 10px
 bindsym $mod+ctrl+Up resize grow height 10px
@@ -48,17 +49,31 @@ bindsym $mod+ctrl+Down resize shrink height 10px
 bindsym $mod+ctrl+Right resize grow width 10px
 floating_modifier $mod normal
 
+# window but vim-like
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+shift+h move left
+bindsym $mod+shift+j move down
+bindsym $mod+shift+k move up
+bindsym $mod+shift+l move right
+bindsym $mod+ctrl+h resize shrink width 10px
+bindsym $mod+ctrl+k resize grow height 10px
+bindsym $mod+ctrl+j resize shrink height 10px
+bindsym $mod+ctrl+l resize grow width 10px
+
 # workspaces
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
-bindsym $mod+6 workspace number 6
-bindsym $mod+7 workspace number 7
-bindsym $mod+8 workspace number 8
-bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
+bindsym $mod+1 workspace --no-auto-back-and-forth number 1
+bindsym $mod+2 workspace --no-auto-back-and-forth number 2
+bindsym $mod+3 workspace --no-auto-back-and-forth number 3
+bindsym $mod+4 workspace --no-auto-back-and-forth number 4
+bindsym $mod+5 workspace --no-auto-back-and-forth number 5
+bindsym $mod+6 workspace --no-auto-back-and-forth number 6
+bindsym $mod+7 workspace --no-auto-back-and-forth number 7
+bindsym $mod+8 workspace --no-auto-back-and-forth number 8
+bindsym $mod+9 workspace --no-auto-back-and-forth number 9
+bindsym $mod+0 workspace --no-auto-back-and-forth number 10
 bindsym $mod+ctrl+1 move container to workspace number 1
 bindsym $mod+ctrl+2 move container to workspace number 2
 bindsym $mod+ctrl+3 move container to workspace number 3
@@ -100,6 +115,8 @@ bindsym $mod+shift+alt+8 [workspace=__focused__] move to workspace number 8, wor
 bindsym $mod+shift+alt+9 [workspace=__focused__] move to workspace number 9, workspace --no-auto-back-and-forth number 9
 bindsym $mod+shift+alt+0 [workspace=__focused__] move to workspace number 10, workspace number --no-auto-back-and-forth 10
 bindsym $mod+ctrl+delete [workspace=] kill
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
 bindgesture swipe:3:left workspace next
 bindgesture swipe:3:right workspace prev
 
@@ -113,9 +130,9 @@ bindsym $mod+tab scratchpad show
 # bindgesture swipe:3:down scratchpad show
 # bindgesture swipe:3:up move container to scratchpad
 
-# conenctivity
+# connectivity
 bindsym $mod+delete exec footclient -T 'bluetooth420' -e bluetui
-bindsym $mod+insert exec footclient -T 'wifi420' -e sudo impala
+bindsym $mod+insert exec footclient -T 'wifi420' -e impala
 
 # pulseaudio
 bindsym --locked XF86AudioRaiseVolume exec wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+

@@ -2,10 +2,10 @@
 
 exec foot -s &
 exec gammastep &
-exec hyprpaper -c ~/.config/hypr/hyprpaper/hp-ps.conf
+exec hyprpaper -c ~/.config/hypr/hyprpaper/hp-sw06.conf
 exec shikane &
-exec swayidle -w -C ~/.config/swayidle/ensure-lock-ps &
-exec swayidle -C ~/.config/swayidle/idle-ps &
+exec swayidle -w -C ~/.config/swayidle/ensure-lock-sw06 &
+exec swayidle -C ~/.config/swayidle/idle-sw06 &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec swaync -s ~/.config/swaync/style_square.css &
 

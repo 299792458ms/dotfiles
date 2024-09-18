@@ -9,8 +9,8 @@ focus_wrapping no
 gaps inner 8
 smart_borders no
 smart_gaps off
-default_border pixel 2
-default_floating_border pixel 2
+default_border normal 2
+default_floating_border normal 2
 focus_on_window_activation focus
 workspace_auto_back_and_forth yes
 # auto_back_and_forth fucks up moving all container workspace to workspace
@@ -39,14 +39,36 @@ input type:touchpad {
 }
 
 #class                   border     backgr.    text  indicator  child_border
-client.focused           $magenta   $magenta   $bg   $magenta   $magenta
+client.focused           $magenta   $magenta   $bg   $cyan      $magenta
 client.focused_inactive  $dimfg     $dimfg     $bg   $dimfg     $dimfg
 client.unfocused         $dimfg     $dimfg     $bg   $dimfg     $dimfg
 client.urgent            $critical  $critical  $bg   $critical  $critical
 client.placeholder       $inv       $dimfg     $bg   $inv       $dimfg
 
-# bar
-bar {
-    swaybar_command "waybar"
-}
+# bar {
+#     swaybar_command "waybar"
+# }
 
+bar {
+    position bottom
+    output *
+    font pango:Jet Brains Mono Nerd Font 16    
+    wrap_scroll no
+    tray_output *
+    separator_symbol |
+    mode dock
+    modifier mod4
+            
+    # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    # status_command while ~/scripts/launch/bar/status.sh; do sleep 1; done
+    status_command i3status
+
+    colors {
+        statusline #C0CAF5FF
+        background #1A1B26FF
+        active_workspace #1A1B26FF #7AA2F7FF #1A1B26FF
+        inactive_workspace #1A1B26FF #1A1B26FF #5C6691FF
+        focused_workspace  #1A1B26FF #AD8EE6FF #1A1B26FF   
+        urgent_workspace #1A1B26FF #F7768EFF #1A1B26FF
+     }
+}

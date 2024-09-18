@@ -398,7 +398,7 @@
     padding: 16px;
     margin: 16px 20px;
     background-color: @mpris-album-art-overlay;
-    border-radius: 12px;
+    border-radius: 0px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
 }
 
@@ -408,7 +408,7 @@
 }
 
 .widget-mpris .widget-mpris-player .widget-mpris-album-art {
-    border-radius: 12px;
+    border-radius: 0px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
 }
 
@@ -486,7 +486,7 @@ background-color: @noti-bg-hover;
     background-color: @noti-bg;
         padding: 8px;
     margin: 8px;
-    border-radius: 12px;
+    border-radius: 0px;
 }
 
 .widget-volume > box > button {
@@ -498,7 +498,7 @@ background-color: @noti-bg-hover;
     background-color: @noti-bg-alt;
         padding: 4px 8px 8px 8px;
     margin: 0px 8px 8px 8px;
-    border-radius: 12px;
+    border-radius:0px;
 }
 
 /* Backlight widget */
@@ -506,7 +506,7 @@ background-color: @noti-bg-hover;
     background-color: @noti-bg;
         padding: 8px;
     margin: 8px;
-    border-radius: 12px;
+    border-radius:0px;
 }
 
 /* Inhibitors widget */
@@ -522,7 +522,7 @@ background-color: @noti-bg-hover;
     background: @noti-bg;
         border: 1px solid @noti-border-color;
     box-shadow: none;
-    border-radius: 12px;
+    border-radius: 0px;
 }
 
 .widget-inhibitors > button:hover {
