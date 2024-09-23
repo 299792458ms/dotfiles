@@ -151,7 +151,7 @@
         "format-icons": [ "󰢿", "󰢼", "󰢽", "󰢾"],
         "format-disconnected": "",
         "interval": 30,
-        "on-click-right": "footclient -T 'wifi420' -e sudo impala",
+        "on-click-right": "footclient -T 'wifi420' -e impala",
         "tooltip": true,
         "tooltip-format": "{essid}"
     },
