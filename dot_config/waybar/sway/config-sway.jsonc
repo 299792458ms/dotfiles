@@ -203,7 +203,7 @@
     "custom/quit": {
         "format": "󰁒",
         "tooltip": false,
-        "on-click": "hyprctl dispatch exit"
+        "on-click": "swaymsg exit"
     },
     "custom/suspend": {
         "format": "󰏥",

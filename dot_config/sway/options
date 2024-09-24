@@ -9,8 +9,8 @@ focus_wrapping no
 gaps inner 8
 smart_borders no
 smart_gaps off
-default_border normal 2
-default_floating_border normal 2
+default_border pixel 2
+default_floating_border pixel 2
 focus_on_window_activation focus
 workspace_auto_back_and_forth yes
 # auto_back_and_forth fucks up moving all container workspace to workspace
@@ -37,6 +37,8 @@ input type:touchpad {
     pointer_accel 1.0
     scroll_factor 0.2
 }
+
+output * mode 1920x1080 pos 0 0 bg ~/Pictures/wallpapers/synthwave/sw06.png fill
 
 #class                   border     backgr.    text  indicator  child_border
 client.focused           $magenta   $magenta   $bg   $cyan      $magenta

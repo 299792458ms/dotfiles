@@ -6,7 +6,7 @@ bindsym $mod+Shift+backspace exec swaymsg exit
 bindsym $mod+alt+l exec loginctl lock-session
 
 # monitor control
-bindsym $mod+shift+bar exec wlr-which-key ~/.config/wlr-which-key/monitorctl_square.yaml
+bindsym $mod+bar exec wlr-which-key ~/.config/wlr-which-key/monitorctl_square.yaml
 
 # panels
 bindsym $mod+minus exec swaync-client -t

@@ -14,9 +14,9 @@ exec = ["notify-send shikane \"profile $SHIKANE_PROFILE_NAME has been applied\" 
 name = "hdmi-hotplug-right"
 exec = ["notify-send shikane \"profile $SHIKANE_PROFILE_NAME has been applied\" -u low -i /usr/share/icons/Papirus-Dark/16x16/devices/display.svg"]
     [[profile.output]]
-    search = "/DP-[1-9]"
+    search = "eDP-1"
     position = "0,0"
-    mode = "best"
+    mode = "1920x1080@60.06Hz"
     scale = 1.0
     adaptive_sync = true
     enable = true
@@ -33,9 +33,9 @@ exec = ["notify-send shikane \"profile $SHIKANE_PROFILE_NAME has been applied\" 
 name = "hdmi-hotplug-left"
 exec = ["notify-send shikane \"profile $SHIKANE_PROFILE_NAME has been applied\" -u low -i /usr/share/icons/Papirus-Dark/16x16/devices/display.svg"]
     [[profile.output]]
-    search = "/DP-[1-9]"
+    search = "eDP-1"
     position = "0,0"
-    mode = "best"
+    mode = "1920x1080@60.06Hz"
     scale = 1.0
     adaptive_sync = true
     enable = true
