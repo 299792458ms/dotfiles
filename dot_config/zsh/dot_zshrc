@@ -15,7 +15,6 @@ bindkey -s '^o' 'helix $(fzf)^M' # "^M" auto-enter
 bindkey -s '^p' 'sudoedit $(fzf)^M'
 bindkey -s '^y' 'yazi $(fzf)^M'
 bindkey -s '^[y' 'yazi $(fzf-cd-widget)^M'
-# bindkey '^z' undo
 bindkey '^b' backward-kill-word
 bindkey '^f' kill-word
 
@@ -40,7 +39,7 @@ source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 # eval "$(starship init zsh)"
 
-# wrappers
+# functions
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
@@ -50,6 +49,10 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
+tre() { command tre "$@" -e && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
 
-PS1="%F{green}%n@%m%f %F{blue}%4~%f >>> "
+# promt
+NEWLINE=$'\n'
+# PS1="%F{magenta}%n@%m%f %F{blue}%9~%f %F{magenta}>%f%F{cyan}>%f%F{magenta}>%f "
+PS1="%F{magenta}%n@%m%f %F{blue}%9~%f %F{magenta}>>>%f "
 RPS1='%B%F{yellow}%T%f%b'

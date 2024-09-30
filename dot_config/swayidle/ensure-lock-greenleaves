@@ -1,1 +1,2 @@
+lock "pidof hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-minimal.conf"
 before-sleep "pidof hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-green_neon_leaves.conf"

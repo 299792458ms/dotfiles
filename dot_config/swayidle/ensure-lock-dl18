@@ -1,1 +1,2 @@
-before-sleep "pgrep hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-dl18.conf"
+lock "pidof hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-dl18.conf"
+before-sleep "pidof hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-dl18.conf"

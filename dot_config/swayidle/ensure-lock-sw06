@@ -1,1 +1,2 @@
+lock "pidof hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-sw06.conf"
 before-sleep "pidof hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-sw06.conf"

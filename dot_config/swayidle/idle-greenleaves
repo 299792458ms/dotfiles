@@ -1,6 +1,5 @@
 # idle-greenleaves
 
-lock "pidof hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-green_neon_leaves.conf"
 timeout 180 "brillo -O; brillo -S 10 -u 200000" resume "brillo -I -u 200000"
 timeout 200 "hyprctl dispatch dpms off" resume "hyprctl dispatch dpms on"
 timeout 600 "systemctl suspend"

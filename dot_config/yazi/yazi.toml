@@ -44,7 +44,8 @@ extract = [
 	{ run = 'unar "%1"', desc = "Extract here", for = "windows" },
 ]
 play = [
-	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+	# { run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+	{ run = 'celluloid "$PWD"', orphan = true, for = "unix" },
 	{ run = 'mpv --force-window "%1"', orphan = true, for = "windows" },
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
@@ -54,7 +55,7 @@ rules = [
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
 	{ mime = "text/*",          use = [ "edit", "reveal" ] },
 	{ mime = "image/*",         use = [ "open", "reveal" ] },
-	{ mime = "{audio,video}/*", use = [ "open", "reveal" ] },
+	{ mime = "{audio,video}/*", use = [ "play", "open", "reveal" ] },
 	{ mime = "inode/x-empty",   use = [ "edit", "reveal" ] },
 	{ mime = "application/{,g}zip", use = [ "extract", "reveal" ] },
 	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", use = [ "extract", "reveal" ] },

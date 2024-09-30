@@ -1,6 +1,5 @@
-# idle-dl03
+# idle-dl18
 
-lock "pidof hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-dl18.conf"
 timeout 180 "brillo -O; brillo -S 10 -u 200000" resume "brillo -I -u 200000"
 timeout 200 "hyprctl dispatch dpms off" resume "hyprctl dispatch dpms on"
 timeout 600 "systemctl suspend"

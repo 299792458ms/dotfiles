@@ -17,14 +17,14 @@ tooltip {
 
 window#waybar {
     background-color: @bg;
-    border-bottom: 2px solid @dimfg;
+    border-bottom: 3px solid @dimfg;
     color: @fg;
 }
 
 /* left modules */
 #custom-logo {
     color: @blue;
-    padding: 0 6px 2px 10px;
+    padding: 0 6px 3px 10px;
 }
 
 #workspaces {
@@ -51,17 +51,17 @@ window#waybar {
 }
 
 #workspaces button.visible {
-    color: @blue;
+    color: @cyan;
     border-radius: 0;
-    border-bottom: 2px solid @blue;
-    margin-top: 2px;
+    border-bottom: 3px solid @cyan;
+    margin-top: 3px;
 }
 
 #workspaces button.active {
-    color: @green;
+    color: @magenta;
     border-radius: 0;
-    border-bottom: 2px solid @green;
-    margin-top: 2px;
+    border-bottom: 3px solid @magenta;
+    margin-top: 3px;
 }
 
 #workspaces button:hover {
@@ -82,7 +82,7 @@ window#waybar {
 
 #clock {
     color: @fg;
-    padding: 0 10px 2px 10px;
+    padding: 0 10px 3px 10px;
     font-weight: bolder;
 }
 
@@ -104,7 +104,7 @@ window#waybar {
 #custom-lock,
 #custom-suspend,
 #custom-reboot {
-    padding: 0 6px 2px 6px;
+    padding: 0 6px 3px 6px;
     color: @fg;
     margin: 0 5px 0 5px;
 }

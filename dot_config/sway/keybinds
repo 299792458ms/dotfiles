@@ -36,7 +36,7 @@ bindsym $mod+shift+Left move left
 bindsym $mod+shift+Down move down
 bindsym $mod+shift+Up move up
 bindsym $mod+shift+Right move right
-bindsym $mod+s layout toggle split
+bindsym $mod+r layout toggle split
 bindsym $mod+t layout toggle tabbed split
 bindsym $mod+a splitt
 bindsym $mod+f fullscreen
@@ -114,7 +114,7 @@ bindsym $mod+shift+alt+7 [workspace=__focused__] move to workspace number 7, wor
 bindsym $mod+shift+alt+8 [workspace=__focused__] move to workspace number 8, workspace --no-auto-back-and-forth number 8
 bindsym $mod+shift+alt+9 [workspace=__focused__] move to workspace number 9, workspace --no-auto-back-and-forth number 9
 bindsym $mod+shift+alt+0 [workspace=__focused__] move to workspace number 10, workspace number --no-auto-back-and-forth 10
-bindsym $mod+ctrl+delete [workspace=] kill
+bindsym $mod+ctrl+c [workspace=] kill
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
 bindgesture swipe:3:left workspace next
