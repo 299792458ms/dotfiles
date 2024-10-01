@@ -6,11 +6,18 @@ bindsym $mod+Shift+backspace exec swaymsg exit
 bindsym $mod+alt+l exec loginctl lock-session
 
 # monitor control
-bindsym $mod+bar exec wlr-which-key ~/.config/wlr-which-key/monitorctl_square.yaml
+# bindsym $mod+questiondown exec wlr-which-key ~/.config/wlr-which-key/monitorctl_square.yaml
+
+# power control
+# bindsym $mod+apostrophe exec wlr-which-key ~/.config/wlr-which-key/ppd_square.yaml
+
+# clipboard manager
+# bindsym $mod+y exec wlr-which-key ~/.config/wlr-which-key/clipboard_square.yaml
 
 # panels
 bindsym $mod+minus exec swaync-client -t
 bindsym $mod+o exec nwg-bar -t logout_sway.json -s logout_square.css
+bindsym $mod+questiondown exec wlr-which-key ~/.config/wlr-which-key/quickpanel_square.yaml
 
 # launch
 bindsym $mod+d exec $menu

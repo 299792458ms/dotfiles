@@ -1,0 +1,22 @@
+# Theming
+font: JetBrainsMono Nerd Font 12
+background: "#1A1B26FF"
+color: "#C0CAF5FF"
+border: "#AD8EE6FF"
+separator: " ➜ "
+border_width: 2
+corner_r: 0
+padding: 15 # Defaults to corner_r
+
+# Anchor and margin
+anchor: center # One of center, left, right, top, bottom, bottom-left, top-left, etc.
+# Only relevant when anchor is not center
+margin_right: 0
+margin_bottom: 0
+margin_left: 0
+margin_top: 0
+
+menu: 
+  "Right": { desc: Performance, cmd: powerprofilesctl set performance && notify-send "Power Control" "Performance profile set" -u low }
+  "Left": { desc: Power-saver, cmd: powerprofilesctl set power-saver && notify-send "Power Control" "Power-saver profile set" -u low }
+  "Down": { desc: Balanced, cmd: powerprofilesctl set balanced && notify-send "Power Control" "Balanced profile set" -u low }

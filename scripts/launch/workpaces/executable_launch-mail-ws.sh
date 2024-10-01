@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if swaymsg -t get_tree | rg geary; then
+if swaymsg -t get_tree | rg mail80085; then
     swaymsg workspace mail
   else
     swaymsg workspace mail
-    geary
+    footclient -a mail80085 -e aerc
 fi

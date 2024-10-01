@@ -8,4 +8,5 @@ exec swayidle -w -C ~/.config/swayidle/ensure-lock-sw06 &
 exec swayidle -C ~/.config/swayidle/idle-sw06 &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec swaync -s ~/.config/swaync/style_square.css &
+exec wl-paste --watch cliphist store
 
