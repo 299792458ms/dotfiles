@@ -15,6 +15,8 @@ focus_on_window_activation focus
 workspace_auto_back_and_forth yes
 # auto_back_and_forth fucks up moving all container workspace to workspace
 
+output * mode 1920x1080 pos 0 0 bg ~/Pictures/wallpapers/synthwave/sw06.png fill
+
 input type:keyboard {
     xkb_layout    "latam"
     xkb_model     "pc105"
@@ -38,18 +40,12 @@ input type:touchpad {
     scroll_factor 0.2
 }
 
-output * mode 1920x1080 pos 0 0 bg ~/Pictures/wallpapers/synthwave/sw06.png fill
-
 #class                   border     backgr.    text  indicator  child_border
 client.focused           $magenta   $magenta   $bg   $cyan      $magenta
 client.focused_inactive  $dimfg     $dimfg     $bg   $dimfg     $dimfg
 client.unfocused         $dimfg     $dimfg     $bg   $dimfg     $dimfg
 client.urgent            $critical  $critical  $bg   $critical  $critical
 client.placeholder       $inv       $dimfg     $bg   $inv       $dimfg
-
-# bar {
-#     swaybar_command "waybar"
-# }
 
 bar {
     position bottom
@@ -60,17 +56,14 @@ bar {
     separator_symbol |
     mode dock
     modifier mod4
-            
-    # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-    # status_command while ~/scripts/launch/bar/status.sh; do sleep 1; done
     status_command i3status
 
     colors {
-        statusline #C0CAF5FF
-        background #1A1B26FF
-        active_workspace #1A1B26FF #7AA2F7FF #1A1B26FF
-        inactive_workspace #1A1B26FF #1A1B26FF #5C6691FF
-        focused_workspace  #1A1B26FF #AD8EE6FF #1A1B26FF   
-        urgent_workspace #1A1B26FF #F7768EFF #1A1B26FF
+        statusline $fg
+        background $bg
+        active_workspace $bg $cyan $bg
+        inactive_workspace $bg $bg $dimfg
+        focused_workspace  $bg $magenta $bg  
+        urgent_workspace $bg $red $bg
      }
 }
