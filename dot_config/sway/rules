@@ -41,5 +41,5 @@ for_window [title="bluetooth420"] floating enable, resize set 750 500
 
 # location
 assign [app_id="music420"] workspace music
-assign [app_id="geary"] workspace mail
+# assign [app_id="geary"] workspace mail
 assign [app_id="mail80085"] workspace mail

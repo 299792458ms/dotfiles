@@ -10,4 +10,5 @@ include ~/.config/sway/rules
 include ~/.config/sway/routine
 include ~/.config/sway/options
 include ~/.config/sway/monitors
+include ~/.config/sway/sway-bar
 

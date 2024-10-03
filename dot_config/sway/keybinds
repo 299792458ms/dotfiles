@@ -47,9 +47,9 @@ bindsym $mod+r layout toggle split
 bindsym $mod+t layout toggle tabbed split
 bindsym $mod+a splitt
 bindsym $mod+f fullscreen
-bindsym $mod+space floating toggle
+bindsym $mod+v floating toggle
+bindsym $mod+g focus mode_toggle
 bindsym $mod+u sticky toggle
-bindsym $mod+shift+space focus mode_toggle
 bindsym $mod+ctrl+Left resize shrink width 10px
 bindsym $mod+ctrl+Up resize grow height 10px
 bindsym $mod+ctrl+Down resize shrink height 10px

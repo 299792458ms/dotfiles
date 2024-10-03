@@ -1,7 +1,7 @@
 # Dotfiles
 
 These are my personal dotfiles for my laptop, including window managers to poorly written scripts and some other stuff.
-Check this [list](/assets/swlist.md) of programs I use if something caught your eye.
+Check this [list](assets/swlist.md) of programs I use if something caught your eye.
 
 > [!Note]
 > - Files and links could be outdated
@@ -17,7 +17,7 @@ Check this [list](/assets/swlist.md) of programs I use if something caught your 
 
 - **i3**: [lil' rocket](https://feddit.cl/post/2290324)
 
-- **Gnome**: [noob-setup](https://feddit.cl/post/2584023)
+- **Gnome**: [noob-setup](https://feddit.cl/post/948902)
 
 ## Inspirations
 

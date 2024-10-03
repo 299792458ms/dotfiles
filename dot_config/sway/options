@@ -47,23 +47,4 @@ client.unfocused         $dimfg     $dimfg     $bg   $dimfg     $dimfg
 client.urgent            $critical  $critical  $bg   $critical  $critical
 client.placeholder       $inv       $dimfg     $bg   $inv       $dimfg
 
-bar {
-    position bottom
-    output *
-    font pango:Jet Brains Mono Nerd Font 16    
-    wrap_scroll no
-    tray_output *
-    separator_symbol |
-    mode dock
-    modifier mod4
-    status_command i3status
 
-    colors {
-        statusline $fg
-        background $bg
-        active_workspace $bg $cyan $bg
-        inactive_workspace $bg $bg $dimfg
-        focused_workspace  $bg $magenta $bg  
-        urgent_workspace $bg $red $bg
-     }
-}
