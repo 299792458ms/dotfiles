@@ -1,4 +1,4 @@
-// W A Y B A R   C O N F I G
+// config.jsonc
 
 {
     "reload_style_on_change": true,
@@ -8,13 +8,14 @@
     "start_hidden": false,
     "modules-left": [
         "custom/logo",
-        "clock"
-        //"wlr/taskbar"
+        "niri/workspaces"
     ],
     "modules-center": [
+        "clock"
     ],
     "modules-right": [
         //"custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
+        "tray",
         "idle_inhibitor",
         "power-profiles-daemon",
         "pulseaudio#pa1",
@@ -23,16 +24,47 @@
         "network",
         "battery",
         "backlight",
-        // "tray",
         "group/group-power"
     ],
     "custom/logo": {
         "format": "󰣇",
-        "tooltip": false,
+        "tooltip": false
+    },
+    "niri/workspaces": {
+        "all-outputs": true,
+        "format": "{value}"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "all-outputs": true,
+        "show-special": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        },
+        "format-icons": {
+            "magic": "󱑷",
+            "music": "󰝚",
+            "email": "󰁥",
+            "matrix": "󰭹",
+            "quickterm": "",
+            "quickmath": "󰪚"
+        }
     },
     "clock": {
+        // "format": "{:%H:%M:%S}",
+        // "format": "{:%H\n%M}",
+        "format": "{:%F %H:%M}",
+        // "interval": 1,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}",
         "calendar": {
             "mode"          : "month",
             "on-scroll"     : 1,
@@ -45,9 +77,6 @@
             }
         },
         "tooltip": true
-    },
-    "wlr/taskbar": {
-        "format": "{icon} {title}"
     },
     "custom/updates": {
         "format": "{icon}{}",
@@ -87,9 +116,9 @@
             "default": ["󰕿", "󰖀", "󰕾"]
         },
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-scroll-up": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+",
-        "on-scroll-down": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-",
-        "on-click-right": "pavucontrol",
+        "on-scroll-up": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+",
+        "on-scroll-down": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-",
+        "on-click-right": "pwvucontrol",
         "tooltip": false
 
     },
@@ -98,9 +127,9 @@
         "format-source": " {volume}%",
         "format-source-muted": "󰍭",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-        "on-scroll-up": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.1+",
-        "on-scroll-down": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.1-",
-        "on-click-right": "pavucontrol",
+        "on-scroll-up": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.05+",
+        "on-scroll-down": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.05-",
+        "on-click-right": "pwvucontrol",
         "tooltip": false
 
     },
@@ -110,23 +139,25 @@
         "format-connected": "{icon}",
         "format-disconnected": "{icon}",
         "format-disabled": "{icon}",
-        "format-alt": "{icon} {device_alias} {device_battery_percentage}%",
         "format-icons": {
             "on": "󰂯",
             "connected": "󰂱",
-            "off": "󰂲", 
+            "off": "󰂯", 
             "disabled": "󰂲"
         },
-        "on-click-right": "blueberry"
+        "on-click-right": "footclient -T 'bluetooth420' -e bluetui",
+        "tooltip": true,
+        "tooltip-format": "{device_alias} {device_battery_percentage}%"
+
     },
     "network": {
         "format-wifi": "{icon}",
         "format-icons": [ "󰢿", "󰢼", "󰢽", "󰢾"],
         "format-disconnected": "",
-        "format-alt": "{icon} {essid}",
         "interval": 30,
-        "on-click-right": "iwgtk",
-        "tooltip": false
+        "on-click-right": "footclient -T 'wifi420' -e impala",
+        "tooltip": true,
+        "tooltip-format": "{essid}"
     },
     "battery": {
         "states": {
@@ -138,18 +169,18 @@
         "format": "{icon}",
         "format-full": "{icon}󱐋 {capacity}%",
         "format-charging": "{icon}󱐋 {capacity}%",
-        "format-alt": "{icon} {capacity}%",
         "format-icons": ["󰂎", "󰁺", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "interval": 120,
-        "tooltip": true
+        "tooltip": true,
+        "tooltip-format": "{capacity}% {timeTo}"
     },
     "backlight": {
         "format": "{icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "format-alt": "{icon} {percent}%",
         "on-scroll-up": "brillo -qA 1 -u 200000",
         "on-scroll-down": "brillo -qU 1 -u 200000",
-        "tooltip": false
+        "tooltip": true,
+        "tooltip-format": "{percent}%"
     },
     "tray": {
         "spacing": 20
@@ -158,8 +189,8 @@
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 500,
-            "children-class": "childs",
-            "transition-left-to-right": true
+            "children-class": "not-power",
+            "transition-left-to-right": false
         },
         "modules": [
             "custom/power",
@@ -180,7 +211,7 @@
         "on-click": "hyprctl dispatch exit"
     },
     "custom/suspend": {
-        "format": "󰍶",
+        "format": "󰏥",
         "tooltip": false,
         "on-click": "systemctl suspend"
     },
@@ -193,5 +224,5 @@
         "format": "󰠠",
         "tooltip": false,
         "on-click": "shutdown now"
-    },
+    }
 }

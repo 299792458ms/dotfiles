@@ -8,10 +8,7 @@
     "start_hidden": false,
     "modules-left": [
         "custom/logo",
-        "clock",
         "river/tags"
-    ],
-    "modules-center": [
     ],
     "modules-right": [
         //"custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
@@ -24,7 +21,8 @@
         "network",
         "battery",
         "backlight",
-        "group/powermenu"
+        "clock"
+        // "group/powermenu"
     ],
     "custom/logo": {
         "format": "󰣇",
@@ -137,7 +135,7 @@
         "format-connected": "blu:con",
         "format-disconnected": "blu:dis",
         "format-disabled": "blue:rfk",
-        "on-click-right": "blueberry",
+        "on-click-right": "footclient -T 'bluetooth420' -e bluetui",
         "tooltip": true,
         "tooltip-format": "{device_alias} {device_battery_percentage}%"
     },
@@ -152,7 +150,7 @@
         //     "disabled": "net: rfk"
         // },
         "interval": 30,
-        "on-click-right": "iwgtk",
+        "on-click-right": "footclient -T 'wifi420' -e impala",
         "tooltip": true,
         "tooltip-format-wifi": "{essid}",
         "tooltip-format-disconnected":  ""

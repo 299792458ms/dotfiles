@@ -1,8 +1,9 @@
 #!/bin/sh
 
-# VARIABLES
+# ··· VARIABLES ···
 mod=Super
-term=footclient
+term=foot
+termclient=footclient
 browser=librewolf
 email=geary
 termfilemanager=yazi
@@ -10,28 +11,22 @@ filemanager=nautilus
 menu="fuzzel --config ~/.config/fuzzel/fuzzel-square.ini"
 notes=logseq
 system_monitor=htop
-music=ymuse
+music=footclient -e ncmpcpp
 
-# ENVIRONMENT VARIABLES
+# ··· ENVIRONMENT VARIABLES ···
 export XDG_SESSION_TYPE='wayland'
 export XDG_SESSION_DESKTOP='river'
 export XDG_CURRENT_DESKTOP='river'
 export QT_QPA_PLATFORM='wayland'
 export SDL_VIDEODRIVER='wayland'
 export _JAVA_AWT_WM_NONREPARENTING='1'
-export SUDO_EDITOR='/usr/bin/nvim'
-export EDITOR='nvim'
-export VISUAL='nvim'
-export BROWSER='librewolf'
-export TERMINAL='foot'
 export PATH="$PATH:/home/alec/.local/bin"
 
-
-# ROUTINE
+# ··· ROUTINE ···
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 foot -s &
 waybar -c ~/.config/waybar/river/config-river.jsonc -s ~/.config/waybar/river/style-river.css &
-# wbg ~/Pictures/wallpapers/digital/weird_ass_cube.jpg &
+# swaybg -i ~/Pictures/wallpapers/synthwave/testarossa.jpg &
 gammastep &
 swayidle -w -C ~/.config/swayidle/ensure-lock-minimal &
 swayidle -C ~/.config/swayidle/idle-minimal &
@@ -39,20 +34,17 @@ swaync -s ~/.config/swaync/style_square.css &
 udiskie -a &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-
-# OPTIONS
-#riverctl background-color 0x24283BFF # tokyonight-storm
-riverctl background-color 0x1A1B26FF # tokyonight-night
-riverctl border-color-focused 0x9ECE6AFF # green
-riverctl border-color-unfocused 0xC0CAF555 # dim fg
+# ··· OPTIONS ···
+riverctl background-color 0x1A1B26FF
+riverctl border-color-focused 0xAD8EE6FF
+riverctl border-color-unfocused 0xC0CAF555
 riverctl focus-follows-cursor normal
 riverctl default-layout rivertile
 rivertile -view-padding 3 -outer-padding 3 &
 # riverctl default-layout bsp-layout
 # river-bsp-layout --inner-gap 5 --outer-gap 10 --split-perc 0.5 &
 
-
-# INPUT
+# ···INPUT ···
 
 # pointer
 riverctl hide-cursor timeout 10000
@@ -73,7 +65,7 @@ riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad natural-scroll 
 riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad scroll-factor 0.2
 riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad drag enabled
 
-# BINDS
+# ··· BINDS ···
 
 # launch
 riverctl map normal $mod B spawn $browser
@@ -82,7 +74,10 @@ riverctl map normal $mod M spawn $filemanager
 riverctl map normal $mod N spawn "$term $termfilemanager"
 riverctl map normal $mod I spawn "$term $system_monitor"
 riverctl map normal $mod Z spawn $music
-riverctl map normal $mod Return spawn $term
+riverctl map normal $mod Return spawn $termclient
+riverctl map normal $mod+Shift Return spawn $termclient
+riverctl map normal $mod Insert spawn "$termclient -T 'wifi420' -e impala"
+riverctl map normal $mod Delete spawn "$termclient -T 'bluetooth420' -e bluetui"
 
 # river
 riverctl map normal $mod+Shift Backspace exit
@@ -90,7 +85,7 @@ riverctl map normal $mod L spawn "hyprlock -c ~/.config/hypr/hyprlock/hl-minimal
 
 # panels
 riverctl map normal $mod Minus spawn "swaync-client -t"
-#riverctl map normal $mod T spawn "pkill -SIGUSR1 waybar" # river did not like that
+# riverctl map normal $mod T spawn "pkill -SIGUSR1 waybar" # river did not like that
 riverctl map normal $mod O spawn "nwg-bar -t logout_river.json -s logout_square.css"
 
 # windows
@@ -170,8 +165,9 @@ riverctl map normal $mod E spawn 'mpc next'
 riverctl map normal $mod+Shift Q spawn 'mpc seek -10'
 riverctl map normal $mod+Shift W spawn 'mpc stop'
 riverctl map normal $mod+Shift E spawn 'mpc seek +10'
+riverctl map normal $mod+Ctrl Q spawn 'mpc seek 0'
 
-# RULES
+# ·· RULES ···
 
 # decorations
 riverctl rule-add ssd
@@ -194,10 +190,18 @@ riverctl rule-add -title 'Unlock Keyring' float
 riverctl rule-add -title 'Enter name of file to save to…' float
 riverctl rule-add -title 'hyprland-share-picker' float
 riverctl rule-add -title 'gcr-prompter' float
+riverctl rule-add -title 'wifi420' float
+riverctl rule-add -title 'bluetooth420' float
 
 # size
 riverctl rule-add -app-id 'org.twosheds.iwgtk' dimensions 550 700
 riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' dimensions 700 500
+riverctl rule-add -title 'wifi420' dimensions 850 900
+riverctl rule-add -title 'bluetooth420' dimensions 755 500
+
+# position
+riverctl rule-add -title 'wifi420' position 535 132
+riverctl rule-add -title 'bluetooth' position 582 307
 
 # location
 riverctl rule-add -app-id 'ymuse' tags 256

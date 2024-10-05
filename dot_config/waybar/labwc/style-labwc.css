@@ -27,50 +27,9 @@ window#waybar {
     padding: 0 6px 3px 10px;
 }
 
-#workspaces {
+#wlr-taskbar {
     color: @fg;
-    margin: 0 4px;
-    padding: 0 6px 0 6px;
-}
-
-#workspaces button {
-    color: @fg;
-    padding: 0 5px;
-    border: none;
-    transition: 0.23s;
-}
-
-#workspaces button.empty {
-    color: @dimfg;
-}
-
-
-#workspaces button.special {
-    color: @fg;
-    background: none;
-}
-
-#workspaces button.visible {
-    color: @cyan;
-    border-radius: 0;
-    border-bottom: 3px solid @cyan;
-    margin-top: 3px;
-}
-
-#workspaces button.active {
-    color: @magenta;
-    border-radius: 0;
-    border-bottom: 3px solid @magenta;
-    margin-top: 3px;
-}
-
-#workspaces button:hover {
-    box-shadow: none;
-    text-shadow: none;
-    background:none;
-    transition: none;
-    color: @blue;
-    border-color: @blue;
+    padding: 0 6px 3px 6px;
 }
 
 /* center modules */

@@ -9,4 +9,5 @@ exec swayidle -C ~/.config/swayidle/idle-sw06 &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec swaync -s ~/.config/swaync/style_square.css &
 exec wl-paste --watch cliphist store
+exec rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 500
 

@@ -138,8 +138,8 @@ bindsym $mod+tab scratchpad show
 # bindgesture swipe:3:up move container to scratchpad
 
 # connectivity
-bindsym $mod+delete exec footclient -T 'bluetooth420' -e bluetui
 bindsym $mod+insert exec footclient -T 'wifi420' -e impala
+bindsym $mod+delete exec footclient -T 'bluetooth420' -e bluetui
 
 # pulseaudio
 bindsym --locked XF86AudioRaiseVolume exec wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+

@@ -3,19 +3,20 @@
 // routine
 spawn-at-startup "foot" "-s"
 spawn-at-startup "gammastep"
-spawn-at-startup "hyprpaper" "-c" "/home/alec/.config/hypr/hyprpaper/hp-sw08.conf"
-//spawn-at-startup "hyprpaper" "-c" "/home/alec/.config/hypr/hyprpaper-forest.conf"
-spawn-at-startup "waybar" "-c" "/home/alec/.config/waybar/niri/v-config-niri.jsonc" "-s" "/home/alec/.config/waybar/niri/v-style-niri.css"
+// spawn-at-startup "hyprpaper" "-c" "/home/alec/.config/hypr/hyprpaper/hp-sw08.conf"
+spawn-at-startup "swaybg " "-i" "/home/alec/Pictures/wallpapers/synthwave/testarossa.jpg"
+spawn-at-startup "waybar" "-c" "/home/alec/.config/waybar/niri/config-niri.jsonc" "-s" "/home/alec/.config/waybar/niri/style-niri.css"
 spawn-at-startup "swayidle" "-w" "-C" "/home/alec/.config/swayidle/ensure-lock-sw08"
 spawn-at-startup "swayidle" "-C" "/home/alec/.config/swayidle/idle-sw08"
 spawn-at-startup "swaync"
-// spawn-at-startup "wbg" "/home/alec/Pictures/wallpapers/cartoons/courage.jpg"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 
 // options
 
 screenshot-path "~/Pictures/screenshots/niri %Y-%m-%d %H-%M-%S.png"
 prefer-no-csd
+
+// workspace "browser"
 
 input {
     keyboard {
@@ -32,6 +33,7 @@ input {
         natural-scroll
         accel-speed 1.0
         accel-profile "flat"
+
     }
 
     mouse {
@@ -62,7 +64,6 @@ layout {
     center-focused-column "never"
     default-column-width { proportion 0.33333; }
 
-
     preset-column-widths {
         proportion 0.33333
         proportion 0.5
@@ -77,7 +78,7 @@ layout {
     }
 
     border {
-        width 2
+        width 3
         // tokyonight-storm
         active-color "#BB9AF7FF"
         inactive-color "#24283BB3"
@@ -113,6 +114,7 @@ window-rule {
 window-rule {
     match app-id="foot"
     opacity 0.9
+    default-column-width { proportion 0.5; }
 }
 
 window-rule {
@@ -129,7 +131,7 @@ window-rule {
 window-rule {
     match app-id="LibreWolf"
     default-column-width { proportion 0.5; }
-    // open-maximized true
+    open-maximized true
 }
 
 binds {
@@ -138,7 +140,7 @@ binds {
 
     // niri
     Super+L { spawn "loginctl" "lock-session"; }
-    Mod+Shift+O { quit; }
+    Mod+Shift+Backspace { quit; }
 
     // windows and columns
     Mod+Shift+F { fullscreen-window; }
@@ -214,7 +216,7 @@ binds {
     // Mod+D { spawn "fuzzel"; }
     Mod+D { spawn "fuzzel"; }
     Mod+B { spawn "librewolf"; }
-    Mod+N { spawn "foot" "-e" "yazi"; }
+    Mod+N { spawn "footclient" "-e" "yazi"; }
     Mod+M { spawn "nautilus"; }
     Mod+Minus { spawn "swaync-client" "-t"; }
 
@@ -232,6 +234,11 @@ binds {
     Mod+Q { spawn "mpc" "prev"; }
     Mod+W { spawn "mpc" "toggle"; }
     Mod+E { spawn "mpc" "next"; }
+    Mod+Shift+Q { spawn "mpc" "seek" "-10"; }
+    Mod+Shift+W { spawn "mpc" "stop"; }
+    Mod+Shift+E { spawn "mpc" "seek" "+10"; }
+    Mod+Ctrl+Q { spawn "mpc" "seek" "0"; }
+    Mod+Ctrl+W { spawn "mpc" "random"; }
 
     // screenshots
     Print { screenshot-screen; }

@@ -1,0 +1,9 @@
+foot -s &
+# wbg ~/Pictures/wallpapers/digital_landscape/dl18.png &
+# swaybg -c '#1A1B26' &
+swaybg -i ~/Pictures/wallpapers/synthwave/sw03.png &
+gammastep &
+# shikane &
+swayidle -w -C ~/.config/swayidle/ensure-lock-dl18 &
+swayidle -C ~/.config/swayidle/idle-dl18 &
+waybar -c ~/.config/waybar/labwc/config-labwc.jsonc -s ~/.config/waybar/labwc/style-labwc.css &

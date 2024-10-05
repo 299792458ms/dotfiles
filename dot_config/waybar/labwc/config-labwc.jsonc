@@ -4,57 +4,34 @@
     "reload_style_on_change": true,
     "layer": "top",
     "height": 35,// 18 px font -> 31 height // 16px font -> 28 height
+    "position": "top",
     "spacing": 0,
     "start_hidden": false,
     "modules-left": [
         "custom/logo",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "clock"
+        "wlr/taskbar"
     ],
     "modules-right": [
         //"custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
         "tray",
         "idle_inhibitor",
         "power-profiles-daemon",
-        // "wireplumber",
         "pulseaudio#pa1",
         "pulseaudio#pa2",
         "bluetooth",
         "network",
         "battery",
         "backlight",
+        "clock",
         "group/group-power"
     ],
     "custom/logo": {
-        "format": "",
+        "format": "󰩃",
         "tooltip": false
     },
-    "hyprland/workspaces": {
+    "wlr/taskbar": {
         "format": "{icon}",
-        "all-outputs": true,
-        "show-special": true,
-        "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
-        },
-        "format-icons": {
-            "magic": "󱑷",
-            "music": "󰝚",
-            "email": "󰁥",
-            "matrix": "󰭹",
-            "quickterm": "",
-            "quickmath": "󰪚"
-        }
+        "on-click": "minimize-raise"
     },
     "clock": {
         // "format": "{:%H:%M:%S}",

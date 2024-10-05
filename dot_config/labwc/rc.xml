@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+
+<labwc_config>
+
+  <core>
+    <decoration>server</decoration>
+    <gap>0</gap>
+    <adaptiveSync>yes</adaptiveSync>
+    <allowTearing>no</allowTearing>
+    <reuseOutputMode>no</reuseOutputMode>
+    <xwaylandPersistence>no</xwaylandPersistence>
+  </core>
+
+  <libinput>
+    <device category="non-touch">
+      <naturalScroll>no</naturalScroll>
+      <pointerSpeed></pointerSpeed>
+      <accelProfile>flat</accelProfile>
+      <tap>yes</tap>
+      <dragLock></dragLock>
+      <middleEmulation></middleEmulation>
+      <disableWhileTyping>yes</disableWhileTyping>
+      <clickMethod></clickMethod>
+      <sendEventsMode></sendEventsMode>
+      <calibrationMatrix></calibrationMatrix>
+      <scrollFactor>-1.0</scrollFactor>
+    </device>
+
+    <device category="touchpad">
+      <naturalScroll>yes</naturalScroll>
+      <pointerSpeed>0.8</pointerSpeed>
+      <accelProfile>flat</accelProfile>
+      <tap>yes</tap>
+      <tapButtonMap>lrm</tapButtonMap>
+      <tapAndDrag>yes</tapAndDrag>
+      <dragLock></dragLock>
+      <middleEmulation></middleEmulation>
+      <disableWhileTyping></disableWhileTyping>
+      <clickMethod></clickMethod>
+      <sendEventsMode></sendEventsMode>
+      <calibrationMatrix></calibrationMatrix>
+      <scrollFactor>-1.0</scrollFactor>
+    </device>
+  </libinput>
+
+  <desktops number="10" popupTime="500" prefix="Workspace" />
+
+  <placement>
+    <policy>cascade</policy>
+      <cascadeOffset x="60" y="45" />
+  </placement>
+
+  <theme>
+    <name>tokyonight-night-custom</name>
+    <cornerRadius>8</cornerRadius>
+    <keepBorder>yes</keepBorder>
+    <dropShadows>yes</dropShadows>
+    <icon>Papirus-Dark</icon>
+    <titlebar>
+      <layout>icon:iconify,max,close</layout>
+      <showTitle>yes</showTitle>
+    </titlebar>
+    <font name="Jet Brains Mono Nerd Font" size="13" />
+  </theme>
+
+  <keyboard>
+
+    <!-- input -->
+    <numlock>on</numlock>
+    <layoutScope>global</layoutScope>
+    <repeatRate>50</repeatRate>
+    <repeatDelay>300</repeatDelay>
+    
+    <!-- workspaces -->
+    <keybind key="W-1"> <action name="GoToDesktop" to="1" /> </keybind>
+    <keybind key="W-2"> <action name="GoToDesktop" to="2" /> </keybind>
+    <keybind key="W-3"> <action name="GoToDesktop" to="3" /> </keybind>
+    <keybind key="W-4"> <action name="GoToDesktop" to="4" /> </keybind>
+    <keybind key="W-5"> <action name="GoToDesktop" to="5" /> </keybind>
+    <keybind key="W-6"> <action name="GoToDesktop" to="6" /> </keybind>
+    <keybind key="W-7"> <action name="GoToDesktop" to="7" /> </keybind>
+    <keybind key="W-8"> <action name="GoToDesktop" to="8" /> </keybind>
+    <keybind key="W-9"> <action name="GoToDesktop" to="9" /> </keybind>
+    <keybind key="W-0"> <action name="GoToDesktop" to="10" /> </keybind>
+
+    <keybind key="W-S-1"> <action name="SendToDesktop" to="1" /> </keybind>
+    <keybind key="W-S-2"> <action name="SendToDesktop" to="2" /> </keybind>
+    <keybind key="W-S-3"> <action name="SendToDesktop" to="3" /> </keybind>
+    <keybind key="W-S-4"> <action name="SendToDesktop" to="4" /> </keybind>
+    <keybind key="W-S-5"> <action name="SendToDesktop" to="5" /> </keybind>
+    <keybind key="W-S-6"> <action name="SendToDesktop" to="6" /> </keybind>
+    <keybind key="W-S-7"> <action name="SendToDesktop" to="7" /> </keybind>
+    <keybind key="W-S-8"> <action name="SendToDesktop" to="8" /> </keybind>
+    <keybind key="W-S-9"> <action name="SendToDesktop" to="9" /> </keybind>
+    <keybind key="W-S-0"> <action name="SendToDesktop" to="10" /> </keybind>
+
+    <keybind key="W-C-1"> <action name="SendToDesktop" to="1" follow="no" /> </keybind>
+    <keybind key="W-C-2"> <action name="SendToDesktop" to="2" follow="no" /> </keybind>
+    <keybind key="W-C-3"> <action name="SendToDesktop" to="3" follow="no" /> </keybind>
+    <keybind key="W-C-4"> <action name="SendToDesktop" to="4" follow="no" /> </keybind>
+    <keybind key="W-C-5"> <action name="SendToDesktop" to="5" follow="no" /> </keybind>
+    <keybind key="W-C-6"> <action name="SendToDesktop" to="6" follow="no" /> </keybind>
+    <keybind key="W-C-7"> <action name="SendToDesktop" to="7" follow="no" /> </keybind>
+    <keybind key="W-C-8"> <action name="SendToDesktop" to="8" follow="no" /> </keybind>
+    <keybind key="W-C-9"> <action name="SendToDesktop" to="9" follow="no" /> </keybind>
+    <keybind key="W-C-0"> <action name="SendToDesktop" to="10" follow="no" /> </keybind>
+
+    <!-- windows -->
+    <keybind key="W-c"> <action name="Close" /> </keybind>
+    <keybind key="W-S-c"> <action name="Kill" /> </keybind>
+    <keybind key="W-f"> <action name="ToggleMaximize" /> </keybind>
+    <keybind key="W-S-f"> <action name="ToggleFullscreen" /> </keybind> 
+
+    <keybind key="W-A-Left"> <action name="MoveToEdge" direction="left" /> </keybind>
+    <keybind key="W-A-Right"> <action name="MoveToEdge" direction="right" /> </keybind>
+    <keybind key="W-A-Up"> <action name="MoveToEdge" direction="up" /> </keybind>
+    <keybind key="W-A-Down"> <action name="MoveToEdge" direction="down" /> </keybind>
+    <keybind key="W-Left"> <action name="SnapToEdge" direction="left" /> </keybind>
+    <keybind key="W-Right"> <action name="SnapToEdge" direction="right" /> </keybind>
+    <keybind key="W-Up"> <action name="SnapToEdge" direction="up" /> </keybind>
+    <keybind key="W-Down"> <action name="SnapToEdge" direction="down" /> </keybind>
+    <keybind key="A-Space"> <action name="ShowMenu" menu="client-menu" atCursor="no" /> </keybind>    
+
+    <!-- labwc main stuff -->
+    <keybind key="W-l"> <action name="Execute" command="loginctl lock-session" /> </keybind>
+
+    <!-- launch -->
+    <keybind key="W-Return"> <action name="Execute" command="footclient" /> </keybind>
+    <keybind key="W-S-Return"> <action name="Execute" command="foot" /> </keybind>
+    <keybind key="W-d"> <action name="Execute" command="fuzzel" /> </keybind>
+    <keybind key="W-n"> <action name="Execute" command="footclient -e yazi" /> </keybind>
+
+    <!-- connectivity -->
+    <keybind key="W-Insert"> <action name="Execute" command="footclient -e impala" /> </keybind>
+    <keybind key="W-Delete"> <action name="Execute" command="footclient -e bluetui" /> </keybind>
+
+
+    <!-- brightness -->
+    <keybind key="XF86MonBrightnessUp"> <action name="Execute" command="brillo -qA 1 -u 200000" /> </keybind>
+    <keybind key="XF86MonBrightnessDown"> <action name="Execute" command="brillo -qU 1 -u 200000" /> </keybind>
+
+    <!-- volume -->
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ 0" />
+      <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+" />
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ 0" />
+      <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-" />
+    </keybind>
+    <keybind key="XF86AudioMute"> <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" /> </keybind>
+
+    <!-- music -->
+    <keybind key="W-q"> <action name="Execute" command="mpc prev" /> </keybind>
+    <keybind key="W-w"> <action name="Execute" command="mpc toggle" /> </keybind>
+    <keybind key="W-e"> <action name="Execute" command="mpc next" /> </keybind>
+    <keybind key="W-S-q"> <action name="Execute" command="mpc seek -10" /> </keybind>
+    <keybind key="W-S-w"> <action name="Execute" command="mpc stop" /> </keybind>
+    <keybind key="W-S-e"> <action name="Execute" command="mpc seek +10" /> </keybind>
+    <keybind key="W-C-q"> <action name="Execute" command="mpc stop" /> </keybind>
+    <keybind key="W-C-w"> <action name="Execute" command="mpc random" /> </keybind>
+
+  </keyboard>
+
+  <mouse>
+    <default />
+    <!-- Show a custom menu on desktop right click -->
+    <context name="Root">
+      <mousebind button="Right" action="Press"> <action name="ShowMenu" menu="some-custom-menu" /> </mousebind>
+    </context>
+
+    <context name="Frame">
+      <mousebind button="W-Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="W-Left" action="Drag">
+        <action name="Move" />
+      </mousebind>
+      <mousebind button="W-Right" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="W-Right" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+  </mouse>
+
+
+  <resistance>
+    <screenEdgeStrength>20</screenEdgeStrength>
+    <windowEdgeStrength>20</windowEdgeStrength>
+    <!-- resistance for maximized/tiled windows -->
+    <unSnapThreshold>20</unSnapThreshold>
+    <!-- resistance for vertically/horizontally maximized windows -->
+    <unMaximizeThreshold>150</unMaximizeThreshold>
+  </resistance>
+
+
+  <focus>
+    <followMouse>yes</followMouse>
+    <followMouseRequiresMovement>yes</followMouseRequiresMovement>
+    <raiseOnFocus>no</raiseOnFocus>
+  </focus>
+
+</labwc_config>

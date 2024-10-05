@@ -23,9 +23,9 @@
 }
 
 #tags button.focused {
-    color: @green;
+    color: @magenta;
     border-radius: 0;
-    border-bottom: 2px solid @green;
+    border-bottom: 2px solid @magenta;
     margin-top: 2px;
 }
 
