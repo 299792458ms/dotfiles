@@ -3,7 +3,7 @@
 @import "../colors/tokyonight-night.css";
 
 * {
-    font-size: 19px; /* 18 px font -> 31 height // 16px font -> 28 height*/
+    font-size: 20px; /* 18 px font -> 31 height // 16px font -> 28 height*/
     font-family: "Jet Brains Mono Nerd Font";
     font-weight: bold;
 }
@@ -22,22 +22,48 @@ window#waybar {
 }
 
 /* left modules */
-#custom-logo {
-    color: @blue;
-    padding: 0 6px 3px 10px;
-}
-
-#wlr-taskbar {
-    color: @fg;
-    padding: 0 6px 3px 6px;
-}
-
-/* center modules */
 
 #clock {
     color: @fg;
     padding: 0 10px 3px 10px;
     font-weight: bolder;
+}
+
+#custom-logo {
+    color: @blue;
+    padding: 0 6px 3px 10px;
+}
+
+#taskbar {
+    color: @fg;
+    padding: 0 6px 0 6px;
+    margin: 0 4px;
+
+}
+#taskbar button {
+    color: @fg;
+    padding: 0 8px;
+    border: none;
+    transition: 0.23s;
+}
+
+#taskbar button:hover {
+    box-shadow: none;
+    text-shadow: none;
+    background: none;
+    transition: none;
+}
+
+#taskbar button.active {
+    border-bottom: solid 3px @magenta;
+    border-radius: 0;
+    margin-top: 3px;
+}
+
+#taskbar button.minimized {
+    border-bottom: solid 3px @green;
+    border-radius: 0;
+    margin-top: 3px;
 }
 
 /* right modules*/

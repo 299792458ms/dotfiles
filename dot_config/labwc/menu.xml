@@ -1,10 +1,32 @@
 <?xml version="1.0" ?>
 
 <openbox_menu>
+
 <menu id="root-menu" label="">
   <item label="Web browser"><action name="Execute" command="librewolf" /></item>
   <item label="Terminal"><action name="Execute" command="footclient" /></item>
+  <item label="Notes"><action name="Execute" command="logseq" /></item>
+  <separator />
+  <menu id="powerprofilesctl" label="Power Profiles">
+    <item label="Performance"><action name="Execute" command="powerprofilesctl set performance" /></item>
+    <item label="Balanced"><action name="Execute" command="powerprofilesctl set balanced" /></item>
+    <item label="Power Saver"><action name="Execute" command="powerprofilesctl set power-saver" /></item>
+  </menu>
+  <menu id="monitorsctl" label="Monitors Control">
+    <item label="Hdmi-Right"><action name="Execute" command="shikanectl switch 'hdmi-hotplug-left'" /></item>
+    <item label="Hdmi-Left"><action name="Execute" command="shikanectl switch 'hdmi-hotplug-left'" /></item>
+    <item label="Switcheroo"><action name="Execute" command="shikanectl switch switcheroo" /></item>
+  </menu>
+  <menu id="clipbpard" label="Clipboard">
+    <item label="Copy"><action name="Execute" command="~/scripts/launch/clipboard/clip-copy.sh" /></item>
+    <item label="Delete"><action name="Execute" command="~/scripts/launch/clipboard/clip-delete.sh" /></item>
+    <item label="Wipe"><action name="Execute" command="cliphist wipe" /></item>
+  </menu>
+  <separator />
   <item label="Reconfigure"><action name="Reconfigure" /></item>
   <item label="Exit"><action name="Exit" /></item>
 </menu>
+
 </openbox_menu>
+
+

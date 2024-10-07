@@ -21,7 +21,6 @@ for_window [title="Unlock Keyring"] floating enable
 for_window [title="Enter name of file to save to..."] floating enable, resize set 1000 650
 for_window [title="wifi420"] floating enable, resize set 850 1000
 for_window [title="bluetooth420"] floating enable, resize set 750 500
-for_window [title="Codeberg.org — LibreWolf"] floating enable
 
 # opacity
 # set $op 0.9

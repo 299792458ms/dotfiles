@@ -5,15 +5,23 @@ All programs are listed by their package name and are available for Arch in Extr
 ## Window Managers
 
 - [**river**](https://codeberg.org/river/river)[^1]: Minimal yet very functional dynamic window manager.
-- [**hyprland-git**](https://github.com/hyprwm/Hyprland): Nice looks, 2 built-in layouts, vast window and workspace rules, special workspaces and more.
+- [**hyprland-git**](https://github.com/hyprwm/Hyprland): Good looks, 2 built-in layouts, vast window and workspace rules, special workspaces and more.
 - [**niri**](https://github.com/YaLTeR/niri)[^1]: Scrolling window manager, works very great with laptops.
 - [**sway**](https://github.com/swaywm/sway): Trusty, functional, fast and very well supported.
+- [**labwc**](https://github.com/labwc/labwc): Stacking window manager inspired in Openbox
 
-## Connectivity
+## Network & Communications
 
 - [**librewolf**](https://codeberg.org/librewolf): Privacy focused fork of Firefox.
 - [**fractal**](https://gitlab.gnome.org/World/fractal): Matrix client designed for Gnome.
 - [**geary**](https://gitlab.gnome.org/GNOME/geary): Nice and Simple GTK3 email client.
+- [**aerc**](https://git.sr.ht/~rjarry/aerc): TUI Email client.
+- [**gnome-podcasts**](): Nice GTK app for your podcasts.
+
+## Connectivity
+
+- [**bluetui**](https://github.com/pythops/bluetui?ref=terminaltrove): Bluetooth manager.
+- [**impala**](https://github.com/pythops/impala?ref=terminaltrove): Network manager.
 
 ## Brightness/Backlight
 
@@ -24,7 +32,8 @@ All programs are listed by their package name and are available for Arch in Extr
 
 - [**wireplumber**](https://pipewire.pages.freedesktop.org/wireplumber/)[^7]: Control Pipewire audio.
 - [**mpc**](https://www.musicpd.org/clients/mpc/): Control Music Player Daemon from the terminal.
-- [**pavucontrol**](https://gitlab.freedesktop.org/pulseaudio/pavucontrol): Volume input/output control center
+- [**pavucontrol**](https://gitlab.freedesktop.org/pulseaudio/pavucontrol): Volume input/output control center for Pulseaudio
+- [**pwvucontrol**](https://gitlab.freedesktop.org/pulseaudio/pavucontrol): Volume input/output control center for Pipewire
 
 ## Monitors/Displays[^2]
 
@@ -33,18 +42,20 @@ All programs are listed by their package name and are available for Arch in Extr
 
 ## Music
 
-- [**mpd**](https://www.musicpd.org/): Play sum phat beets man.
+- [**mpd**](https://github.com/MusicPlayerDaemon/MPD): Play sum phat beets man.
+- [**ncmpcpp**](https://github.com/ncmpcpp/ncmpcpp): TUI music player for MPD.
 - [**ymuse**](https://yktoo.com/en/software/ymuse/): Play those phat beets on *mpd* graphically.
 - **zotify**: yes.
 
-## CLI Utilities
+## CLI & TUI Utilities
 
 - [**zsh**](https://www.zsh.org/)[^3]: Interactive shell that integrates features of bash, ksh and tcsh. 
 - [**foot**](https://codeberg.org/dnkl/foot): Fast and light weight terminal for wayland.
-- [**neovim**](https://neovim.io/): Modern version of vim.
-- [**starship**](https://starship.rs/): Fast and customizable shell prompt (it will make you shell a little slower anyway).
+- [**neovim**](https://github.com/neovim/neovim): Modern version of vim.
+- [**helix**](https://github.com/helix-editor/helix): Editor inpired in Neovim and Kakoune.
+- [**starship**](https://github.com/starship/starship): Fast and customizable shell prompt (it will make you shell a little slower anyway).
 - [**bat**](https://github.com/sharkdp/bat): Cat on steroids. No cats were harmed...
-- [**zoxide**](https://github.com/ajeetdsouza/zoxide): Jump fast bewtween directories.
+- [**zoxide**](https://github.com/ajeetdsouza/zoxide): Jump fast between directories.
 - [**fzf**](https://github.com/junegunn/fzf): Fuzzy search files.
 - [**ripgrep**](https://github.com/BurntSushi/ripgrep): Better *grep*.
 - [**eza**](https://github.com/eza-community/eza): Better *ls* and *tree*.
@@ -52,13 +63,8 @@ All programs are listed by their package name and are available for Arch in Extr
 - [**tldr**](https://tldr.sh/): Summarized Manual Pages.
 - [**udiskie**](https://github.com/coldfix/udiskie): Daemon that manages external drives.
 - [**imv**](https://git.sr.ht/~exec64/imv/): Fast and simple cli image viewer.
-- [**cyme**](https://github.com/tuna-f1sh/cyme): Replacement for lsusb.
-
-### TUI
-- [**bluetui**](https://github.com/pythops/bluetui?ref=terminaltrove): Bluetooth manager.
-- [**impala**](https://github.com/pythops/impala?ref=terminaltrove): Network manager.
-- [**ncmpcpp**](https://github.com/ncmpcpp/ncmpcpp): Music player for MPD.
 - [**diskonaut**](https://github.com/imsnif/diskonaut): Display disk usage by directories relative size.
+- [**cyme**](https://github.com/tuna-f1sh/cyme): Replacement for lsusb.
 
 ## GUI Utilities
 
@@ -89,6 +95,7 @@ All programs are listed by their package name and are available for Arch in Extr
 
 - [**hyprpaper**](https://github.com/hyprwm/hyprpaper)[^4]: Set wallpapers and change them through the command-line.
 - [̣**wbg**](https://codeberg.org/dnkl/wbg)[^1]: Very simple wallpaper utility meant only to se wallpaper once.
+- [**swaybg**](https://github.com/swaywm/swaybg): Sway's wallpaper utility.
 
 ## Bars, Panels & Menus
 
@@ -104,7 +111,7 @@ All programs are listed by their package name and are available for Arch in Extr
     - [**nautilus-admin-gtk4**](https://github.com/MacTavishAO/nautilus-admin-gtk4): Open files with elevated priviledges.
     - [**nautilus-image-converter**](https://gitlab.gnome.org/coreyberla/nautilus-image-converter): Resize and rotate images in Nautilus
     - [**nautilus-open-any-terminal**](https://github.com/Stunkymonkey/nautilus-open-any-terminal): Open terminals in selected directory.
-- [**yazi**](https://yazi-rs.github.io/): Holy moly this ducky file manager is quick and so customizable. Its great out-of-the-box with great default too(unless you use Emacs).
+- [**yazi**](https://yazi-rs.github.io/): Lightning fast TUI file manager. Its great out-of-the-box with great default too(unless you use Emacs).
 
 ## Media
 

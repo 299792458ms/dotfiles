@@ -169,4 +169,5 @@ bindsym --locked $mod+shift+q exec mpc seek -10
 bindsym --locked $mod+shift+w exec mpc stop
 bindsym --locked $mod+shift+e exec mpc seek +10
 bindsym --locked $mod+control+q exec mpc seek 0
+bindsym --locked $mod+control+w exec mpc random
 

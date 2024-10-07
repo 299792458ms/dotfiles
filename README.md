@@ -1,7 +1,7 @@
 # Dotfiles
 
 These are my personal dotfiles for my laptop, including window managers to poorly written scripts and some other stuff.
-Check this [list](assets/swlist.md) of programs I use if something caught your eye.
+Check this [**list**](assets/swlist.md) of programs I use if something caught your eye.
 
 > [!Note]
 > - Files and links could be outdated

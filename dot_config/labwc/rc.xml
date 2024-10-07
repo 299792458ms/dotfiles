@@ -4,7 +4,7 @@
 
   <core>
     <decoration>server</decoration>
-    <gap>0</gap>
+    <gap>6</gap>
     <adaptiveSync>yes</adaptiveSync>
     <allowTearing>no</allowTearing>
     <reuseOutputMode>no</reuseOutputMode>
@@ -23,7 +23,7 @@
       <clickMethod></clickMethod>
       <sendEventsMode></sendEventsMode>
       <calibrationMatrix></calibrationMatrix>
-      <scrollFactor>-1.0</scrollFactor>
+      <scrollFactor>0.0</scrollFactor>
     </device>
 
     <device category="touchpad">
@@ -39,11 +39,9 @@
       <clickMethod></clickMethod>
       <sendEventsMode></sendEventsMode>
       <calibrationMatrix></calibrationMatrix>
-      <scrollFactor>-1.0</scrollFactor>
+      <scrollFactor>0.0</scrollFactor>
     </device>
   </libinput>
-
-  <desktops number="10" popupTime="500" prefix="Workspace" />
 
   <placement>
     <policy>cascade</policy>
@@ -63,8 +61,9 @@
     <font name="Jet Brains Mono Nerd Font" size="13" />
   </theme>
 
-  <keyboard>
+  <desktops number="10" popupTime="800" prefix="Workspace" />
 
+  <keyboard>
     <!-- input -->
     <numlock>on</numlock>
     <layoutScope>global</layoutScope>
@@ -82,7 +81,6 @@
     <keybind key="W-8"> <action name="GoToDesktop" to="8" /> </keybind>
     <keybind key="W-9"> <action name="GoToDesktop" to="9" /> </keybind>
     <keybind key="W-0"> <action name="GoToDesktop" to="10" /> </keybind>
-
     <keybind key="W-S-1"> <action name="SendToDesktop" to="1" /> </keybind>
     <keybind key="W-S-2"> <action name="SendToDesktop" to="2" /> </keybind>
     <keybind key="W-S-3"> <action name="SendToDesktop" to="3" /> </keybind>
@@ -93,7 +91,6 @@
     <keybind key="W-S-8"> <action name="SendToDesktop" to="8" /> </keybind>
     <keybind key="W-S-9"> <action name="SendToDesktop" to="9" /> </keybind>
     <keybind key="W-S-0"> <action name="SendToDesktop" to="10" /> </keybind>
-
     <keybind key="W-C-1"> <action name="SendToDesktop" to="1" follow="no" /> </keybind>
     <keybind key="W-C-2"> <action name="SendToDesktop" to="2" follow="no" /> </keybind>
     <keybind key="W-C-3"> <action name="SendToDesktop" to="3" follow="no" /> </keybind>
@@ -104,13 +101,17 @@
     <keybind key="W-C-8"> <action name="SendToDesktop" to="8" follow="no" /> </keybind>
     <keybind key="W-C-9"> <action name="SendToDesktop" to="9" follow="no" /> </keybind>
     <keybind key="W-C-0"> <action name="SendToDesktop" to="10" follow="no" /> </keybind>
+    <keybind key="W-comma"> <action name="GoToDesktop" to="left" wrap="yes" /> </keybind>
+    <keybind key="W-period"> <action name="GoToDesktop" to="right" wrap="yes" /> </keybind>
 
     <!-- windows -->
     <keybind key="W-c"> <action name="Close" /> </keybind>
     <keybind key="W-S-c"> <action name="Kill" /> </keybind>
     <keybind key="W-f"> <action name="ToggleMaximize" /> </keybind>
     <keybind key="W-S-f"> <action name="ToggleFullscreen" /> </keybind> 
-
+    <keybind key="W-u"> <action name="ToggleOmnipresent" /> </keybind> 
+    <keybind key="W-r"> <action name="FitToOutput" /> </keybind> 
+    <keybind key="W-m"> <action name="ShowMenu" menu="client-menu" atCursor="no" /> </keybind> 
     <keybind key="W-A-Left"> <action name="MoveToEdge" direction="left" /> </keybind>
     <keybind key="W-A-Right"> <action name="MoveToEdge" direction="right" /> </keybind>
     <keybind key="W-A-Up"> <action name="MoveToEdge" direction="up" /> </keybind>
@@ -119,55 +120,63 @@
     <keybind key="W-Right"> <action name="SnapToEdge" direction="right" /> </keybind>
     <keybind key="W-Up"> <action name="SnapToEdge" direction="up" /> </keybind>
     <keybind key="W-Down"> <action name="SnapToEdge" direction="down" /> </keybind>
+    <keybind key="W-Dead_acute"> <action name="SnapToRegion" region="top-left" /> </keybind>
+    <keybind key="W-Plus"> <action name="SnapToRegion" region="top-right" /> </keybind>
+    <keybind key="W-Braceleft"> <action name="SnapToRegion" region="bottom-left" /> </keybind>
+    <keybind key="W-Braceright"> <action name="SnapToRegion" region="bottom-right" /> </keybind>
     <keybind key="A-Space"> <action name="ShowMenu" menu="client-menu" atCursor="no" /> </keybind>    
 
     <!-- labwc main stuff -->
     <keybind key="W-l"> <action name="Execute" command="loginctl lock-session" /> </keybind>
+    <keybind key="W-S-backspace"> <action name="Exit" /> </keybind>
+    <keybind key="W-S-r"> <action name="Reconfigure" /> </keybind>
 
     <!-- launch -->
     <keybind key="W-Return"> <action name="Execute" command="footclient" /> </keybind>
     <keybind key="W-S-Return"> <action name="Execute" command="foot" /> </keybind>
     <keybind key="W-d"> <action name="Execute" command="fuzzel" /> </keybind>
     <keybind key="W-n"> <action name="Execute" command="footclient -e yazi" /> </keybind>
+    <keybind key="W-b"> <action name="Execute" command="librewolf" /> </keybind>
+
+    <!-- pannels -->
+    <keybind key="W-t"> <action name="Execute" command="pkill -SIGUSR1 waybar"/> </keybind>
 
     <!-- connectivity -->
-    <keybind key="W-Insert"> <action name="Execute" command="footclient -e impala" /> </keybind>
-    <keybind key="W-Delete"> <action name="Execute" command="footclient -e bluetui" /> </keybind>
-
+    <keybind key="W-Insert"> <action name="Execute" command="footclient -T 'wifi420' -e impala" /> </keybind>
+    <keybind key="W-Delete"> <action name="Execute" command="footclient -T 'bluetooth420' -e bluetui" /> </keybind>
 
     <!-- brightness -->
-    <keybind key="XF86MonBrightnessUp"> <action name="Execute" command="brillo -qA 1 -u 200000" /> </keybind>
-    <keybind key="XF86MonBrightnessDown"> <action name="Execute" command="brillo -qU 1 -u 200000" /> </keybind>
+    <keybind key="XF86MonBrightnessUp" allowWhenLocked="yes"> <action name="Execute" command="brillo -qA 1 -u 200000" /> </keybind>
+    <keybind key="XF86MonBrightnessDown" allowWhenLocked="yes"> <action name="Execute" command="brillo -qU 1 -u 200000" /> </keybind>
 
     <!-- volume -->
-    <keybind key="XF86AudioRaiseVolume">
+    <keybind key="XF86AudioRaiseVolume" allowWhenLocked="yes">
       <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ 0" />
       <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+" />
     </keybind>
-    <keybind key="XF86AudioLowerVolume">
+    <keybind key="XF86AudioLowerVolume" allowWhenLocked="yes">
       <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ 0" />
       <action name="Execute" command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-" />
     </keybind>
-    <keybind key="XF86AudioMute"> <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" /> </keybind>
+    <keybind key="XF86AudioMute" allowWhenLocked="yes"> <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" /> </keybind>
+    <keybind key="XF86AudioMicMute" allowWhenLocked="yes"> <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" /> </keybind>
 
+    <!-- screenshots -->
+    <keybind key="print" allowWhenLocked="yes"> <action name="Execute" command="grim" /> </keybind>
+    
     <!-- music -->
-    <keybind key="W-q"> <action name="Execute" command="mpc prev" /> </keybind>
-    <keybind key="W-w"> <action name="Execute" command="mpc toggle" /> </keybind>
-    <keybind key="W-e"> <action name="Execute" command="mpc next" /> </keybind>
-    <keybind key="W-S-q"> <action name="Execute" command="mpc seek -10" /> </keybind>
-    <keybind key="W-S-w"> <action name="Execute" command="mpc stop" /> </keybind>
-    <keybind key="W-S-e"> <action name="Execute" command="mpc seek +10" /> </keybind>
-    <keybind key="W-C-q"> <action name="Execute" command="mpc stop" /> </keybind>
-    <keybind key="W-C-w"> <action name="Execute" command="mpc random" /> </keybind>
+    <keybind key="W-q" allowWhenLocked="yes"> <action name="Execute" command="mpc prev" /> </keybind>
+    <keybind key="W-w" allowWhenLocked="yes"> <action name="Execute" command="mpc toggle" /> </keybind>
+    <keybind key="W-e" allowWhenLocked="yes"> <action name="Execute" command="mpc next" /> </keybind>
+    <keybind key="W-S-q" allowWhenLocked="yes"> <action name="Execute" command="mpc seek -10" /> </keybind>
+    <keybind key="W-S-w" allowWhenLocked="yes"> <action name="Execute" command="mpc stop" /> </keybind>
+    <keybind key="W-S-e" allowWhenLocked="yes"> <action name="Execute" command="mpc seek +10" /> </keybind>
+    <keybind key="W-C-q" allowWhenLocked="yes"> <action name="Execute" command="mpc stop" /> </keybind>
+    <keybind key="W-C-w" allowWhenLocked="yes"> <action name="Execute" command="mpc random" /> </keybind>
 
   </keyboard>
 
   <mouse>
-    <default />
-    <!-- Show a custom menu on desktop right click -->
-    <context name="Root">
-      <mousebind button="Right" action="Press"> <action name="ShowMenu" menu="some-custom-menu" /> </mousebind>
-    </context>
 
     <context name="Frame">
       <mousebind button="W-Left" action="Press">
@@ -185,23 +194,213 @@
         <action name="Resize" />
       </mousebind>
     </context>
+
+
+    <context name="Root">
+      <mousebind button="Right" action="Press"> <action name="ShowMenu" menu="root-menu" /> </mousebind>
+    </context>
+
+    <context name="Top">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="Left">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="Right">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="Bottom">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="TRCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="BRCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="TLCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="BLCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+
+    <context name="TitleBar">
+      <mousebind button="Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind direction="Up" action="Scroll">
+        <action name="Unshade" />
+        <action name="Focus" />
+      </mousebind>
+      <mousebind direction="Down" action="Scroll">
+        <action name="Unfocus" />
+        <action name="Shade" />
+      </mousebind>
+    </context>
+
+    <context name="Title">
+      <mousebind button="Left" action="Drag">
+        <action name="Move" />
+      </mousebind>
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" />
+      </mousebind>
+    </context>
+
+    <context name="Maximize">
+      <mousebind button="Left" action="Click">
+        <action name="ToggleMaximize" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ToggleMaximize" direction="horizontal" />
+      </mousebind>
+      <mousebind button="Middle" action="Click">
+        <action name="ToggleMaximize" direction="vertical" />
+      </mousebind>
+    </context>
+
+    <context name="WindowMenu">
+      <mousebind button="Left" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+    </context>
+
+    <context name="Icon">
+      <mousebind button="Left" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+    </context>
+
+    <context name="Shade">
+      <mousebind button="Left" action="Click">
+        <action name="ToggleShade" />
+      </mousebind>
+    </context>
+
+    <context name="AllDesktops">
+      <mousebind button="Left" action="Click">
+        <action name="ToggleOmnipresent" />
+      </mousebind>
+    </context>
+
+    <context name="Iconify">
+      <mousebind button="Left" action="Click">
+        <action name="Iconify" />
+      </mousebind>
+    </context>
+
+    <context name="Close">
+      <mousebind button="Left" action="Click">
+        <action name="Close" />
+      </mousebind>
+    </context>
+
+    <context name="Client">
+      <mousebind button="Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Middle" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Right" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+    </context>
+
+    <context name="Root">
+      <mousebind button="Left" action="Press">
+        <action name="ShowMenu" menu="root-menu" />
+      </mousebind>
+      <mousebind button="Right" action="Press">
+        <action name="ShowMenu" menu="root-menu" />
+      </mousebind>
+      <mousebind button="Middle" action="Press">
+        <action name="ShowMenu" menu="root-menu" />
+	<!-- openbox default, swap with above line to activate -->
+        <!-- <action name="ShowMenu" menu="client-list-combined-menu" /> -->
+      </mousebind>
+      <mousebind direction="Up" action="Scroll">
+        <action name="GoToDesktop" to="left" wrap="yes" />
+      </mousebind>
+      <mousebind direction="Down" action="Scroll">
+        <action name="GoToDesktop" to="right" wrap="yes" />
+      </mousebind>
+    </context>
   </mouse>
 
+  <snapping>
+    <range>5</range>
+    <topMaximize>no</topMaximize>
+  </snapping>
+
+  <regions>
+    <region name="top-left" x="0%" y="0%" height="50%" width="50%"/>
+    <region name="top" x="0%" y="0%" height="50%" width="100%"/>
+    <region name="top-right" x="50%" y="0%" height="50%" width="50%"/>
+    <region name="left" x="0%" y="0%" height="100%" width="50%"/>
+    <region name="center" x="10%" y="10%" height="80%" width="80%"/>
+    <region name="right" x="50%" y="0%" height="100%" width="50%"/>
+    <region name="bottom-left" x="0%" y="50%" height="50%" width="50%"/>
+    <region name="bottom" x="0%" y="50%" height="50%" width="100%"/>
+    <region name="bottom-right" x="50%" y="50%" height="50%" width="50%"/>
+  </regions>
 
   <resistance>
-    <screenEdgeStrength>20</screenEdgeStrength>
-    <windowEdgeStrength>20</windowEdgeStrength>
+    <screenEdgeStrength>100</screenEdgeStrength>
+    <windowEdgeStrength>100</windowEdgeStrength>
     <!-- resistance for maximized/tiled windows -->
     <unSnapThreshold>20</unSnapThreshold>
     <!-- resistance for vertically/horizontally maximized windows -->
     <unMaximizeThreshold>150</unMaximizeThreshold>
   </resistance>
 
-
   <focus>
-    <followMouse>yes</followMouse>
+    <followMouse>no</followMouse>
     <followMouseRequiresMovement>yes</followMouseRequiresMovement>
     <raiseOnFocus>no</raiseOnFocus>
   </focus>
+
+<windowRules>
+  <windowRule identifier="" title="bluetooth420" type="">
+    <action name="ResizeTo" width="755" height="500" />
+  </windowRule>
+  <windowRule identifier="" title="wifi420" type="">
+    <action name="ResizeTo" width="850" height="900" />
+  </windowRule>
+</windowRules>
 
 </labwc_config>

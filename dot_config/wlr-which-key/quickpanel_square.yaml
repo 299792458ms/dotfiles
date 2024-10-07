@@ -28,7 +28,7 @@ menu:
   "c":
     desc: clipboard
     submenu:
-      "s": { desc: select, cmd: cliphist list | fuzzel --dmenu --config ~/.config/fuzzel/fuzzel-square.ini | cliphist decode | wl-copy }
+      "c": { desc: copy, cmd: cliphist list | fuzzel --dmenu --config ~/.config/fuzzel/fuzzel-square.ini | cliphist decode | wl-copy }
       "d": { desc: delete, cmd: cliphist list | fuzzel --dmenu --config ~/.config/fuzzel/fuzzel-square.ini | cliphist delete }
       "w": { desc: wipe, cmd: cliphist wipe }
 
