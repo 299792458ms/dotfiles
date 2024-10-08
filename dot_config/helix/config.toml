@@ -5,6 +5,7 @@ mouse = true
 cursorline = false
 cursorcolumn = false
 line-number = "absolute"
+color-modes = true
 
 [editor.cursor-shape]
 insert = "block"

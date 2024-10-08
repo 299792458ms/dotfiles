@@ -5,6 +5,7 @@ image/png=imv-dir.desktop
 application/pdf=org.gnome.Evince.desktop
 application/toml=helix.desktop
 application/xml=helix.desktop
+image/svg+xml=imv-dir.desktop
 
 [Added Associations]
 text/plain=nvim.desktop;
@@ -13,3 +14,5 @@ image/png=org.gnome.eog.desktop;imv-dir.desktop;
 application/pdf=org.gnome.Evince.desktop;libreoffice-draw.desktop;
 application/toml=helix.desktop;
 application/xml=helix.desktop;
+image/svg+xml=imv-dir.desktop;
+application/x-perf-data=helix.desktop;

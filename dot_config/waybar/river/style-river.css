@@ -42,8 +42,8 @@
     text-shadow: none;
     background:none;
     transition: none;
-    color: @blue;
-    border-color: @blue;
+    color: @cyan;
+    border-color: @cyan;
 }
 
 tooltip {
@@ -134,10 +134,10 @@ window#waybar {
     color: @warning;
 }
 
-#pulseaudio.pa1 {
-    margin-top: 2px;
-    border-bottom: 2px solid @fg;
-}
+/* #pulseaudio.pa1 { */
+    /* margin-top: 2px; */
+    /* border-bottom: 2px solid @fg; */
+/* } */
 
 #pulseaudio.pa1.muted {
     color: @dimfg;
@@ -147,23 +147,23 @@ window#waybar {
 
 #pulseaudio.pa1.bluetooth {
     color: @blue;
-    border-bottom: 2px solid @blue;
+    /* border-bottom: 2px solid @blue; */
 }
 
 #pulseaudio.pa1.bluetooth.muted {
     color: @dimfg;
-    border: none;
+    /* border: none; */
 }
 
-#pulseaudio.pa2 {
-    margin-top: 2px;
-    border-bottom: 2px solid @fg;
-}
+/* #pulseaudio.pa2 { */
+    /* margin-top: 2px; */
+    /* border-bottom: 2px solid @fg; */
+/* } */
 
 #pulseaudio.pa2.source-muted {
-    color: @dimfg;
-    border: none;
-    margin-bottom: 2px;
+        color: @dimfg;
+    /* border: none; */
+    /* margin-bottom: 2px; */
 }
 
 #battery {

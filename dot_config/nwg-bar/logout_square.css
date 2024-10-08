@@ -5,7 +5,7 @@
 }
 window {
         background-color: @bg;
-        border: 2px solid @dimfg;
+        border: 2px solid @magenta;
         border-radius: 0px;
         font-size: 1.5em;
 }
