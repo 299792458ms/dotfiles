@@ -128,8 +128,8 @@ bindgesture swipe:3:left workspace next
 bindgesture swipe:3:right workspace prev
 
 # named workspaces
-bindsym $mod+plus exec /home/alec/scripts/launch/workpaces/launch-music-ws.sh
-bindsym $mod+braceleft exec /home/alec/scripts/launch/workpaces/launch-mail-ws.sh
+bindsym $mod+plus exec /home/alec/scripts/launch/workspaces/sway/launch-music-ws.sh
+bindsym $mod+braceleft exec /home/alec/scripts/launch/workspaces/sway/launch-mail-ws.sh
 
 # scratchpad
 bindsym $mod+shift+tab move container to scratchpad

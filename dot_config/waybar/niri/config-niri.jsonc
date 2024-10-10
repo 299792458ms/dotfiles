@@ -118,7 +118,7 @@
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-scroll-up": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+",
         "on-scroll-down": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-",
-        "on-click-right": "pwvucontrol",
+        "on-click-right": "pavucontrol",
         "tooltip": false
 
     },
@@ -129,7 +129,7 @@
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
         "on-scroll-up": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.05+",
         "on-scroll-down": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0 && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 0.05-",
-        "on-click-right": "pwvucontrol",
+        "on-click-right": "pavucontrol",
         "tooltip": false
 
     },

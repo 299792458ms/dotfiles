@@ -5,7 +5,8 @@ mod=Super
 term=foot
 termclient=footclient
 browser=librewolf
-email=geary
+# email=geary
+email=aerc
 termfilemanager=yazi
 filemanager=nautilus -w
 menu="fuzzel --config ~/.config/fuzzel/fuzzel-square.ini"
@@ -40,7 +41,9 @@ riverctl border-color-focused 0xAD8EE6FF
 riverctl border-color-unfocused 0xC0CAF555
 riverctl focus-follows-cursor normal
 riverctl default-layout rivertile
-rivertile -view-padding 3 -outer-padding 3 -main-ratio 0.5 &
+rivertile -view-padding 3 -outer-padding 3 -main-ratio 0.5 -main-location left &
+
+# ←bsp layout→
 # riverctl default-layout bsp-layout
 # river-bsp-layout --inner-gap 5 --outer-gap 10 --split-perc 0.5 &
 
@@ -152,14 +155,15 @@ for i in $(seq 1 9)
 do
     tags=$((1 << ($i - 1)))
     riverctl map normal $mod $i set-focused-tags $tags
-    riverctl map normal $mod+Control $i set-view-tags $tags
-    riverctl map normal $mod+Shift $i toggle-focused-tags $tags
+    riverctl map normal $mod+Shift $i set-view-tags $tags
+    riverctl map normal $mod+Control $i toggle-focused-tags $tags
     riverctl map normal $mod+Alt $i toggle-view-tags $tags
 done
 
+# 10th tag
 riverctl map normal $mod 0 set-focused-tags 512
-riverctl map normal $mod+Control 0 set-view-tags 512
-riverctl map normal $mod+Shift 0 toggle-focused-tags 512
+riverctl map normal $mod+Shift 0 set-view-tags 512
+riverctl map normal $mod+Control 0 toggle-focused-tags 512
 riverctl map normal $mod+Alt 0 toggle-view-tags 512
 
 all_tags=$(((1 << 32) - 1))
@@ -168,32 +172,37 @@ riverctl map normal $mod+Control Bar set-view-tags $all_tags
 
 # music
 music_tag=$((1 << 10 ))
-
-riverctl map normal $mod Plus set-focused-tags ${music_tag}		# toggle the scratchpad
-riverctl map normal $mod+Control Plus set-view-tags ${music_tag}		# send windows to the scratchpad
-riverctl map normal $mod+Shift Plus toggle-focused-tags ${music_tag}
-
-# Set spawn tagmask to ensure new windows do not have the scratchpad tag unless explicitly set.
+riverctl map normal $mod Plus spawn "~/scripts/launch/tags/river/music-tag.sh"
+riverctl map normal $mod+Shift Plus set-view-tags ${music_tag}
+riverctl map normal $mod+Control Plus toggle-focused-tags ${music_tag}
 all_but_music_tag=$(( ((1 << 32) - 1) ^ $music_tag ))
 riverctl spawn-tagmask ${all_but_music_tag}
+
+# mail
+mail_tag=$((1 << 11 ))
+riverctl map normal $mod Braceleft spawn "~/scripts/launch/tags/river/mail-tag.sh"
+riverctl map normal $mod+Shift Braceleft set-view-tags ${mail_tag}
+riverctl map normal $mod+Control Braceleft toggle-focused-tags ${mail_tag}
+all_but_music_tag=$(( ((1 << 32) - 1) ^ $mail_tag ))
+riverctl spawn-tagmask ${all_but_mail_tag}
 
 # window manager inception³
 riverctl declare-mode passthrough
 riverctl map normal $mod F11 enter-mode passthrough
 riverctl map passthrough $mod F11 enter-mode normal
 
-# volume & brightness
+# keybinds available in lockscreen too
 for mode in normal locked
 do
     # volume
-    riverctl map $mode None XF86AudioRaiseVolume  spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+'
-    riverctl map $mode None XF86AudioLowerVolume  spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-'
-    riverctl map $mode None XF86AudioMute         spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'
-    riverctl map $mode None XF86AudioMicMute      spawn "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    riverctl map -repeat $mode None XF86AudioRaiseVolume  spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+'
+    riverctl map -repeat $mode None XF86AudioLowerVolume  spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-'
+    riverctl map -repeat $mode None XF86AudioMute         spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'
+    riverctl map -repeat $mode None XF86AudioMicMute      spawn "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
     # brightness
-    riverctl map $mode None XF86MonBrightnessUp   spawn 'brillo -qA 2 -u 200000'
-    riverctl map $mode None XF86MonBrightnessDown spawn 'brillo -qU 2 -u 200000'
+    riverctl map -repeat $mode None XF86MonBrightnessUp   spawn 'brillo -qA 2 -u 200000'
+    riverctl map -repeat $mode None XF86MonBrightnessDown spawn 'brillo -qU 2 -u 200000'
 
     # screnshots
     riverctl map $mode None Print spawn 'grim; notify-send "screenshot taken" -u low'
@@ -247,5 +256,5 @@ riverctl rule-add -title 'wifi420' position 535 132
 riverctl rule-add -title 'bluetooth420' position 582 307
 
 # location
-riverctl rule-add -app-id 'ymuse' tags 1024
-riverctl rule-add -title 'music420' tags 1024 
+riverctl rule-add -app-id 'music420' tags $((1 << 10))
+riverctl rule-add -app-id 'mail80085' tags $((1 << 11))
