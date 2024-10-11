@@ -1,7 +1,7 @@
 #.zshrc
 
 #options
-HISTFILE=~/.local/state/zsh/history/.histfile
+HISTFILE=~/.local/state/zsh/history/histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd beep nomatch
@@ -53,6 +53,5 @@ tre() { command tre "$@" -e && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
 
 # promt
 NEWLINE=$'\n'
-# PS1="%F{magenta}%n@%m%f %F{blue}%9~%f %F{magenta}>%f%F{cyan}>%f%F{magenta}>%f "
 PS1="%F{magenta}%n@%m%f %F{blue}%9~%f %F{magenta}>>>%f "
 RPS1='%B%F{yellow}%T%f%b'

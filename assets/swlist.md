@@ -5,7 +5,7 @@ All programs are listed by their package name and are available for Arch in Extr
 ## Window Managers
 
 - [**river**](https://codeberg.org/river/river)[^1]: Minimal yet very functional dynamic window manager.
-- [**hyprland-git**](https://github.com/hyprwm/Hyprland): Good looks, 2 built-in layouts, vast window and workspace rules, special workspaces and more.
+- [**hyprland**](https://github.com/hyprwm/Hyprland): Good looks, 2 built-in layouts, vast window and workspace rules, special workspaces and more.
 - [**niri**](https://github.com/YaLTeR/niri)[^1]: Scrolling window manager, works very great with laptops.
 - [**sway**](https://github.com/swaywm/sway): Trusty, functional, fast and very well supported.
 - [**labwc**](https://github.com/labwc/labwc): Stacking window manager inspired in Openbox
@@ -144,10 +144,10 @@ All programs are listed by their package name and are available for Arch in Extr
 [^1]: Unused and/or unmaintained configuration file.
 [^2]: Not recommended to use multiple at a time.
 [^3]: Having numerous plugins plus a custom prompt (_like starship_) will slow down your shell. If your are only interested in syntax higlight & auto suggestions I recommend either to use a light framework/plugin_manager or to drop them entirely and use fzf. Put in your ~/.zshrc: `source <(fzf --zsh)`, this will overwrite some of your zsh default bindings and allow you to search and copy commands with Control+R from your history to your prompt. As for syntax highlighting I think if you are not typing extremely long and complex commands you can live without it. Test your shell speed with ![zsh-bench](https://github.com/romkatv/zsh-bench)
-[^4]: You can use whatever you like, I just use this because it does not complain about .png and its auto crop/fill/resize is consistent with hyprlock. If you are not using hyprlock then I would recommend wbg or sww to set a simple wallpaper or switch wallpapers dynamically.
+[^4]: You can use whatever you like, I just use this because it does not complain about .png and its auto crop/fill/resize is consistent with hyprlock. If you are not using hyprlock then I would recommend swaybg or wbg to simply set a wallpaper and sww to change wallpapers with animations on runtime.
 [^5]: The list also includes programs I use *as is* with no configuration files
 [^6]: Includes icons used in waybar.
-[^7]: You can use pactl or pamixer for PulseAudio. See [example](dot_config/hypr/examples/pulseaudio.conf).
+[^7]: You can use pactl or pamixer for PulseAudio.
 [^8]: To freeze the screen while on *area select* mode use --freeze flag, this depends on *hyprpicker* so make sure to have it installed.
 
 [//]: # ( Still here?)
