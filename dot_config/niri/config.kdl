@@ -4,7 +4,7 @@
 spawn-at-startup "foot" "-s"
 spawn-at-startup "gammastep"
 // spawn-at-startup "hyprpaper" "-c" "/home/alec/.config/hypr/hyprpaper/hp-sw08.conf"
-spawn-at-startup "swaybg" "-i" "/home/alec/Pictures/wallpapers/synthwave/testarossa.jpg"
+spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/alec/Pictures/wallpapers/synthwave/testarossa.jpg"
 spawn-at-startup "waybar" "-c" "/home/alec/.config/waybar/niri/config-niri.jsonc" "-s" "/home/alec/.config/waybar/niri/style-niri.css"
 spawn-at-startup "swayidle" "-w" "-C" "/home/alec/.config/swayidle/ensure-lock-sw08"
 spawn-at-startup "swayidle" "-C" "/home/alec/.config/swayidle/idle-sw08"

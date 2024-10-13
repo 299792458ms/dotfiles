@@ -1,6 +1,7 @@
 foot -s &
 # swaybg -c '#1A1B26' &
 swaybg -i ~/Pictures/wallpapers/synthwave/sw03.png &
+# swaybg -m fill -i ~/Pictures/wallpapers/vaporwave/vw01.jpg  &
 gammastep &
 shikane &
 swayidle -w -C ~/.config/swayidle/ensure-lock-sw03 &

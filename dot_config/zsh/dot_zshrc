@@ -1,20 +1,25 @@
-#.zshrc
-
-#options
+# Lines configured by zsh-newuser-install
 HISTFILE=~/.local/state/zsh/history/histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt autocd beep nomatch
-unsetopt extendedglob notify
-autoload -Uz compinit
-compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
+HISTSIZE=2000
+SAVEHIST=2000
+setopt beep nomatch
+unsetopt autocd extendedglob notify
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/alec/.zshrc'
 
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+NEWLINE=$'\n'
+PS1="%F{magenta}%n@%m%f %F{blue}%9~%f %F{magenta}>>>%f "
 
 # keybinds
 bindkey -s '^o' 'helix $(fzf)^M' # "^M" auto-enter
 bindkey -s '^p' 'sudoedit $(fzf)^M'
 bindkey -s '^y' 'yazi $(fzf)^M'
-bindkey -s '^[y' 'yazi $(fzf-cd-widget)^M'
+bindkey -s '^y' 'yazi $(fzf-cd-widget)^M'
 bindkey '^b' backward-kill-word
 bindkey '^f' kill-word
 
@@ -34,11 +39,6 @@ alias ffp='pokeget random --hide-name | fastfetch --file-raw -'
 # files
 source <(fzf --zsh)
 
-# run
-# eval "$(register-python-argcomplete pipx)"
-eval "$(zoxide init zsh)"
-# eval "$(starship init zsh)"
-
 # functions
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -49,9 +49,6 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
-tre() { command tre "$@" -e && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
+# run
+eval "$(zoxide init zsh)"
 
-# promt
-NEWLINE=$'\n'
-PS1="%F{magenta}%n@%m%f %F{blue}%9~%f %F{magenta}>>>%f "
-RPS1='%B%F{yellow}%T%f%b'

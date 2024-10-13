@@ -196,9 +196,6 @@
     </context>
 
 
-    <context name="Root">
-      <mousebind button="Right" action="Press"> <action name="ShowMenu" menu="root-menu" /> </mousebind>
-    </context>
 
     <context name="Top">
       <mousebind button="Left" action="Drag">
@@ -342,17 +339,15 @@
     </context>
 
     <context name="Root">
-      <mousebind button="Left" action="Press">
-        <action name="ShowMenu" menu="root-menu" />
-      </mousebind>
+      <!-- <mousebind button="Left" action="Press"> -->
+        <!-- <action name="ShowMenu" menu="root-menu" /> -->
+      <!-- </mousebind> -->
       <mousebind button="Right" action="Press">
         <action name="ShowMenu" menu="root-menu" />
       </mousebind>
-      <mousebind button="Middle" action="Press">
-        <action name="ShowMenu" menu="root-menu" />
-	<!-- openbox default, swap with above line to activate -->
-        <!-- <action name="ShowMenu" menu="client-list-combined-menu" /> -->
-      </mousebind>
+      <!-- <mousebind button="Middle" action="Press"> -->
+        <!-- <action name="ShowMenu" menu="root-menu" /> -->
+      <!-- </mousebind> -->
       <mousebind direction="Up" action="Scroll">
         <action name="GoToDesktop" to="left" wrap="yes" />
       </mousebind>
@@ -381,7 +376,7 @@
 
   <resistance>
     <screenEdgeStrength>100</screenEdgeStrength>
-    <windowEdgeStrength>100</windowEdgeStrength>
+    <windowEdgeStrength>50</windowEdgeStrength>
     <!-- resistance for maximized/tiled windows -->
     <unSnapThreshold>20</unSnapThreshold>
     <!-- resistance for vertically/horizontally maximized windows -->

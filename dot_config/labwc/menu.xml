@@ -12,7 +12,7 @@
     <item label="Balanced"><action name="Execute" command="powerprofilesctl set balanced" /></item>
     <item label="Power Saver"><action name="Execute" command="powerprofilesctl set power-saver" /></item>
   </menu>
-  <menu id="monitorsctl" label="Monitors Control">
+  <menu id="monitorsctl" label="Monitor Control">
     <item label="Hdmi-Right"><action name="Execute" command="shikanectl switch 'hdmi-hotplug-left'" /></item>
     <item label="Hdmi-Left"><action name="Execute" command="shikanectl switch 'hdmi-hotplug-left'" /></item>
     <item label="Switcheroo"><action name="Execute" command="shikanectl switch switcheroo" /></item>
