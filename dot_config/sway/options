@@ -20,8 +20,8 @@ output * mode 1920x1080 pos 0 0 bg ~/Pictures/wallpapers/synthwave/sw06.png fill
 input type:keyboard {
     xkb_layout    "latam"
     xkb_model     "pc105"
-    repeat_delay  300
-    repeat_rate   50
+    repeat_delay  250
+    repeat_rate   40
 }
 
 input type:pointer {

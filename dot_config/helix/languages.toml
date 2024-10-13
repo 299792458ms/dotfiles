@@ -1,0 +1,11 @@
+[[language]]
+name = "hyprlang"
+scope = "source.hyprlang"
+roots = ["hyprland.conf"]
+file-types = [ { glob = "*/hypr/*.conf" } ]
+comment-token = "#"
+grammar = "hyprlang"
+
+[[grammar]]
+name = "hyprlang"
+source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-hyprlang", rev = "27af9b74acf89fa6bed4fb8cb8631994fcb2e6f3"}

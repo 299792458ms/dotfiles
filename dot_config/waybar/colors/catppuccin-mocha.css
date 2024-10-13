@@ -1,16 +1,15 @@
 /* catppuccin-mocha colors */
 
-@define-color bg #1E1E2E;
-@define-color fg #CDD6F4;
-@define-color dimfg rgba(205, 214, 244, 0.33);
-@define-color red #F38BA8;
-@define-color green #A6E3A1;
-@define-color yellow #F9E2AF;
-@define-color blue #89B4FA;
-@define-color magenta #F5C2E7;
-@define-color cyan #94E2D5;
-@define-color white #BAC2DE;
-@define-color warning #F9E2AF; /* yellow */
-@define-color critical #F38BA8; /* red */
-@define-color limit #F5C2E7; /* magenta */
-
+@define-color  bg        #1E1E2E;                              
+@define-color  fg        #CDD6F4;                              
+@define-color  dimfg     rgba(205,214,244,0.33);               
+@define-color  red       #F38BA8;                              
+@define-color  green     #A6E3A1;                              
+@define-color  yellow    #F9E2AF;                              
+@define-color  blue      #89B4FA;                              
+@define-color  magenta   #F5C2E7;                              
+@define-color  cyan      #94E2D5;                              
+@define-color  white     #BAC2DE;                              
+@define-color  warning   #F9E2AF;                 /*  yellow   */
+@define-color  critical  #F38BA8;                 /*  red      */
+@define-color  limit     #F5C2E7;                 /*  magenta  */

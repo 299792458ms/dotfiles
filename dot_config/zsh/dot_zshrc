@@ -1,16 +1,13 @@
-# Lines configured by zsh-newuser-install
+#.zshrc
+
 HISTFILE=~/.local/state/zsh/history/histfile
 HISTSIZE=2000
 SAVEHIST=2000
 setopt beep nomatch
 unsetopt autocd extendedglob notify
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
 zstyle :compinstall filename '/home/alec/.zshrc'
-
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
 NEWLINE=$'\n'
 PS1="%F{magenta}%n@%m%f %F{blue}%9~%f %F{magenta}>>>%f "

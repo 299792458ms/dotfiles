@@ -12,7 +12,6 @@ filemanager=nautilus -w
 menu="fuzzel --config ~/.config/fuzzel/fuzzel-square.ini"
 notes=logseq
 system_monitor=htop
-music=footclient -e ncmpcpp
 
 # ··· ENVIRONMENT VARIABLES ···
 export XDG_SESSION_TYPE='wayland'
@@ -26,8 +25,9 @@ export PATH="$PATH:/home/alec/.local/bin"
 # ··· ROUTINE ···
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 foot -s &
-waybar -c ~/.config/waybar/river/config-river.jsonc -s ~/.config/waybar/river/style-river.css &
+waybar -c ~/.config/waybar/river/config-river-bottom.jsonc -s ~/.config/waybar/river/style-river-bottom.css &
 # swaybg -i ~/Pictures/wallpapers/synthwave/testarossa.jpg &
+swaybg -m fill -i ~/Pictures/wallpapers/synthwave/sw03.png & ## MAKE THIS HAPPEN!
 gammastep &
 swayidle -w -C ~/.config/swayidle/ensure-lock-minimal &
 swayidle -C ~/.config/swayidle/idle-minimal &
@@ -39,7 +39,8 @@ shikane &
 # ··· OPTIONS ···
 riverctl background-color 0x1A1B26FF
 riverctl border-color-focused 0xAD8EE6FF
-riverctl border-color-unfocused 0xC0CAF555
+riverctl border-color-unfocused 0x5C6691FF
+riverctl border-width 3
 riverctl focus-follows-cursor normal
 riverctl default-layout rivertile
 rivertile -view-padding 3 -outer-padding 3 -main-ratio 0.5 -main-location left &
@@ -51,14 +52,14 @@ rivertile -view-padding 3 -outer-padding 3 -main-ratio 0.5 -main-location left &
 # ···INPUT ···
 
 # pointer
-riverctl hide-cursor timeout 10000
+riverctl hide-cursor timeout 20000
 riverctl input pointer-1133-16471-Logitech_M280/320/275 pointer-accel -0.35
 
 # keyboard
 riverctl keyboard-layout latam
 riverctl hide-cursor when-typing enabled
 riverctl set-cursor-warp on-focus-change
-riverctl set-repeat 40 300
+riverctl set-repeat 40 250
 
 # touchpad
 riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad pointer-accel 1.0
@@ -72,14 +73,12 @@ riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad drag enabled
 # ··· KEYBINDS ···
 
 # launch
-riverctl map normal $mod B spawn $browser
+riverctl map normal $mod B spawn "$browser"
 riverctl map normal $mod D spawn "$menu"
-riverctl map normal $mod M spawn $filemanager
-riverctl map normal $mod N spawn "$term $termfilemanager"
+riverctl map normal $mod Y spawn "$termclient $termfilemanager"
 riverctl map normal $mod I spawn "$term $system_monitor"
-riverctl map normal $mod Z spawn $music
-riverctl map normal $mod Return spawn $termclient
-riverctl map normal $mod+Shift Return spawn $termclient
+riverctl map normal $mod Return spawn "$termclient"
+riverctl map normal $mod+Shift Return spawn "$term"
 riverctl map normal $mod Insert spawn "$termclient -T 'wifi420' -e impala"
 riverctl map normal $mod Delete spawn "$termclient -T 'bluetooth420' -e bluetui"
 
@@ -114,15 +113,25 @@ riverctl map normal $mod+Shift L swap right
 riverctl map normal $mod+Shift J swap down
 riverctl map normal $mod+Shift H swap left
 
-### make a map of these or make the monitor thing with the arrow keys
-# riverctl map -repeat normal $mod+Alt H move left 69
-# riverctl map -repeat normal $mod+Alt J move down 69
-# riverctl map -repeat normal $mod+Alt K move up 69
-# riverctl map -repeat normal $mod+Alt L move right 69
-# riverctl map -repeat normal $mod+Control H resize horizontal -30
-# riverctl map -repeat normal $mod+Control J resize vertical -30
-# riverctl map -repeat normal $mod+Control K resize vertical 30
-# riverctl map -repeat normal $mod+Control L resize horizontal 30
+# move
+riverctl declare-mode move
+riverctl map normal $mod M enter-mode move  
+riverctl map move $mod M enter-mode normal
+riverctl map move $mod R enter-mode resize
+riverctl map -repeat move None H move left 69
+riverctl map -repeat move None J move down 69
+riverctl map -repeat move None K move up 69
+riverctl map -repeat move None L move right 69
+
+# resize
+riverctl declare-mode resize
+riverctl map normal $mod R enter-mode resize
+riverctl map resize $mod R enter-mode normal  
+riverctl map resize $mod M enter-mode move  
+riverctl map -repeat resize None H resize horizontal -30
+riverctl map -repeat resize None J resize vertical -30
+riverctl map -repeat resize None K resize vertical 30
+riverctl map -repeat resize None L resize horizontal 30
 
 # windows → monitors
 riverctl map normal $mod+Control H focus-output left
@@ -135,7 +144,8 @@ riverctl map normal $mod+Alt K send-to-output -current-tags down
 riverctl map normal $mod+Alt L send-to-output -current-tags right
 
 # huh
-riverctl map normal Super R send-to-previous-tags  
+riverctl map normal $mod S send-to-previous-tags  
+riverctl map normal $mod A focus-previous-tags  
 
 # tags
 for i in $(seq 1 9)
@@ -204,7 +214,7 @@ riverctl map normal $mod+Shift Q spawn 'mpc seek -10'
 riverctl map normal $mod+Shift W spawn 'mpc stop'
 riverctl map normal $mod+Shift E spawn 'mpc seek +10'
 riverctl map normal $mod+Control Q spawn 'mpc seek 0'
-riverctl map normal $mod+Control W spawn 'mpc seek 0'
+riverctl map normal $mod+Control W spawn 'mpc random'
 
 # ·· RULES ···
 

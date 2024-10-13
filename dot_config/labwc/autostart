@@ -6,5 +6,5 @@ gammastep &
 shikane &
 swayidle -w -C ~/.config/swayidle/ensure-lock-sw03 &
 swayidle -C ~/.config/swayidle/idle-sw03 &
-waybar -c ~/.config/waybar/labwc/config-labwc_bottom.jsonc -s ~/.config/waybar/labwc/style-labwc_bottom.css &
+waybar -c ~/.config/waybar/labwc/config-labwc-bottom.jsonc -s ~/.config/waybar/labwc/style-labwc-bottom.css &
 wl-paste --watch cliphist store &
