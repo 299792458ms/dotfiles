@@ -78,6 +78,8 @@ tooltip {
 #battery,
 #bluetooth,
 #tray,
+#cpu,
+#memory,
 #custom-power,
 #custom-quit,
 #custom-lock,
@@ -113,6 +115,7 @@ tooltip {
     margin-bottom: 3px;
 }
 
+#bluetooth.off,
 #bluetooth.disabled {
     color: @dimfg;
 }

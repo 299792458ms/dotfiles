@@ -13,15 +13,17 @@
     ],
     "modules-right": [
         //"custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
-        "tray",
         "idle_inhibitor",
         "power-profiles-daemon",
         "pulseaudio#pa1",
         "pulseaudio#pa2",
+        "tray",
         "bluetooth",
         "network",
         "battery",
         "backlight",
+        // "cpu",
+        // "memory",
         "clock"
         // "group/powermenu"
     ],
@@ -70,13 +72,13 @@
             "8",
             "9",
             "10",
-            "󰝚",
-            "󰁥"
+            "µ",
+            "κ"
         ]
     },
     "clock": {
-        "format": "{:%H:%M}",
-        //"format": "{:%Y-%m-%d %H:%M:%S}",
+        // "format": "{:%H:%M}",
+        "format": "{:%Y-%m-%d %H:%M}",
         // "format-alt": "{:%Y-%m-%d}",
         "interval": 60,
         "calendar": {
@@ -192,6 +194,14 @@
         "on-scroll-up": "brillo -qA 1 -u 200000",
         "on-scroll-down": "brillo -qU 1 -u 200000",
         "tooltip": false
+    },
+    "cpu": {
+        "format": "cpu: {usage}%",
+        "interval": 1
+    },
+    "memory": {
+        "format": "mem: {percentage}%",
+        "interval": 1
     },
     "tray": {
         "spacing": 20

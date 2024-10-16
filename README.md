@@ -17,7 +17,9 @@ Check this [**list**](assets/swlist.md) of programs I use if something caught yo
 
 - **i3**: [lil' rocket](https://feddit.cl/post/2290324)
 
-- **Gnome**: [noob-setup](https://feddit.cl/post/948902)
+- **Labwc**: [Lots of Purple](https://lemmy.zip/post/24327455)
+
+- **Gnome**: [noob-setup](https://feddit.cl/post/948902
 
 ## Inspirations
 

@@ -13,7 +13,7 @@ spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPL
 
 // options
 
-screenshot-path "~/Pictures/screenshots/niri %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Pictures/screenshots/niri_screenshots/niri %Y-%m-%d %H-%M-%S.png"
 prefer-no-csd
 
 // workspace "browser"
