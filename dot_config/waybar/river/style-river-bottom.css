@@ -3,7 +3,7 @@
 @import "../colors/tokyonight-night.css";
 
 * {
-    font-size: 20px; /* 18 px font -> 31 height // 16px font -> 28 height*/
+    font-size: 20px;
     font-family: "Jet Brains Mono Nerd Font";
     font-weight: bold;
 }
@@ -87,16 +87,17 @@ tooltip {
 #custom-reboot {
     padding: 3px 6px 0 6px;
     color: @fg;
-    margin: 0 4px 0 4px;
+    border-radius: 0;
+    /* margin: 0 2px 0 2px; */
+}
+
+#idle_inhibitor.deactivated {
+    color: @dimfg;
 }
 
 #idle_inhibitor.activated {
     border-top: 3px solid @fg;
     margin-bottom: 3px;
-}
-
-#idle_inhibitor.deactivated {
-    color: @dimfg;
 }
 
 #power-profiles-daemon.performance {
@@ -107,6 +108,7 @@ tooltip {
 
 #power-profiles-daemon.balanced {
     color: @dimfg;
+    padding: 3px 6px 0 6px;
 }
 
 #power-profiles-daemon.power-saver {
@@ -131,7 +133,6 @@ tooltip {
 #pulseaudio.pa1.muted {
     color: @dimfg;
     border: none;
-    margin-top: 3px;
 }
 
 #pulseaudio.pa1.bluetooth {

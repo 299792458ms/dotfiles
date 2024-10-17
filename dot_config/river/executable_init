@@ -43,6 +43,7 @@ riverctl border-color-unfocused 0x5C6691FF
 riverctl border-width 3
 riverctl focus-follows-cursor normal
 riverctl default-layout rivertile
+riverctl default-attach-mode top
 rivertile -view-padding 3 -outer-padding 3 -main-ratio 0.5 -main-location left &
 
 # ←bsp layout→
@@ -90,17 +91,62 @@ riverctl map normal $mod+Alt+Control L spawn "hyprlock -c ~/.config/hypr/hyprloc
 riverctl map normal $mod Minus spawn "swaync-client -t"
 riverctl map normal $mod O spawn "nwg-bar -t logout_river.json -s logout_square.css"
 
-# windows
-riverctl map normal $mod C close
-riverctl map normal $mod F toggle-fullscreen
-riverctl map normal $mod V toggle-float
+# layout
 riverctl map normal $mod Comma send-layout-cmd rivertile "main-ratio -0.05"
 riverctl map normal $mod Period send-layout-cmd rivertile "main-ratio +0.05"
 riverctl map normal $mod+Shift Comma send-layout-cmd rivertile "main-count +1"
 riverctl map normal $mod+Shift Period send-layout-cmd rivertile "main-count -1"
+
+# windows
+riverctl map normal $mod C close
+riverctl map normal $mod F toggle-fullscreen
+riverctl map normal $mod V toggle-float
+riverctl map normal $mod G zoom
+riverctl map normal $mod Left focus-view left
+riverctl map normal $mod Down focus-view down
+riverctl map normal $mod Up focus-view up
+riverctl map normal $mod Right focus-view right
+riverctl map normal $mod Tab focus-view next
+riverctl map normal $mod+Shift Tab focus-view previous
+riverctl map normal $mod+Shift Left swap left
+riverctl map normal $mod+Shift Down swap down
+riverctl map normal $mod+Shift Up swap up
+riverctl map normal $mod+Shift Right swap right
 riverctl map-pointer normal $mod BTN_LEFT move-view
 riverctl map-pointer normal $mod BTN_RIGHT resize-view
 riverctl map-pointer normal $mod BTN_MIDDLE toggle-float
+
+# move mode (floating)
+riverctl declare-mode move
+riverctl map normal $mod M enter-mode move  
+riverctl map move $mod M enter-mode normal
+riverctl map move $mod Escape enter-mode normal  
+riverctl map move $mod R enter-mode resize
+riverctl map -repeat move None H move left 69
+riverctl map -repeat move None J move down 69
+riverctl map -repeat move None K move up 69
+riverctl map -repeat move None L move right 69
+
+# resize mode (floating)
+riverctl declare-mode resize
+riverctl map normal $mod R enter-mode resize
+riverctl map resize $mod R enter-mode normal  
+riverctl map resize $mod Escape enter-mode normal  
+riverctl map resize $mod M enter-mode move  
+riverctl map -repeat resize None H resize horizontal -30
+riverctl map -repeat resize None J resize vertical -30
+riverctl map -repeat resize None K resize vertical 30
+riverctl map -repeat resize None L resize horizontal 30
+
+# windows → monitors
+riverctl map normal $mod+Control Left focus-output left
+riverctl map normal $mod+Control Down focus-output down
+riverctl map normal $mod+Control Up focus-output up
+riverctl map normal $mod+Control Right focus-output right
+riverctl map normal $mod+Alt Left send-to-output -current-tags left
+riverctl map normal $mod+Alt Up send-to-output -current-tags up
+riverctl map normal $mod+Alt Down send-to-output -current-tags down
+riverctl map normal $mod+Alt Right send-to-output -current-tags right
 
 # vim-like
 riverctl map normal $mod K focus-view up
@@ -111,40 +157,14 @@ riverctl map normal $mod+Shift K swap up
 riverctl map normal $mod+Shift L swap right
 riverctl map normal $mod+Shift J swap down
 riverctl map normal $mod+Shift H swap left
-
-# move
-riverctl declare-mode move
-riverctl map normal $mod M enter-mode move  
-riverctl map move $mod M enter-mode normal
-riverctl map move $mod R enter-mode resize
-riverctl map -repeat move None H move left 69
-riverctl map -repeat move None J move down 69
-riverctl map -repeat move None K move up 69
-riverctl map -repeat move None L move right 69
-
-# resize
-riverctl declare-mode resize
-riverctl map normal $mod R enter-mode resize
-riverctl map resize $mod R enter-mode normal  
-riverctl map resize $mod M enter-mode move  
-riverctl map -repeat resize None H resize horizontal -30
-riverctl map -repeat resize None J resize vertical -30
-riverctl map -repeat resize None K resize vertical 30
-riverctl map -repeat resize None L resize horizontal 30
-
-# windows → monitors
 riverctl map normal $mod+Control H focus-output left
 riverctl map normal $mod+Control J focus-output down
 riverctl map normal $mod+Control K focus-output up
 riverctl map normal $mod+Control L focus-output right
 riverctl map normal $mod+Alt H send-to-output -current-tags left
-riverctl map normal $mod+Alt J send-to-output -current-tags up
-riverctl map normal $mod+Alt K send-to-output -current-tags down
+riverctl map normal $mod+Alt J send-to-output -current-tags down
+riverctl map normal $mod+Alt K send-to-output -current-tags up
 riverctl map normal $mod+Alt L send-to-output -current-tags right
-
-# huh
-riverctl map normal $mod S send-to-previous-tags  
-riverctl map normal $mod A focus-previous-tags  
 
 # tags
 for i in $(seq 1 9)
@@ -165,6 +185,10 @@ riverctl map normal $mod+Control 0 toggle-view-tags 512
 all_tags=$(((1 << 32) - 1))
 riverctl map normal $mod Apostrophe set-focused-tags $all_tags
 riverctl map normal $mod+Shit Apostrophe set-view-tags $all_tags
+
+# huh
+riverctl map normal $mod S send-to-previous-tags  
+riverctl map normal $mod A focus-previous-tags  
 
 # music
 music_tag=$((1 << 10 ))
@@ -249,10 +273,10 @@ riverctl rule-add -title 'wifi420' dimensions 850 900
 riverctl rule-add -title 'bluetooth420' dimensions 755 500
 
 # position
-# riverctl rule-add -title 'wifi410' position 535 107 # for waybar top position
-# riverctl rule-add -title 'bluetooth420' position 582 307 # for waybar top position
 riverctl rule-add -title 'wifi420' position 535 72 # for waybar bottomposition
 riverctl rule-add -title 'bluetooth420' position 582 272 # for waybar bottomposition
+# riverctl rule-add -title 'wifi410' position 535 107 # for waybar top position
+# riverctl rule-add -title 'bluetooth420' position 582 307 # for waybar top position
 
 # location
 riverctl rule-add -app-id 'music420' tags $((1 << 10))

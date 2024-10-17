@@ -26,7 +26,7 @@ bindsym $mod+b exec $browser
 bindsym $mod+shift+return exec $term
 bindsym $mod+return exec $termclient
 bindsym $mod+p exec $display
-bindsym $mod+n exec $termclient -e yazi
+bindsym $mod+y exec $termclient -e yazi
 bindsym $mod+m exec $filemanager
 # bindsym $mod+k exec $notes
 

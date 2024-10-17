@@ -19,7 +19,7 @@ Check this [**list**](assets/swlist.md) of programs I use if something caught yo
 
 - **Labwc**: [Lots of Purple](https://lemmy.zip/post/24327455)
 
-- **Gnome**: [noob-setup](https://feddit.cl/post/948902
+- **Gnome**: [noob-setup](https://feddit.cl/post/948902)
 
 ## Inspirations
 

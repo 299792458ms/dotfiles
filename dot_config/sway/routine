@@ -11,3 +11,5 @@ exec swaync -s ~/.config/swaync/style_square.css
 exec wl-paste --watch cliphist store
 exec rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 500
 
+exec_always sleep 1.5; shikanectl reload
+

@@ -3,7 +3,7 @@
 @import "../colors/tokoynight-storm.css";
 
 * {
-    font-size: 18px; /* 18 px font -> 31 height // 16px font -> 28 height*/
+    font-size: 18px;
     font-family: "Jet Brains Mono Nerd Font";
 }
 
