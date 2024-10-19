@@ -9,7 +9,5 @@ export ELECTRON_OZONE_PLATFORM_HINT='wayland'
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export GOPATH="$XDG_DATA_HOME"/go
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
-# export SHIKANE_LOG='trace'
+# SHIKANE_LOG='trace'
 export STARSHIP_CONFIG="$HOME"/.config/starship/starship.toml
-
-

@@ -1,6 +1,6 @@
 /* style-sway.css */
 
-@import "colors/tokyonight-storm.css";
+@import "colors/tokyonight-night.css";
 
 * {
     font-size: 19px; /* 18 px font -> 31 height // 16px font -> 28 height*/

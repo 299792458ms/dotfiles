@@ -135,7 +135,7 @@
     <keybind key="W-Return"> <action name="Execute" command="footclient" /> </keybind>
     <keybind key="W-S-Return"> <action name="Execute" command="foot" /> </keybind>
     <keybind key="W-d"> <action name="Execute" command="fuzzel" /> </keybind>
-    <keybind key="W-n"> <action name="Execute" command="footclient -e yazi" /> </keybind>
+    <keybind key="W-y"> <action name="Execute" command="footclient -e yazi" /> </keybind>
     <keybind key="W-b"> <action name="Execute" command="librewolf" /> </keybind>
 
     <!-- pannels -->

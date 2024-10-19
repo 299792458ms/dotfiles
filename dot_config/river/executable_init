@@ -23,7 +23,7 @@ export _JAVA_AWT_WM_NONREPARENTING='1'
 export PATH="$PATH:/home/alec/.local/bin"
 
 # ··· ROUTINE ···
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river &
 foot -s &
 waybar -c ~/.config/waybar/river/config-river-bottom.jsonc -s ~/.config/waybar/river/style-river-bottom.css &
 # swaybg -m fill -i ~/Pictures/wallpapers/vaporwave/vw05.png &
@@ -35,6 +35,7 @@ swaync -s ~/.config/swaync/style_square.css &
 udiskie -a &
 shikane &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+cliphist wipe && wl-paste --watch cliphist store &
 
 # ··· OPTIONS ···
 riverctl background-color 0x1A1B26FF
@@ -90,6 +91,7 @@ riverctl map normal $mod+Alt+Control L spawn "hyprlock -c ~/.config/hypr/hyprloc
 # panels
 riverctl map normal $mod Minus spawn "swaync-client -t"
 riverctl map normal $mod O spawn "nwg-bar -t logout_river.json -s logout_square.css"
+riverctl map normal $mod Questiondown spawn "wlr-which-key ~/.config/wlr-which-key/quickpanel_square.yaml"
 
 # layout
 riverctl map normal $mod Comma send-layout-cmd rivertile "main-ratio -0.05"

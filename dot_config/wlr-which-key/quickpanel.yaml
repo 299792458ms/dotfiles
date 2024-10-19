@@ -1,4 +1,4 @@
-font: JetBrainsMono Nerd Font 12
+font: JetBrainsMono Nerd Font 13
 background: "#1A1B26FF"
 color: "#C0CAF5FF"
 border: "#AD8EE6FF"
@@ -28,7 +28,7 @@ menu:
   "c":
     desc: clipboard
     submenu:
-      "c": { desc: copy, cmd: cliphist list | fuzzel --dmenu | cliphist decode | wl-copy }
-      "d": { desc: delete, cmd: cliphist list | fuzzel --dmenu | cliphist delete }
+      "c": { desc: copy, cmd: cliphist list | fuzzel --dmenu --config ~/.config/fuzzel/clipboard.ini | cliphist decode | wl-copy }
+      "d": { desc: delete, cmd: cliphist list | fuzzel --dmenu --config ~/.config/fuzzel/clipboard.ini | cliphist delete }
       "w": { desc: wipe, cmd: cliphist wipe }
 
