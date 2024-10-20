@@ -188,8 +188,10 @@
     },
     "backlight": {
         "format": "bri:{percent}%",
-        "on-scroll-up": "brillo -qA 1 -u 200000",
-        "on-scroll-down": "brillo -qU 1 -u 200000",
+        // "on-scroll-up": "brillo -qA 1 -u 200000",
+        // "on-scroll-down": "brillo -qU 1 -u 200000",
+        "on-scroll-up": "brightnessctl s 5%+",
+        "on-scroll-down": "brightnessctl s 5%-",
         "tooltip": false
     },
     "tray": {

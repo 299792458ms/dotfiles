@@ -1,0 +1,22 @@
+max-history=5
+font=Jet Brains Mono Nerd Font 13
+sort=-time
+background-color=#1A1B26FF
+text-color=#C0CAF5FF
+width=300
+height=300
+border-color=#AD8EE6FF
+border-size=3
+anchor=top-center
+padding=3
+margin=10
+outer-margin=20
+text-alignment=center
+default-timeout=8000
+
+
+[urgency=low]
+
+[urgency=normal]
+
+[urgency=critical]

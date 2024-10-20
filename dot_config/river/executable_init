@@ -5,8 +5,7 @@ mod=Super
 term=foot
 termclient=footclient
 browser=librewolf
-# email=geary
-email=aerc
+email=geary
 termfilemanager=yazi
 filemanager=nautilus -w
 menu="fuzzel --config ~/.config/fuzzel/fuzzel-square.ini"
@@ -27,11 +26,11 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 foot -s &
 waybar -c ~/.config/waybar/river/config-river-bottom.jsonc -s ~/.config/waybar/river/style-river-bottom.css &
 # swaybg -m fill -i ~/Pictures/wallpapers/vaporwave/vw05.png &
+swaybg -m fill -i ~/Pictures/wallpapers/synthwave/sw06.png &
 gammastep &
 swayidle -w -C ~/.config/swayidle/ensure-lock-minimal &
 swayidle -C ~/.config/swayidle/idle-minimal &
 swaync -s ~/.config/swaync/style_square.css &
-# mako &
 udiskie -a &
 shikane &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -91,7 +90,7 @@ riverctl map normal $mod+Alt+Control L spawn "hyprlock -c ~/.config/hypr/hyprloc
 # panels
 riverctl map normal $mod Minus spawn "swaync-client -t"
 riverctl map normal $mod O spawn "nwg-bar -t logout_river.json -s logout_square.css"
-riverctl map normal $mod Questiondown spawn "wlr-which-key ~/.config/wlr-which-key/quickpanel_square.yaml"
+riverctl map normal $mod Bar spawn "wlr-which-key ~/.config/wlr-which-key/quickpanel_square.yaml"
 
 # layout
 riverctl map normal $mod Comma send-layout-cmd rivertile "main-ratio -0.05"
@@ -185,26 +184,26 @@ riverctl map normal $mod+Alt 0 toggle-focused-tags 512
 riverctl map normal $mod+Control 0 toggle-view-tags 512
 
 all_tags=$(((1 << 32) - 1))
-riverctl map normal $mod Apostrophe set-focused-tags $all_tags
-riverctl map normal $mod+Shit Apostrophe set-view-tags $all_tags
+riverctl map normal $mod A set-focused-tags $all_tags
+riverctl map normal $mod+Shit A set-view-tags $all_tags
 
-# huh
+# previous tags
 riverctl map normal $mod S send-to-previous-tags  
-riverctl map normal $mod A focus-previous-tags  
+riverctl map normal $mod P focus-previous-tags  
 
 # music
 music_tag=$((1 << 10 ))
-riverctl map normal $mod Plus spawn "~/scripts/launch/tags/river/music-tag.sh"
-riverctl map normal $mod+Shift Plus set-view-tags ${music_tag}
-riverctl map normal $mod+Alt Plus toggle-focused-tags ${music_tag}
+riverctl map normal $mod Apostrophe spawn "~/scripts/launch/tags/river/music-tag.sh"
+riverctl map normal $mod+Bar Apostrophe set-view-tags ${music_tag}
+riverctl map normal $mod+Bar Apostrophe toggle-focused-tags ${music_tag}
 all_but_music_tag=$(( ((1 << 32) - 1) ^ $music_tag ))
 riverctl spawn-tagmask ${all_but_music_tag}
 
 # mail
 mail_tag=$((1 << 11 ))
-riverctl map normal $mod Braceleft spawn "~/scripts/launch/tags/river/mail-tag.sh"
-riverctl map normal $mod+Shift Braceleft set-view-tags ${mail_tag}
-riverctl map normal $mod+Alt Braceleft toggle-focused-tags ${mail_tag}
+riverctl map normal $mod Questiondown spawn "~/scripts/launch/tags/river/mail-tag.sh"
+riverctl map normal $mod+Shift Questiondown set-view-tags ${mail_tag}
+riverctl map normal $mod+Alt Questiondown toggle-focused-tags ${mail_tag}
 all_but_music_tag=$(( ((1 << 32) - 1) ^ $mail_tag ))
 riverctl spawn-tagmask ${all_but_mail_tag}
 
@@ -223,8 +222,8 @@ do
     riverctl map -repeat $mode None XF86AudioMicMute      spawn "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
     # brightness
-    riverctl map -repeat $mode None XF86MonBrightnessUp   spawn 'brillo -qA 2 -u 200000'
-    riverctl map -repeat $mode None XF86MonBrightnessDown spawn 'brillo -qU 2 -u 200000'
+    riverctl map -repeat $mode None XF86MonBrightnessUp   spawn 'brightnessctl s 5%+'
+    riverctl map -repeat $mode None XF86MonBrightnessDown spawn 'brightnessctl s 5%-'
 
     # screnshots
     riverctl map $mode None Print spawn '~/scripts/screenshots/river/allmonitors.sh'
@@ -253,6 +252,7 @@ riverctl rule-add -app-id 'blueberry.py' float
 riverctl rule-add -app-id 'hyprland-share-picker' float
 riverctl rule-add -app-id 'galculator' float
 riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
+riverctl rule-add -app-id 'imv' float
 riverctl rule-add -title 'Open File' float
 riverctl rule-add -title 'Open Folder' float
 riverctl rule-add -title 'File Upload' float

@@ -108,18 +108,18 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "idl",
-            "deactivated": "idl"
+            "activated": "idl:on",
+            "deactivated": "idl:off"
         },
         "tooltip": false
     },
     "power-profiles-daemon": {
         "format": "{icon}",
         "format-icons": {
-            "default": "ppd",
-            "performance": "ppd",
-            "balanced": "ppd",
-            "power-saver": "ppd"
+            "default": "ppd:bal",
+            "performance": "ppd:per",
+            "balanced": "ppd:bal",
+            "power-saver": "ppd:sav"
         },
         "tooltip": false,
         "tooltip-format": "<tt><small>{profile}</small></tt>"
@@ -186,13 +186,16 @@
             "critical": 10
         },
         "format": "bat:{capacity}%",
+        "format-charging": "chr:{capacity}%",
         "interval": 120,
         "tooltip": true
     },
     "backlight": {
         "format": "bri:{percent}%",
-        "on-scroll-up": "brillo -qA 1 -u 200000",
-        "on-scroll-down": "brillo -qU 1 -u 200000",
+        // "on-scroll-up": "brillo -qA 1 -u 200000",
+        // "on-scroll-down": "brillo -qU 1 -u 200000",
+        "on-scroll-up": "brightnessctl s 5%+",
+        "on-scroll-down": "brightnessctl s 5%-",
         "tooltip": false
     },
     "cpu": {

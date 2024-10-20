@@ -96,14 +96,15 @@ tooltip {
 }
 
 #idle_inhibitor.activated {
-    border-top: 3px solid @fg;
-    margin-bottom: 3px;
+    color: @fg;
+    /* border-top: 3px solid @fg; */
+    /* margin-bottom: 3px; */
 }
 
 #power-profiles-daemon.performance {
     color: @red;
-    border-top: 3px solid @red;
-    margin-bottom: 3px;
+    /* border-top: 3px solid @red; */
+    /* margin-bottom: 3px; */
 }
 
 #power-profiles-daemon.balanced {
@@ -113,8 +114,8 @@ tooltip {
 
 #power-profiles-daemon.power-saver {
     color: @green;
-    border-top: 3px solid @green;
-    margin-bottom: 3px;
+    /* border-top: 3px solid @green; */
+    /* margin-bottom: 3px; */
 }
 
 #bluetooth.off,
@@ -158,14 +159,14 @@ tooltip {
 #battery.good.charging,
 #battery.good.plugged {
     color: @green;
-    border-top: 3px solid @green;
-    margin-bottom: 3px;
+    /* border-top: 3px solid @green; */
+    /* margin-bottom: 3px; */
 }
 
 #battery.limit.charging, #battery.limit.plugged {
     color: @limit;
-    border-top: 3px solid @limit;
-    margin-bottom: 3px;
+    /* border-top: 3px solid @limit; */
+    /* margin-bottom: 3px; */
     animation-name: blink-limit;
     animation-duration: 3s;
 }
