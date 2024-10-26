@@ -155,6 +155,7 @@
         "format-connected": "blu:con",
         "format-disconnected": "blu:dis",
         "format-disabled": "blue:rfk",
+        "on-click": "~/scripts/waybar/toggle-bluetooth.sh",
         "on-click-right": "footclient -T 'bluetooth420' -e bluetui",
         "tooltip": true,
         "tooltip-format": "{device_alias} {device_battery_percentage}%"

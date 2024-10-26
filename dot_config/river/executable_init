@@ -5,7 +5,6 @@ mod=Super
 term=foot
 termclient=footclient
 browser=librewolf
-email=geary
 termfilemanager=yazi
 filemanager=nautilus -w
 menu="fuzzel --config ~/.config/fuzzel/fuzzel-square.ini"
@@ -26,13 +25,18 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 foot -s &
 waybar -c ~/.config/waybar/river/config-river-bottom.jsonc -s ~/.config/waybar/river/style-river-bottom.css &
 # swaybg -m fill -i ~/Pictures/wallpapers/vaporwave/vw05.png &
-swaybg -m fill -i ~/Pictures/wallpapers/synthwave/sw06.png &
+# swaybg -m fill -i ~/Pictures/wallpapers/synthwave/sw06.png &
+# swaybg -m fill -i ~/Pictures/wallpapers/vaporwave/vw21.jpg &
+# swaybg -m fill -i ~/Pictures/wallpapers/synthwave/sw03.png &
+swaybg -m fill -i ~/Pictures/wallpapers/digital_landscape/dl18.png &
 gammastep &
 swayidle -w -C ~/.config/swayidle/ensure-lock-minimal &
 swayidle -C ~/.config/swayidle/idle-minimal &
-swaync -s ~/.config/swaync/style_square.css &
+# swaync -s ~/.config/swaync/style_square.css &
+mako -c ~/.config/mako/config-square &
 udiskie -a &
-shikane &
+# shikane &
+kanshi &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 cliphist wipe && wl-paste --watch cliphist store &
 
@@ -76,8 +80,8 @@ riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad drag enabled
 # launch
 riverctl map normal $mod B spawn "$browser"
 riverctl map normal $mod D spawn "$menu"
-riverctl map normal $mod Y spawn "$termclient $termfilemanager"
-riverctl map normal $mod I spawn "$term $system_monitor"
+riverctl map normal $mod Y spawn "$termclient -e $termfilemanager"
+riverctl map normal $mod I spawn "$termclient -e $system_monitor"
 riverctl map normal $mod Return spawn "$termclient"
 riverctl map normal $mod+Shift Return spawn "$term"
 riverctl map normal $mod Insert spawn "$termclient -T 'wifi420' -e impala"
@@ -183,6 +187,7 @@ riverctl map normal $mod+Shift 0 set-view-tags 512
 riverctl map normal $mod+Alt 0 toggle-focused-tags 512
 riverctl map normal $mod+Control 0 toggle-view-tags 512
 
+# all tags
 all_tags=$(((1 << 32) - 1))
 riverctl map normal $mod A set-focused-tags $all_tags
 riverctl map normal $mod+Shit A set-view-tags $all_tags
@@ -194,8 +199,8 @@ riverctl map normal $mod P focus-previous-tags
 # music
 music_tag=$((1 << 10 ))
 riverctl map normal $mod Apostrophe spawn "~/scripts/launch/tags/river/music-tag.sh"
-riverctl map normal $mod+Bar Apostrophe set-view-tags ${music_tag}
-riverctl map normal $mod+Bar Apostrophe toggle-focused-tags ${music_tag}
+riverctl map normal $mod+Shit Apostrophe set-view-tags ${music_tag}
+riverctl map normal $mod+Alt Apostrophe toggle-focused-tags ${music_tag}
 all_but_music_tag=$(( ((1 << 32) - 1) ^ $music_tag ))
 riverctl spawn-tagmask ${all_but_music_tag}
 
@@ -212,7 +217,7 @@ riverctl declare-mode passthrough
 riverctl map normal $mod F11 enter-mode passthrough
 riverctl map passthrough $mod F11 enter-mode normal
 
-# keybinds available in lockscreen too
+# volume, brightness, screenshots and music
 for mode in normal locked
 do
     # volume
@@ -229,17 +234,17 @@ do
     riverctl map $mode None Print spawn '~/scripts/screenshots/river/allmonitors.sh'
     riverctl map $mode $mod Print spawn '~/scripts/screenshots/river/allmonitors-edit.sh'
     riverctl map $mode None+Control Print spawn '~/scripts/screenshots/river/area.sh'
-done
 
-# music
-riverctl map normal $mod Q spawn 'mpc prev'
-riverctl map normal $mod W spawn 'mpc toggle'
-riverctl map normal $mod E spawn 'mpc next'
-riverctl map normal $mod+Shift Q spawn 'mpc seek -10'
-riverctl map normal $mod+Shift W spawn 'mpc stop'
-riverctl map normal $mod+Shift E spawn 'mpc seek +10'
-riverctl map normal $mod+Control Q spawn 'mpc seek 0'
-riverctl map normal $mod+Control W spawn 'mpc random'
+    # music
+    riverctl map $mode $mod Q spawn 'mpc prev'
+    riverctl map $mode $mod W spawn 'mpc toggle'
+    riverctl map $mode $mod E spawn 'mpc next'
+    riverctl map $mode $mod+Shift Q spawn 'mpc seek -10'
+    riverctl map $mode $mod+Shift W spawn 'mpc stop'
+    riverctl map $mode $mod+Shift E spawn 'mpc seek +10'
+    riverctl map $mode $mod+Control Q spawn 'mpc seek 0'
+    riverctl map $mode $mod+Control W spawn 'mpc random'
+done
 
 # ·· RULES ···
 

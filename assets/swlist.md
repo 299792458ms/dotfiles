@@ -58,6 +58,7 @@ All programs are listed by their package name and are available for Arch in Extr
 - [**zoxide**](https://github.com/ajeetdsouza/zoxide): Jump fast between directories.
 - [**fzf**](https://github.com/junegunn/fzf): Fuzzy search files.
 - [**ripgrep**](https://github.com/BurntSushi/ripgrep): Better *grep*.
+- [**fd**](https://github.com/sharkdp/fd): Simple, fast and user-friendly alternative to *find*.
 - [**eza**](https://github.com/eza-community/eza): Better *ls* and *tree*.
 - [**lsix**](https://github.com/hackerb9/lsix): An image previewer for terminals with sixel support.
 - [**tldr**](https://tldr.sh/): Summarized Manual Pages.
@@ -65,6 +66,7 @@ All programs are listed by their package name and are available for Arch in Extr
 - [**imv**](https://git.sr.ht/~exec64/imv/): Fast and simple cli image viewer.
 - [**diskonaut**](https://github.com/imsnif/diskonaut): Display disk usage by directories relative size.
 - [**cyme**](https://github.com/tuna-f1sh/cyme): Replacement for lsusb.
+- [**jq**](https://jqlang.github.io/jq/): Command-line JSON processor.
 
 ## GUI Utilities
 
@@ -112,6 +114,22 @@ All programs are listed by their package name and are available for Arch in Extr
     - [**nautilus-image-converter**](https://gitlab.gnome.org/coreyberla/nautilus-image-converter): Resize and rotate images in Nautilus
     - [**nautilus-open-any-terminal**](https://github.com/Stunkymonkey/nautilus-open-any-terminal): Open terminals in selected directory.
 - [**yazi**](https://yazi-rs.github.io/): Lightning fast TUI file manager. Its great out-of-the-box with great default too(unless you use Emacs).
+    - [**unarchiver***](https://github.com/MacPaw/XADMaster): For managing archives.
+    - [**nerd-fonts**](https://github.com/ryanoasis/nerd-fonts): For icon support.
+    - [**ffmpegthubmnailer**](https://github.com/dirkvdb/ffmpegthumbnailer): For video thumbnails
+    - [**p7zip(7-zip)**](https://github.com/p7zip-project/p7zip): For archive extraction and preview
+    - [**jq**](https://jqlang.github.io/jq/): For JSON preview
+    - [**poppler**](https://gitlab.freedesktop.org/poppler/poppler): For PDF preview
+    - [**fd**](https://github.com/sharkdp/fd): For file searching.
+    - [**ripgrep**](https://github.com/BurntSushi/ripgrep): For file content searching
+    - [**fzf**](https://github.com/junegunn/fzf): For quick subtree navigation
+    - [**zoxide**](https://github.com/ajeetdsouza/zoxide): For historical directories navigation.
+    - [**wl-clipboard**](https://github.com/bugaevc/wl-clipboard): For system clipboard support.
+
+## Clipboard
+
+- [**wl-clipboard**](https://github.com/bugaevc/wl-clipboard): Clipboard for wayland.
+- [**cliphist**](https://github.com/sentriz/cliphist): Simple and small clipboard manager.
 
 ## Media
 
@@ -128,7 +146,7 @@ All programs are listed by their package name and are available for Arch in Extr
 
 ## Fonts
 
-- [**ttf-jetbrains-mono-nerd**](https://www.nerdfonts.com/)[^6]
+- [**ttf-jetbrains-mono-nerd**](https://github.com/ryanoasis/nerd-fonts)[^6]
 - [**noto-fonts-emoji**](https://fonts.google.com/noto/specimen/Noto+Emoji)
 - [**noto-fonts-cjk**](https://github.com/notofonts/noto-cjk): Korean, Japanese & Chinese Fonts
 

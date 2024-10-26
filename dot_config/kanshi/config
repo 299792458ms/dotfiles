@@ -1,0 +1,42 @@
+profile laptop-builtin {
+	exec notify-send 'kanshi' 'profile laptop-builtin applied'
+	output eDP-1 enable
+}
+
+profile hdmi-right {
+	exec notify-send 'kanshi' 'profile hdmi-right applied'
+	output eDP-1 {
+		enable
+		mode 1920x1080
+		position 0,0
+	}
+	output HDMI-A-1 {
+		enable
+		mode 1920x1080
+		position 1920,0
+	}
+}
+
+profile hdmi-left {
+	exec notify-send 'kanshi' 'profile hdmi-left applied'
+	output eDP-1 {
+		enable
+		mode 1920x1080
+		position 0,0
+	}
+	output HDMI-A-1 {
+		enable
+		mode 1920x1080
+		position -1920,0
+	}
+}
+
+profile switcheroo {
+	exec notify-send 'kanshi' 'profile switcheroo applied'
+	output eDP-1 disable
+	output HDMI-A-1 {
+		enable
+		mode 1920x1080
+		position 0,0
+	}
+}

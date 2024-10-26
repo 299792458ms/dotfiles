@@ -148,8 +148,10 @@ bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 # brightness
-bindsym --locked XF86MonBrightnessUp exec brillo -qA 2 -u 200000
-bindsym --locked XF86MonBrightnessDown exec brillo -qU 2 -u 200000
+bindsym --locked XF86MonBrightnessUp exec brightnessctl s 5%+
+bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
+# bindsym --locked XF86MonBrightnessUp exec brillo -qA 2 -u 200000
+# bindsym --locked XF86MonBrightnessDown exec brillo -qU 2 -u 200000
 
 # screenshots
 bindsym --locked alt+print         exec  ~/scripts/screenshots/sway/allmonitors.sh

@@ -6,6 +6,8 @@ cursorline = false
 cursorcolumn = false
 line-number = "absolute"
 color-modes = true
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+rulers = [80]
 
 [editor.cursor-shape]
 insert = "block"
@@ -26,3 +28,5 @@ mode.select = "SEL"
 [editor.soft-wrap]
 enable = true
 # wrap-at-text-width = true
+
+

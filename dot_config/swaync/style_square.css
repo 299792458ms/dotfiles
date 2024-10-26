@@ -216,11 +216,11 @@
 
 .notification-row .notification-background .notification .notification-action:first-child {
     /* add bottom border radius to eliminate clipping */
-    border-bottom-left-radius: 12px;
+    border-bottom-left-radius: 0px;
 }
 
 .notification-row .notification-background .notification .notification-action:last-child {
-    border-bottom-right-radius: 12px;
+    border-bottom-right-radius: 0px;
     border-right: none;
 }
 

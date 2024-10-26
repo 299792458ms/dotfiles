@@ -221,8 +221,10 @@ binds {
     Mod+Minus { spawn "swaync-client" "-t"; }
 
     // brightness
-    XF86MonBrightnessUp { spawn "brillo" "-qA" "2" "-u" "200000"; }
-    XF86MonBrightnessDown { spawn "brillo" "-qU" "2" "-u" "200000"; }
+    XF86MonBrightnessUp { spawn "brightnessctl" "s" "5%+"; }
+    XF86MonBrightnessDown { spawn "brightnessctl" "s" "5%-"; }
+    // XF86MonBrightnessUp { spawn "brillo" "-qA" "2" "-u" "200000"; }
+    // XF86MonBrightnessDown { spawn "brillo" "-qU" "2" "-u" "200000"; }
 
     // volume
     XF86AudioRaiseVolume allow-when-locked=true { spawn "/home/alec/scripts/vol_up.sh"; }

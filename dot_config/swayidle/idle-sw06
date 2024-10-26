@@ -1,5 +1,6 @@
 # idle-sw06
 
-timeout 180 "brillo -O; brillo -S 10 -u 200000" resume "brillo -I -u 200000"
+#timeout 180 "brillo -O; brillo -S 10 -u 200000" resume "brillo -I -u 200000"
+timeout 180 "brightnessctl -s; brightnessctl s 10%" resume "brightnessctl -r"
 timeout 200 "hyprctl dispatch dpms off" resume "hyprctl dispatch dpms on"
 timeout 600 "systemctl suspend"

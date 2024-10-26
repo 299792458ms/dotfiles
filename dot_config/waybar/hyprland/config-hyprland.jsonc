@@ -3,6 +3,7 @@
 {
     "reload_style_on_change": true,
     "layer": "top",
+    "exclusive": true,
     "height": 35,
     "spacing": 0,
     "start_hidden": false,
@@ -140,6 +141,7 @@
             "off": "󰂯", 
             "disabled": "󰂲"
         },
+        "on-click": "~/scripts/waybar/toggle-bluetooth.sh",
         "on-click-right": "footclient -T 'bluetooth420' -e bluetui",
         "tooltip": true,
         "tooltip-format": "{device_alias} {device_battery_percentage}%"

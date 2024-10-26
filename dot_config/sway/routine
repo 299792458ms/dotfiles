@@ -3,7 +3,8 @@
 exec foot -s &
 exec gammastep &
 # exec hyprpaper -c ~/.config/hypr/hyprpaper/hp-sw06.conf
-exec shikane &
+# exec shikane &
+exec kanshi &
 exec swayidle -w -C ~/.config/swayidle/ensure-lock-sw06 &
 exec swayidle -C ~/.config/swayidle/idle-sw06 &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -11,5 +12,5 @@ exec swaync -s ~/.config/swaync/style_square.css
 exec wl-paste --watch cliphist store
 exec rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 500
 
-exec_always sleep 1.5; shikanectl reload
+exec_always sleep 1.5; kanshictl reload
 

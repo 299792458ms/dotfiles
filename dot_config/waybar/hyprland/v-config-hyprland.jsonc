@@ -136,7 +136,8 @@
             "off": "󰂲", 
             "disabled": "󰂲"
         },
-        "on-click-right": "blueberry"
+        "on-click": "~/scripts/waybar/toggle-bluetooth.sh",
+        "on-click-right": "footclient -T 'bluetooth420' -e bluetui",
     },
     "network": {
         "format-wifi": "{icon}",

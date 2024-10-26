@@ -3,21 +3,25 @@
 {
     "reload_style_on_change": true,
     "layer": "top",
+    "exclusive": true,
     "height": 38,// 18 px font -> 31 height // 16px font -> 28 height
     "spacing": 0,
     "position": "bottom",
+    "fixed-center": true,
     "start_hidden": false,
     "modules-left": [
         "custom/logo",
-        "river/tags"
+        // "clock",
+        "river/tags"  
+        // "tray"
     ],
-    "modules-right": [
-        //"custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
+     "modules-right": [
+        // "custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
+        "tray",
         "idle_inhibitor",
         "power-profiles-daemon",
         "pulseaudio#pa1",
         "pulseaudio#pa2",
-        "tray",
         "bluetooth",
         "network",
         "battery",
@@ -26,7 +30,7 @@
         // "memory",
         "clock"
         // "group/powermenu"
-    ],
+     ],
     "custom/logo": {
         "format": "󰣇",
         "tooltip": false
@@ -77,8 +81,8 @@
         ]
     },
     "clock": {
-        // "format": "{:%H:%M}",
-        "format": "{:%Y-%m-%d %H:%M}",
+        "format": "{:%H:%M}",
+        // "format": "{:%Y-%m-%d %H:%M}",
         // "format-alt": "{:%Y-%m-%d}",
         "interval": 60,
         "calendar": {
@@ -158,6 +162,7 @@
         "format-connected": "blu:con",
         "format-disconnected": "blu:dis",
         "format-disabled": "blue:rfk",
+        "on-click": "~/scripts/waybar/toggle-bluetooth.sh",
         "on-click-right": "footclient -T 'bluetooth420' -e bluetui",
         "tooltip": true,
         "tooltip-format": "{device_alias} {device_battery_percentage}%"
@@ -199,11 +204,11 @@
         "tooltip": false
     },
     "cpu": {
-        "format": "cpu: {usage}%",
+        "format": "cpu:{usage}%",
         "interval": 1
     },
     "memory": {
-        "format": "mem: {percentage}%",
+        "format": "mem:{percentage}%",
         "interval": 1
     },
     "tray": {

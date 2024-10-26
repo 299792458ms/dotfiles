@@ -22,9 +22,9 @@ menu:
   "m":
     desc: monitors
     submenu:
-      "r": { desc: HMDI-RIGHT, cmd: shikanectl switch 'hdmi-hotplug-right' }
-      "l": { desc: HMDI-LEFT, cmd: shikanectl switch 'hdmi-hotplug-left' }
-      "s": { desc: SWITCHEROO, cmd: shikanectl switch switcheroo }
+      "r": { desc: HMDI-RIGHT, cmd: kanshictl switch 'hdmi-hotplug-right' }
+      "l": { desc: HMDI-LEFT, cmd: kanshictl switch 'hdmi-hotplug-left' }
+      "s": { desc: SWITCHEROO, cmd: kanshictl switch switcheroo }
   "c":
     desc: clipboard
     submenu:
