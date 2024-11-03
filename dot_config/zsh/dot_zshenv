@@ -1,3 +1,4 @@
+export PATH="$PATH:/home/alec/.local/share/gem/ruby/3.3.0/bin"
 export PATH="$PATH:/home/alec/.cargo/bin"
 export PATH="$PATH:/home/alec/.local/bin"
 export SUDO_EDITOR='/usr/bin/helix'
@@ -11,3 +12,4 @@ export GOPATH="$XDG_DATA_HOME"/go
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 # export SHIKANE_LOG='trace'
 export STARSHIP_CONFIG="$HOME"/.config/starship/starship.toml
+export XDG_CURRENT_DESKTOP='river'

@@ -125,7 +125,7 @@ riverctl map-pointer normal $mod BTN_MIDDLE toggle-float
 riverctl declare-mode move
 riverctl map normal $mod M enter-mode move  
 riverctl map move $mod M enter-mode normal
-riverctl map move $mod Escape enter-mode normal  
+riverctl map move $mod N enter-mode normal  
 riverctl map move $mod R enter-mode resize
 riverctl map -repeat move None H move left 69
 riverctl map -repeat move None J move down 69
@@ -136,7 +136,7 @@ riverctl map -repeat move None L move right 69
 riverctl declare-mode resize
 riverctl map normal $mod R enter-mode resize
 riverctl map resize $mod R enter-mode normal  
-riverctl map resize $mod Escape enter-mode normal  
+riverctl map resize $mod N enter-mode normal  
 riverctl map resize $mod M enter-mode move  
 riverctl map -repeat resize None H resize horizontal -30
 riverctl map -repeat resize None J resize vertical -30
