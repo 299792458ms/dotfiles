@@ -1,2 +1,2 @@
-lock "pidof hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-minimal.conf"
-before-sleep "pgrep hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-minimal.conf"
+lock "pidof waylock || waylock -fork-on-lock -init-color 0x7FCFFF  -input-color 0xAD8EE6 -fail-color 0xF7768E"
+before-sleep "pidof waylock || waylock -fork-on-lock -init-color 0x7FCFFF-input-color 0xAD8EE6 -fail-color 0xF7768E"

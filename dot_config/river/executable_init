@@ -89,7 +89,7 @@ riverctl map normal $mod Delete spawn "$termclient -T 'bluetooth420' -e bluetui"
 
 # river
 riverctl map normal $mod+Shift Backspace exit
-riverctl map normal $mod+Alt+Control L spawn "hyprlock -c ~/.config/hypr/hyprlock/hl-minimal.conf"
+riverctl map normal $mod+Alt+Control L spawn "loginctl lock-session"
 
 # panels
 riverctl map normal $mod Minus spawn "swaync-client -t"
