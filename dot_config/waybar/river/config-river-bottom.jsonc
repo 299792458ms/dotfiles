@@ -12,11 +12,12 @@
     "modules-left": [
         "custom/logo",
         // "clock",
-        "river/tags"  
+        "river/tags",
+        "river/mode"
         // "tray"
     ],
      "modules-right": [
-        // "custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
+        // 12custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
         "tray",
         "idle_inhibitor",
         "power-profiles-daemon",
@@ -26,8 +27,8 @@
         "network",
         "battery",
         "backlight",
-        // "cpu",
-        // "memory",
+        "cpu",
+        "memory",
         "clock"
         // "group/powermenu"
      ],
@@ -36,7 +37,7 @@
         "tooltip": false
     },
     "river/tags": {
-        "num-tags": 32,
+        "num-tags": 12,
         "set-tags": [
             1,
             2,
@@ -79,6 +80,9 @@
             "µ",
             "κ"
         ]
+    },
+    "river/mode": {
+      "format": "{}"  
     },
     "clock": {
         // "format": "{:%H:%M}",

@@ -1,15 +1,16 @@
 /* tokyonight-night colors */
-@define-color  bg        rgba(26,27,38,1);                     
-@define-color  trbg      rgba(26,27,38,0.9);                   
-@define-color  fg        rgba(192,202,245,1);                  
-@define-color  dimfg     rgba(92,102,145,1);               
-@define-color  red       rgba(247,118,142,1);                  
-@define-color  green     rgba(158,206,106,1);                  
-@define-color  yellow    rgba(224,175,104,1);                  
-@define-color  blue      rgba(122,162,247,1);                  
-@define-color  magenta   rgba(173,142,230,1);                  
-@define-color  cyan      rgba(127,207,255,1);                  
-@define-color  white     rgba(120,124,153,1);                  
-@define-color  warning   rgba(224,175,104,1);     /*  yellow   */
-@define-color  critical  rgba(247,118,142,1);     /*  red      */
-@define-color  limit     rgba(173,142,230,1);     /*  magenta  */
+@define-color  bg        rgba(26,27,38,1);                  
+@define-color  trbg      rgba(26,27,38,0.9);                
+@define-color  fg        rgba(192,202,245,1);               
+@define-color  dimfg     rgba(92,102,145,1);                
+@define-color  red       rgba(247,118,142,1);               
+@define-color  green     rgba(158,206,106,1);               
+@define-color  yellow    rgba(224,175,104,1);               
+@define-color  blue      rgba(122,162,247,1);               
+@define-color  magenta   rgba(173,142,230,1);               
+@define-color  cyan      rgba(127,207,255,1);               
+@define-color  white     rgba(120,124,153,1);               
+@define-color  warning   rgba(224,175,104,1);  /*  yellow   */
+@define-color  critical  rgba(247,118,142,1);  /*  red      */
+@define-color  limit     rgba(173,142,230,1);  /*  magenta  */
+@define-color  inv       rgba(0,0,0,0);

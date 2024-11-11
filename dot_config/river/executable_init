@@ -92,7 +92,7 @@ riverctl map normal $mod+Shift Backspace exit
 riverctl map normal $mod+Alt+Control L spawn "loginctl lock-session"
 
 # panels
-riverctl map normal $mod Minus spawn "swaync-client -t"
+# riverctl map normal $mod Minus spawn "swaync-client -t" # not using swaync anymore
 riverctl map normal $mod O spawn "nwg-bar -t logout_river.json -s logout_square.css"
 riverctl map normal $mod Bar spawn "wlr-which-key ~/.config/wlr-which-key/quickpanel_square.yaml"
 
@@ -127,6 +127,7 @@ riverctl map normal $mod M enter-mode move
 riverctl map move $mod M enter-mode normal
 riverctl map move $mod N enter-mode normal  
 riverctl map move $mod R enter-mode resize
+riverctl map move $mod V toggle-float
 riverctl map -repeat move None H move left 69
 riverctl map -repeat move None J move down 69
 riverctl map -repeat move None K move up 69
@@ -138,6 +139,7 @@ riverctl map normal $mod R enter-mode resize
 riverctl map resize $mod R enter-mode normal  
 riverctl map resize $mod N enter-mode normal  
 riverctl map resize $mod M enter-mode move  
+riverctl map resize $mod V toggle-float
 riverctl map -repeat resize None H resize horizontal -30
 riverctl map -repeat resize None J resize vertical -30
 riverctl map -repeat resize None K resize vertical 30
@@ -182,15 +184,15 @@ do
 done
 
 # 10th tag
-riverctl map normal $mod 0 set-focused-tags 512
-riverctl map normal $mod+Shift 0 set-view-tags 512
-riverctl map normal $mod+Alt 0 toggle-focused-tags 512
-riverctl map normal $mod+Control 0 toggle-view-tags 512
+riverctl map normal $mod 0 set-focused-tags $((1 << (9)))
+riverctl map normal $mod+Shift 0 set-view-tags $((1 << (9)))
+riverctl map normal $mod+Alt 0 toggle-focused-tags $((1 << (9)))
+riverctl map normal $mod+Control 0 toggle-view-tags $((1 << (9)))
 
 # all tags
 all_tags=$(((1 << 32) - 1))
 riverctl map normal $mod A set-focused-tags $all_tags
-riverctl map normal $mod+Shit A set-view-tags $all_tags
+riverctl map normal $mod+Shit A set-view-tags $all_tags # this does not make sense, you cant set-view-tags to all tags, it has to be only one.
 
 # previous tags
 riverctl map normal $mod S send-to-previous-tags  
