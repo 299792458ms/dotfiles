@@ -27,8 +27,8 @@
         "network",
         "battery",
         "backlight",
-        "cpu",
-        "memory",
+        // "cpu",
+        // "memory",
         "clock"
         // "group/powermenu"
      ],

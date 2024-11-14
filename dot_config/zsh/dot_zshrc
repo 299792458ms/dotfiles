@@ -9,9 +9,9 @@ zstyle :compinstall filename '/home/alec/.zshrc'
 autoload -Uz compinit add-zsh-hook
 compinit
 
-precmd() {
-    print -Pn "\e]133;A\e\\"
-}
+# precmd() {
+#     print -Pn "\e]133;A\e\\"
+# }
 
 NEWLINE=$'\n'
 PS1="%F{magenta}%n@%m%f %F{blue}%9~%f %F{magenta}>>>%f "
