@@ -26,6 +26,8 @@ bindkey '^k' kill-line
 
 # aliases
 alias sudo='sudo '
+alias e='helix'
+alias se='sudoedit'
 alias y='yazi'
 alias hlx='helix'
 alias tree='eza -T --icons=always'

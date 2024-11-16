@@ -1,0 +1,7 @@
+/* .librewolf/(default_profile)/chrome/userChrome.css */
+
+
+/*** remove annoying ass tooltips ***/
+tooltip {
+  display: none !important;
+}

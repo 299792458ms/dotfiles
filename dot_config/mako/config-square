@@ -1,0 +1,31 @@
+# options
+max-history=5
+sort=-time
+default-timeout=6000
+
+# style
+font=Jet Brains Mono Nerd Font 13
+background-color=#1A1B26FF
+text-color=#C0CAF5FF
+border-color=#AD8EE6FF
+width=300
+height=300
+border-size=3
+border-radius=0
+anchor=top-center
+padding=5
+margin=5
+outer-margin=10
+text-alignment=center
+max-icon-size=64
+icon-location=left
+icons=0
+
+[urgency=low]
+
+[urgency=normal]
+
+[urgency=critical]
+border-color=#F7768EFF
+default-timeout=0
+
