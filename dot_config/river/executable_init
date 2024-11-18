@@ -99,7 +99,7 @@ riverctl map normal $mod+Alt+Control L spawn "loginctl lock-session"
 
 # panels
 # riverctl map normal $mod Minus spawn "swaync-client -t" # not using swaync anymore
-riverctl map normal $mod O spawn "nwg-bar -t logout_river.json -s logout_square.css"
+riverctl map normal $mod O spawn "nwg-bar -t logout.json -s logout_square.css"
 riverctl map normal $mod Bar spawn "wlr-which-key ~/.config/wlr-which-key/quickpanel_square.yaml"
 
 # layout

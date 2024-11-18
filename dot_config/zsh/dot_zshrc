@@ -9,10 +9,6 @@ zstyle :compinstall filename '/home/alec/.zshrc'
 autoload -Uz compinit add-zsh-hook
 compinit
 
-# precmd() {
-#     print -Pn "\e]133;A\e\\"
-# }
-
 NEWLINE=$'\n'
 PS1="%F{magenta}%n@%m%f %F{blue}%9~%f %F{magenta}>>>%f "
 
@@ -30,8 +26,8 @@ alias e='helix'
 alias se='sudoedit'
 alias y='yazi'
 alias hlx='helix'
-alias tree='eza -T --icons=always'
-alias ls='eza --group-directories-first --color=always --icons=always'
+alias tree='eza -T --color=auto --icons=always'
+alias ls='eza --group-directories-first --color=auto --icons=auto'
 alias ff='fastfetch'
 alias ffb='fastfetch -c ~/.config/fastfetch/custom/config-bolt.jsonc'
 alias cz='chezmoi'

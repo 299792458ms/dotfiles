@@ -1,11 +1,15 @@
 [
     {
         "label": "󰁒",
-        "exec": "hyprctl dispatch exit"
+        "exec": "loginctl terminate-session self"
     },
     {
         "label": "󰏥",
         "exec": "systemctl suspend"
+    },
+    {
+        "label": "󰻂",
+        "exec": "systemctl hibernate"
     },
     {
         "label": "󱍷",

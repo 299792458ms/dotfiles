@@ -4,11 +4,11 @@ All programs are listed by their package name and are available for Arch in Extr
 
 ## Window Managers
 
-- [**river**](https://codeberg.org/river/river)[^1]: Minimal yet very functional dynamic window manager.
+- [**river**](https://codeberg.org/river/river): Minimal yet very functional dynamic window manager.
 - [**hyprland**](https://github.com/hyprwm/Hyprland): Good looks, 2 built-in layouts, vast window and workspace rules, special workspaces and more.
 - [**niri**](https://github.com/YaLTeR/niri)[^1]: Scrolling window manager, works very great with laptops.
-- [**sway**](https://github.com/swaywm/sway): Trusty, functional, fast and very well supported.
-- [**labwc**](https://github.com/labwc/labwc): Stacking window manager inspired in Openbox
+- [**sway**](https://github.com/swaywm/sway)[^1]: Trusty, functional, fast and very well supported.
+- [**labwc**](https://github.com/labwc/labwc)[^1]: Stacking window manager inspired in Openbox
 
 ## Network & Communications
 
@@ -16,7 +16,7 @@ All programs are listed by their package name and are available for Arch in Extr
 - [**fractal**](https://gitlab.gnome.org/World/fractal): Matrix client designed for Gnome.
 - [**geary**](https://gitlab.gnome.org/GNOME/geary): Nice and Simple GTK3 email client.
 - [**aerc**](https://git.sr.ht/~rjarry/aerc): TUI Email client.
-- [**gnome-podcasts**](): Nice GTK app for your podcasts.
+- [**gnome-podcasts**](https://gitlab.gnome.org/World/podcasts): Nice GTK app for your podcasts.
 
 ## Connectivity
 
@@ -51,7 +51,7 @@ All programs are listed by their package name and are available for Arch in Extr
 
 - [**zsh**](https://www.zsh.org/)[^3]: Interactive shell that integrates features of bash, ksh and tcsh. 
 - [**foot**](https://codeberg.org/dnkl/foot): Fast and light weight terminal for wayland.
-- [**neovim**](https://github.com/neovim/neovim): Modern version of vim.
+- [**neovim**](https://github.com/neovim/neovim)[^1]: Modern version of vim.
 - [**helix**](https://github.com/helix-editor/helix): Editor inpired in Neovim and Kakoune.
 - [**starship**](https://github.com/starship/starship): Fast and customizable shell prompt (it will make you shell a little slower anyway).
 - [**bat**](https://github.com/sharkdp/bat): Cat on steroids. No cats were harmed...
@@ -92,6 +92,7 @@ All programs are listed by their package name and are available for Arch in Extr
 ## Notification Daemons
 
 - [**swaync**](https://github.com/ErikReider/SwayNotificationCenter): Notification daemon that comes with a slick _notification center_ panel.
+- [**mako**](https://github.com/emersion/mako): Simple and lightweight notification daemon.
 
 ## Wallpaper
 
@@ -114,7 +115,7 @@ All programs are listed by their package name and are available for Arch in Extr
     - [**nautilus-image-converter**](https://gitlab.gnome.org/coreyberla/nautilus-image-converter): Resize and rotate images in Nautilus
     - [**nautilus-open-any-terminal**](https://github.com/Stunkymonkey/nautilus-open-any-terminal): Open terminals in selected directory.
 - [**yazi**](https://yazi-rs.github.io/): Lightning fast TUI file manager. Its great out-of-the-box with great default too(unless you use Emacs).
-    - [**unarchiver***](https://github.com/MacPaw/XADMaster): For managing archives.
+    - [**unarchiver**](https://github.com/MacPaw/XADMaster): For managing archives.
     - [**nerd-fonts**](https://github.com/ryanoasis/nerd-fonts): For icon support.
     - [**ffmpegthubmnailer**](https://github.com/dirkvdb/ffmpegthumbnailer): For video thumbnails
     - [**p7zip(7-zip)**](https://github.com/p7zip-project/p7zip): For archive extraction and preview
