@@ -1,0 +1,10 @@
+
+@define-color bg rgba(25, 25, 25, 1);
+@define-color fg rgba(238, 238, 238, 1);
+@define-color dimfg rgba(85, 85, 85, 1);
+@define-color red rgba(238, 0, 0, 1);
+@define-color green rgba(119, 238, 0, 1);
+@define-color yellow rgba(238, 238, 0, 1);
+@define-color blue rgba(0, 119, 238, 1);
+@define-color magenta rgba(119, 0, 238, 1);
+@define-color cyam rgba(0, 238, 238, 1);

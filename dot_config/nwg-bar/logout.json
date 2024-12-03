@@ -4,7 +4,7 @@
         "exec": "loginctl terminate-session self"
     },
     {
-        "label": "󰏥",
+        "label": "󰍶",
         "exec": "systemctl suspend"
     },
     {

@@ -34,26 +34,26 @@ button, image {
 }
 
 button {
-    color: @dimfg;
+  color: @dimfg;
 	padding-left: 10px;
 	padding-right: 10px;
 	margin: 5px;
-    border: none;
-    transition: 0.23s;
+  border: none;
+  transition: 0.23s;
 }
 
 button:focus {
-    color: @fg;
+  color: @fg;
 	padding-left: 5px;
 	padding-right: 5px;
 	margin: 0px;
-    border: none;
+  border: none;
 }
 
 button:hover {
-    color: @blue;
-    box-shadow: none;
-    text-shadow: none;
-    background: none;
-    transition: 0.23s;
+  color: @blue;
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  transition: 0.23s;
 }

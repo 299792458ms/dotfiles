@@ -1,4 +1,4 @@
-theme = "tokyonight"
+theme = "lightning"
 
 [editor]
 mouse = true
@@ -7,14 +7,14 @@ cursorcolumn = false
 line-number = "absolute"
 color-modes = true
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
-rulers = [80]
+# rulers = [80]
 
 [editor.cursor-shape]
 insert = "block"
 
 [editor.indent-guides]
 render = true
-character = "┆" # Some characters that work well: "▏", "┆", "┊", "⸽","╎""
+character = "┆" # Some characters that work well: "▏", "┆", "┊", "⸽","╎"
 skip-levels = 0
 
 [editor.statusline]
@@ -27,6 +27,16 @@ mode.select = "SEL"
 
 [editor.soft-wrap]
 enable = true
-# wrap-at-text-width = true
+wrap-at-text-width = false
+wrap-indicator = ''
 
+[keys]
+  [keys.normal]
+    A-h = "jump_view_left"
+    A-l = "jump_view_right"
+    A-j = "jump_view_down"
+    A-k = "jump_view_up"
+    C-i = "insert_mode"
 
+  [keys.insert]
+    C-n = "normal_mode"

@@ -1,9 +1,7 @@
-/* W A Y B A R    S T Y L E */
-
-@import "../colors/tokyonight-night.css";
+@import "../colors/lightning.css";
 
 * {
-    font-size: 20px;
+    font-size: 20;
     font-family: "Jet Brains Mono Nerd Font";
     font-weight: bold;
 }
@@ -22,11 +20,16 @@ tooltip {
     border-radius: 0;
 }
 
+#tags {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
 #tags button {
     color: @dimfg;
     padding: 0 5px;
     border: none;
-    transition: 0.23s;
+    /* transition: 0.23s; */
     font-size: 25px;
     padding: 0 5px 0 5px;
 }
@@ -36,51 +39,75 @@ tooltip {
 }
 
 #tags button.focused {
-    color: @magenta;
+    color: @dimfg;
+    /* background: @magenta; */
     border-radius: 0;
-    border-top: 3px solid @magenta;
+    border-top: 3px solid @yellow;
+    margin-bottom: 3px;
+}
+
+#tags button.focused.occupied {
+    color: @fg;
+    border-radius: 0;
+    border-top: 3px solid @yellow;
     margin-bottom: 3px;
 }
 
 #tags button.urgent {
+    color: @critical;
+    border-radius: 0;
+    transition: none;
+    animation: blink-critical 2s infinite;
+}
+
+#tags button.urgent.focused {
     color: @red;
     border-radius: 0;
     border-top: 3px solid @red;
     margin-bottom: 3px;
 }
 
-
 #tags button:hover {
     box-shadow: none;
     text-shadow: none;
     background:none;
     transition: none;
-    color: @cyan;
-    border-color: @cyan;
+    /* color: @cyan; */
+    /* border-color: @cyan; */
 }
 
 #mode {
     padding: 3px 6px 0 6px;
     color: @fg;
     border-radius: 0;
-    /* margin: 0 2px 0 2px; */
-    
 }
 
 #mode.normal {
+    color: @yellow;
+    background: @inv;
+} 
+
+#mode.resize{
+    color: @magenta;
+    background: @inv;
+} 
+
+#mode.move{
+    color: @green;
+    background: @inv;
+} 
+
+#mode.locked {
     color: @inv
 }
 
-
 /* left modules */
-
 #custom-logo {
-    color: @blue;
+    color: @yellow;
     padding: 3px 10px 0 10px;
 }
 
 /* right modules*/
-
 #custom-updates,
 #idle_inhibitor,
 #power-profiles-daemon,
@@ -99,7 +126,9 @@ tooltip {
 #custom-lock,
 #custom-suspend,
 #custom-reboot {
-    padding: 3px 6px 0 6px;
+    padding-top: 3px;
+    padding-left: 0.5rem;
+    margin: 0;
     color: @fg;
     border-radius: 0;
     /* margin: 0 2px 0 2px; */
@@ -216,8 +245,7 @@ tooltip {
     font-weight: bolder;
 }
 
-/* blinking animation */
-
+/* blinking animations */
 @keyframes blink-warning {
     50% {
         opacity: 0.5;

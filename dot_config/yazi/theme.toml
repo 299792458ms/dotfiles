@@ -5,7 +5,7 @@
 cwd = { fg = "#a9b1d6", italic = true }
 
 # Hovered
-hovered         = { fg = "#24283b", bg = "#7aa2f7" }
+hovered         = { fg = "#1a1b26", bg = "#7aa2f7" }
 preview_hovered = { underline = true }
 
 # Find
@@ -13,23 +13,24 @@ find_keyword  = { fg = "#16161e", bg = "#ff9e64", bold = true }
 find_position = { fg = "#0db9d7", bg = "#192b38", bold = true }
 
 # Marker
-marker_copied   = { fg = "#73daca", bg = "#73daca" }
-marker_cut      = { fg = "#f7768e", bg = "#f7768e" }
-marker_marked   = { fg = "#bb9af7", bg = "#bb9af7" }
-marker_selected = { fg = "#7aa2f7", bg = "#7aa2f7" }
+marker_copied   = { fg = "#9ece6a", bg = "#9ece6a" }
+marker_cut      = { fg = "#f7768e", bg = "#e0af68" }
+marker_marked   = { fg = "#bb9af7", bg = "#7dcfff" }
+marker_selected = { fg = "#7aa2f7", bg = "#bb9af7" }
 
 # Tab
-tab_active   = { fg = "#c0caf5", bg = "#292e42" }
-tab_inactive = { fg = "#3b4261", bg = "#1a1b26" }
-tab_width    = 1
+tab_active   = { fg = "#1a1b26", bg = "#bb9af7" }
+tab_inactive = { fg = "#c0caf5", bg = "#1a1b26" }
+tab_width    = 2
 
 # Count
-count_copied   = { fg = "#c0caf5", bg = "#41a6b5" }
-count_cut      = { fg = "#c0caf5", bg = "#db4b4b" }
-count_selected = { fg = "#c0caf5", bg = "#3d59a1" }
+count_copied   = { fg = "#1a1b26", bg = "#9ece6a" }
+count_cut      = { fg = "#1a1b26", bg = "#e0af68" }
+count_selected = { fg = "#1a1b26", bg = "#3d59a1" }
+
 # Border
 border_symbol = "│"
-border_style  = { fg = "#27a1b9" }
+border_style  = { fg = "#bb9af7" }
 
 [status]
 separator_open  = ""
@@ -60,7 +61,7 @@ inactive = { fg = "#c0caf5" }
 
 # Input
 [input]
-border   = { fg = "#0db9d7" }
+border   = { fg = "#bb9af7" }
 title    = {}
 value    = { fg = "#9d7cd8" }
 selected = { bg = "#283457" }

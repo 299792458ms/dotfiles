@@ -26,36 +26,35 @@ foot -s &
 waybar -c ~/.config/waybar/river/config-river-bottom.jsonc -s ~/.config/waybar/river/style-river-bottom.css &
 
 # wallpapers
-    # swaybg -m fill -i ~/Pictures/wallpapers/vaporwave/vw05.png &
-    swaybg -m fill -i ~/Pictures/wallpapers/synthwave/sw06.png &
-    # swaybg -m fill -i ~/Pictures/wallpapers/vaporwave/vw21.jpg &
-    # swaybg -m fill -i ~/Pictures/wallpapers/synthwave/sw03.png &
-    # swaybg -m fill -i ~/Pictures/wallpapers/digital_landscape/dl18.png &
+    # swaybg -m fill -i ~/Pictures/wallpapers/digital/motherboards.jpg &
+    # swaybg -m fill -i ~/Pictures/wallpapers/digital_space/ds08.png &
+    # swaybg -m fill -i ~/Pictures/wallpapers/digital_space/ds04.png &
+    swaybg -m fill -i ~/Pictures/wallpapers/geometric/connected_sphere.jpg &
 
 gammastep &
 swayidle -w -C ~/.config/swayidle/ensure-lock-minimal &
 swayidle -C ~/.config/swayidle/idle-minimal &
-# swaync -s ~/.config/swaync/style_square.css &
 mako -c ~/.config/mako/config-square &
 udiskie -a &
-# shikane &
-kanshi &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 cliphist wipe && wl-paste --watch cliphist store &
 
 # ··· OPTIONS ···
-riverctl background-color 0x1A1B26FF
-riverctl border-color-focused 0xAD8EE6FF
-riverctl border-color-unfocused 0x5C6691FF
+# riverctl background-color 0x1A1B26FF
+# riverctl border-color-focused 0xAD8EE6FF
+# riverctl border-color-unfocused 0x5C6691FF
+# riverctl border-color-urgent 0xF7768EFF
+
+riverctl background-color 0x191919FF
+riverctl border-color-focused 0xeeee00ff
+riverctl border-color-unfocused 0x777777FF
+riverctl border-color-urgent 0xee0000FF
+
 riverctl border-width 3
 riverctl focus-follows-cursor normal
 riverctl default-layout rivertile
 riverctl default-attach-mode top
 rivertile -view-padding 4 -outer-padding 4 -main-ratio 0.5 -main-location left &
-
-# ←bsp layout→
-# riverctl default-layout bsp-layout
-# river-bsp-layout --inner-gap 5 --outer-gap 10 --split-perc 0.5 &
 
 # ···INPUT ···
 
@@ -98,7 +97,6 @@ riverctl map normal $mod+Shift Backspace exit
 riverctl map normal $mod+Alt+Control L spawn "loginctl lock-session"
 
 # panels
-# riverctl map normal $mod Minus spawn "swaync-client -t" # not using swaync anymore
 riverctl map normal $mod O spawn "nwg-bar -t logout.json -s logout_square.css"
 riverctl map normal $mod Bar spawn "wlr-which-key ~/.config/wlr-which-key/quickpanel_square.yaml"
 
@@ -138,6 +136,10 @@ riverctl map -repeat move None H move left 69
 riverctl map -repeat move None J move down 69
 riverctl map -repeat move None K move up 69
 riverctl map -repeat move None L move right 69
+riverctl map move Alt H snap left
+riverctl map move Alt J snap down
+riverctl map move Alt K snap up
+riverctl map move Alt L snap right
 
 # resize mode (floating)
 riverctl declare-mode resize
@@ -198,7 +200,6 @@ riverctl map normal $mod+Control 0 toggle-view-tags $((1 << (9)))
 # all tags
 all_tags=$(((1 << 32) - 1))
 riverctl map normal $mod A set-focused-tags $all_tags
-riverctl map normal $mod+Shit A set-view-tags $all_tags # this does not make sense, you cant set-view-tags to all tags, it has to be only one.
 
 # previous tags
 riverctl map normal $mod S send-to-previous-tags  
@@ -207,7 +208,7 @@ riverctl map normal $mod P focus-previous-tags
 # music
 music_tag=$((1 << 10 ))
 riverctl map normal $mod Apostrophe spawn "~/scripts/launch/tags/river/music-tag.sh"
-riverctl map normal $mod+Shit Apostrophe set-view-tags ${music_tag}
+riverctl map normal $mod+Shift Apostrophe set-view-tags ${music_tag}
 riverctl map normal $mod+Alt Apostrophe toggle-focused-tags ${music_tag}
 all_but_music_tag=$(( ((1 << 32) - 1) ^ $music_tag ))
 riverctl spawn-tagmask ${all_but_music_tag}
@@ -287,12 +288,12 @@ riverctl rule-add -title 'Extension: (Bitwarden Password Manager) - Bitwarden �
 riverctl rule-add -app-id 'org.twosheds.iwgtk' dimensions 550 700
 riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' dimensions 700 500
 riverctl rule-add -title 'wifi420' dimensions 850 900
-riverctl rule-add -title 'bluetooth420' dimensions 850 900
+riverctl rule-add -title 'bluetooth420' dimensions 750 900
 riverctl rule-add -title 'floaty-terminal' dimensions 650 500
 
 # position
-riverctl rule-add -title 'wifi420' position 535 72 # for waybar bottomposition
-riverctl rule-add -title 'bluetooth420' position 535 72 # for waybar bottomposition
+riverctl rule-add -title 'wifi420' position 535 72 # for waybar bottom position
+riverctl rule-add -title 'bluetooth420' position 585 72 # for waybar bottom position
 
 # calculate window position for waybar top some time later
 

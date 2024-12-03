@@ -5,17 +5,17 @@ HISTSIZE=2000
 SAVEHIST=2000
 setopt beep nomatch
 unsetopt autocd extendedglob notify
-zstyle :compinstall filename '/home/alec/.zshrc'
+zstyle :compinstall filename '$XDG_CONFIG_HOME/.zsh/.zshrc'
 autoload -Uz compinit add-zsh-hook
 compinit
 
-NEWLINE=$'\n'
-PS1="%F{magenta}%n@%m%f %F{blue}%9~%f %F{magenta}>>>%f "
+# NEWLINE=$'\n'
+PS1="%F{yellow}%n@%m%f %F{blue}%9~%f %F{yellow}>%f "
 
 # keybinds
 bindkey -v
-bindkey -s '^o' 'helix $(fzf)^M' # "^M" auto-enter
-bindkey -s '^p' 'sudoedit $(fzf)^M'
+bindkey -s '^o' 'helix $(fzf -m --reverse)^M' # "^M" auto-enter
+bindkey -s '^p' 'sudoedit $(fzf --reverse)^M'
 bindkey '^b' backward-kill-word
 bindkey '^f' kill-word
 bindkey '^k' kill-line
@@ -25,15 +25,18 @@ alias sudo='sudo '
 alias e='helix'
 alias se='sudoedit'
 alias y='yazi'
-alias hlx='helix'
+alias hlx='helix' # hx is taken by another package
 alias tree='eza -T --color=auto --icons=always'
 alias ls='eza --group-directories-first --color=auto --icons=auto'
 alias ff='fastfetch'
-alias ffb='fastfetch -c ~/.config/fastfetch/custom/config-bolt.jsonc'
 alias cz='chezmoi'
 alias hc='truncate -s 0 "$HISTFILE"'
-alias ff-bepp='ff --logo ~/Pictures/memes/bepp-tnn.png --logo-type sixel'
-alias ffp='pokeget random --hide-name | fastfetch --file-raw -'
+
+alias ga='git add'
+alias gs='git status'
+alias gc='git commit'
+alias gp='git pull'
+
 
 # files
 source <(fzf --zsh)

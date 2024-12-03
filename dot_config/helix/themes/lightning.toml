@@ -1,0 +1,61 @@
+# lightning theme 
+
+# ui
+"ui.selection" = { bg = "#333333" }
+"ui.selection.primary" = { bg = "#333333" }
+
+"ui.background" = { bg = "#191919" }
+"ui.background.separator" = { fg = "#ff0000"}
+
+"ui.cursor" = { fg = "#191919", bg = "#eeee00", underline = { color = "#ff0000", style = "curl"} }
+"ui.cursor.primary.normal" = { fg = "#191919", bg = "#eeee00", modifiers = ["slow_blink"] }
+"ui.cursor.primary.insert" = { fg = "#191919", bg = "#9022ff" }
+"ui.cursor.primary.select" = { fg = "#191919", bg = "#7700ee" }
+"ui.cursor.normal" = { fg = "#191919", bg = "#999900" }
+"ui.cursor.insert" = { fg = "#191919", bg = "#9022ff" }
+"ui.cursor.select" = { fg = "#191919", bg = "#7700ee" }
+
+"ui.linenr" = { fg = "#777777"}
+"ui.linenr.selected" = { fg = "#eeee00" }
+"ui.gutter" = { bg = "#222222" }
+
+"ui.text" = { fg = "#cccccc"}
+
+"ui.statusline" = { fg = "#efefef", bg = "#222222" }
+"ui.statusline.unfocused" = { bg = "#222222" }
+"ui.statusline.normal" = { fg = "#1a1a1a", bg = "#eeee00" }
+"ui.statusline.insert" = { fg = "#1a1a1a", bg = "#9022ff" }
+"ui.statusline.select" = { fg = "#1a1a1a", bg = "#bb00bb" }
+
+"ui.virtual.indent-guide" = { fg = "#555555" }
+
+"ui.window" = { fg ="#777777"}
+
+# syntax
+"comment" = { fg = "#777777", modifiers = [ "italic" ] }
+"variable" = { fg = "#eeee00" }
+"label" = { fg ="#eeee00" }
+
+"markup.heading" = { fg = "#7777dd"}
+"markup.link.text" = { fg = "#99aadd", modifiers = [ "" ] }
+"markup.link.url" = { fg = "#99aadd",  underline.style = "line" }
+"markup.bold" = { modifiers = [ "bold" ] }
+"markup.italic" = { modifiers = [ "italic" ] }
+"markup.quote" = { fg = "#ddaa00"}
+
+[palette]
+red = "#ee0000"
+orange = "#ee7700"
+green = "#77ee00"
+yellow = "#eeee00"
+blue = "#0077ee"
+magenta = "#7700ee"
+cyan ="#00eeee"
+
+light-red = "#ff2222"
+light-orange = "#ff9022"
+light-green = "#90ff22"
+light-yellow = "#ffff22"
+light-blue ="#2290ff"
+light-magenta = "#9022ff"
+light-cyan = "#22ffff"

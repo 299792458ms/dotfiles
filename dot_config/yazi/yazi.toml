@@ -1,7 +1,7 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [manager]
-ratio          = [ 1, 4, 3 ]
+ratio          = [ 0, 4, 3 ]
 sort_by        = "alphabetical"
 sort_sensitive = false
 sort_reverse 	 = false
@@ -28,11 +28,13 @@ edit = [
 	{ run = 'code %*',    orphan = true, desc = "code",           for = "windows" },
 	{ run = 'code -w %*', block = true,  desc = "code (block)",   for = "windows" },
 ]
+
 open = [
 	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
 	{ run = 'open "$@"',                    desc = "Open", for = "macos" },
 	{ run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
+
 reveal = [
 	{ run = 'xdg-open "$(dirname "$1")"',            desc = "Reveal", for = "linux" },
 	{ run = 'open -R "$1"',                          desc = "Reveal", for = "macos" },
@@ -43,6 +45,7 @@ extract = [
 	{ run = 'unar "$1"', desc = "Extract here", for = "unix" },
 	{ run = 'unar "%1"', desc = "Extract here", for = "windows" },
 ]
+
 play = [
 	# { run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
 	{ run = 'celluloid "$@"', orphan = true, for = "unix" },
@@ -51,6 +54,7 @@ play = [
 ]
 
 [open]
+
 rules = [
 	{ name = "*/", use = [ "edit", "open", "reveal" ] },
 	{ mime = "text/*",          use = [ "edit", "reveal" ] },

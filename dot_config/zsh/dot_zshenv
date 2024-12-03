@@ -20,3 +20,13 @@ export TERMINAL='foot'
 export ELECTRON_OZONE_PLATFORM_HINT='wayland'
 export XDG_CURRENT_DESKTOP='river'
 
+export FZF_CTRL_R_OPTS="
+  --height 100%
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)+abort'
+  --color=16,header:02,current-bg:-1,current-hl:underline:01,hl:03,current-fg:-1,scrollbar:04,prompt:05,pointer:01,info:04
+  --header 'CTRL-Y: copy, ctrl-/: toggle wrap'
+  --reverse"
+
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'tree -CL 2 {}'"

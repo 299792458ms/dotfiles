@@ -1,24 +1,25 @@
-@import "tokyonight-night.css";
+@import "colors/lightning.css";
 
 * {
     outline: none;
 }
 window {
-        background-color: @bg;
-        border: 2px solid @magenta;
-        border-radius: 0px;
-        font-size: 1.5em;
+  background-color: @bg;
+  /* border: 3px solid @yellow; */
+  border-radius: 0px;
+  font-size: 1.5em;
 }
 
 /* Outer bar container, takes all the window width/height */
 #outer-box {
 	margin: 0px;
-    border-radius: 0px;
+  border-radius: 0px;
+  border: 3px solid @yellow;
 }
 
 /* Inner bar container, surrounds buttons */
 #inner-box {
-    background-color: @bg;
+  background-color: @bg;
 	border-radius: 10px;
 	border-style: none;
 	border-width: 1px;
@@ -34,26 +35,26 @@ button, image {
 }
 
 button {
-    color: @dimfg;
+  color: @dimfg;
 	padding-left: 10px;
 	padding-right: 10px;
 	margin: 5px;
-    border: none;
-    transition: 0.23s;
+  border: none;
+  transition: 0.23s;
 }
 
 button:focus {
-    color: @fg;
+  color: @fg;
 	padding-left: 5px;
 	padding-right: 5px;
 	margin: 0px;
-    border: none;
+  border: none;
 }
 
 button:hover {
-    color: @blue;
-    box-shadow: none;
-    text-shadow: none;
-    background: none;
-    transition: 0.23s;
+  color: @yellow;
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  transition: 0.23s;
 }

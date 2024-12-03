@@ -1,0 +1,15 @@
+@define-color  bg        #191919;                  
+@define-color  trbg      rgba(26,27,38,0.9);                
+@define-color  fg        #cccccc;               
+@define-color  dimfg     #555555;                
+@define-color  red       #ee3300;               
+@define-color  green     #77dd00;               
+@define-color  yellow    #dddd00;               
+@define-color  blue      rgba(122,162,247,1);               
+@define-color  magenta   rgba(173,142,230,1);               
+@define-color  cyan      rgba(127,207,255,1);               
+@define-color  white     rgba(120,124,153,1);               
+@define-color  warning   rgba(224,175,104,1);  /*  yellow   */
+@define-color  critical  rgba(247,118,142,1);  /*  red      */
+@define-color  limit     rgba(173,142,230,1);  /*  magenta  */
+@define-color  inv       rgba(0,0,0,0);

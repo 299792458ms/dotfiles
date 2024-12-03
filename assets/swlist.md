@@ -4,29 +4,29 @@ All programs are listed by their package name and are available for Arch in Extr
 
 ## Window Managers
 
-- [**river**](https://codeberg.org/river/river): Minimal yet very functional dynamic window manager.
-- [**hyprland**](https://github.com/hyprwm/Hyprland): Good looks, 2 built-in layouts, vast window and workspace rules, special workspaces and more.
-- [**niri**](https://github.com/YaLTeR/niri)[^1]: Scrolling window manager, works very great with laptops.
-- [**sway**](https://github.com/swaywm/sway)[^1]: Trusty, functional, fast and very well supported.
-- [**labwc**](https://github.com/labwc/labwc)[^1]: Stacking window manager inspired in Openbox
+- [river](https://codeberg.org/river/river): Minimal yet very functional dynamic window manager.
+- [hyprland](https://github.com/hyprwm/Hyprland): Good looks, 2 built-in layouts, vast window and workspace rules, special workspaces and more.
+- [niri](https://github.com/YaLTeR/niri)[^1]: Scrolling window manager, works very great with laptops.
+- [sway](https://github.com/swaywm/sway)[^1]: Trusty, functional, fast and very well supported.
+- [labwc](https://github.com/labwc/labwc)[^1]: Stacking window manager inspired in Openbox
 
 ## Network & Communications
 
-- [**librewolf**](https://codeberg.org/librewolf): Privacy focused fork of Firefox.
-- [**fractal**](https://gitlab.gnome.org/World/fractal): Matrix client designed for Gnome.
-- [**geary**](https://gitlab.gnome.org/GNOME/geary): Nice and Simple GTK3 email client.
-- [**aerc**](https://git.sr.ht/~rjarry/aerc): TUI Email client.
-- [**gnome-podcasts**](https://gitlab.gnome.org/World/podcasts): Nice GTK app for your podcasts.
+- [**librewolf](https://codeberg.org/librewolf): Privacy focused fork of Firefox.
+- [**fractal](https://gitlab.gnome.org/World/fractal): Matrix client designed for Gnome.
+- [geary**](https://gitlab.gnome.org/GNOME/geary): Nice and Simple GTK3 email client.
+- [aerc](https://git.sr.ht/~rjarry/aerc): TUI Email client.
+- [gnome-podcasts](https://gitlab.gnome.org/World/podcasts): Nice GTK app for your podcasts.
 
 ## Connectivity
 
-- [**bluetui**](https://github.com/pythops/bluetui?ref=terminaltrove): Bluetooth manager.
-- [**impala**](https://github.com/pythops/impala?ref=terminaltrove): Network manager.
+- [bluetui](https://github.com/pythops/bluetui): Bluetooth manager.
+- [impala](https://github.com/pythops/impala): Network manager.
 
 ## Brightness/Backlight
 
-- [**brillo**](https://gitlab.com/cameronnemo/brillo): Control brightness adapted logarithmically to human eye and optionally add smooth transitions.
-- [**gammastep**](https://gitlab.com/chinstrap/gammastep): Gamma control to protect your eyes from blue light.
+- [brillo](https://gitlab.com/cameronnemo/brillo)[^1]: Control brightness adapted logarithmically to human eye and optionally add smooth transitions.
+- [gammastep](https://gitlab.com/chinstrap/gammastep): Gamma control to protect your eyes from blue light.
 
 ## Volume/Media Control
 
@@ -160,7 +160,7 @@ All programs are listed by their package name and are available for Arch in Extr
 
 [//]: # (footnotes)
 
-[^1]: Unused and/or unmaintained configuration file.
+[^1]: Not used or at least regularly.
 [^2]: Not recommended to use multiple at a time.
 [^3]: Having numerous plugins plus a custom prompt (_like starship_) will slow down your shell. If your are only interested in syntax higlight & auto suggestions I recommend either to use a light framework/plugin_manager or to drop them entirely and use fzf. Put in your ~/.zshrc: `source <(fzf --zsh)`, this will overwrite some of your zsh default bindings and allow you to search and copy commands with Control+R from your history to your prompt. As for syntax highlighting I think if you are not typing extremely long and complex commands you can live without it. Test your shell speed with ![zsh-bench](https://github.com/romkatv/zsh-bench)
 [^4]: You can use whatever you like, I just use this because it does not complain about .png and its auto crop/fill/resize is consistent with hyprlock. If you are not using hyprlock then I would recommend swaybg or wbg to simply set a wallpaper and sww to change wallpapers with animations on runtime.
