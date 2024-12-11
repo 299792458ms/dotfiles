@@ -46,9 +46,9 @@ cliphist wipe && wl-paste --watch cliphist store &
 # riverctl border-color-urgent 0xF7768EFF
 
 riverctl background-color 0x191919FF
-riverctl border-color-focused 0xeeee00ff
+riverctl border-color-focused 0xffff66ff
 riverctl border-color-unfocused 0x777777FF
-riverctl border-color-urgent 0xee0000FF
+riverctl border-color-urgent 0xff6666FF
 
 riverctl border-width 3
 riverctl focus-follows-cursor normal

@@ -1,7 +1,7 @@
 @import "../colors/lightning.css";
 
 * {
-    font-size: 20;
+    font-size: 20px;
     font-family: "Jet Brains Mono Nerd Font";
     font-weight: bold;
 }
@@ -152,7 +152,6 @@ tooltip {
 
 #power-profiles-daemon.balanced {
     color: @dimfg;
-    padding: 3px 6px 0 6px;
 }
 
 #power-profiles-daemon.power-saver {
@@ -188,7 +187,7 @@ tooltip {
 }
 
 #pulseaudio.pa2.source-muted {
-        color: @dimfg;
+    color: @dimfg;
 }
 
 #battery {

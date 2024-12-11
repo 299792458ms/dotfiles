@@ -1,8 +1,8 @@
-font: JetBrainsMono Nerd Font 13
-background: "#1A1B26FF"
-color: "#C0CAF5FF"
-border: "#AD8EE6FF"
-separator: " ➜ "
+font: JetBrainsMono Nerd Font 14
+background: "#191919"
+color: "#dddddd"
+border: "#ffff66"
+separator: ": "
 border_width: 3
 corner_r: 0
 padding: 15
@@ -22,9 +22,9 @@ menu:
   "m":
     desc: monitors
     submenu:
-      "r": { desc: HMDI-RIGHT, cmd: kanshictl switch 'hdmi-hotplug-right' }
-      "l": { desc: HMDI-LEFT, cmd: kanshictl switch 'hdmi-hotplug-left' }
-      "s": { desc: SWITCHEROO, cmd: kanshictl switch switcheroo }
+      "r": { desc: hdmi-right, cmd: kanshictl switch 'hdmi-hotplug-right' }
+      "l": { desc: hdmi-left, cmd: kanshictl switch 'hdmi-hotplug-left' }
+      "s": { desc: switcheroo, cmd: kanshictl switch switcheroo }
   "c":
     desc: clipboard
     submenu:

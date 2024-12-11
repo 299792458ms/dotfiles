@@ -7,7 +7,7 @@ default-timeout=6000
 font=Jet Brains Mono Nerd Font 13
 background-color=#191919ff
 text-color=#efefefff
-border-color=#dddd00ff
+border-color=#ffff66ff
 width=300
 height=300
 border-size=3
@@ -26,6 +26,6 @@ icons=0
 [urgency=normal]
 
 [urgency=critical]
-border-color=#F7768EFF
+border-color=#ff6666
 default-timeout=0
 

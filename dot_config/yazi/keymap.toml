@@ -19,8 +19,8 @@ prepend_keymap = [
   # sorting
 	{ on = [ ",", "m" ], run = [ "sort modified --reverse", "linemode mtimev2" ], desc = "Sort by modified time" },
 	{ on = [ ",", "M" ], run = [ "sort modified --reverse=no", "linemode mtimev2" ], desc = "Sort by modified time (reverse)" },
-	{ on = [ ",", "c" ], run = [ "sort created --reverse", "linemode ctimev2" ], desc = "Sort by created time" },
-	{ on = [ ",", "C" ], run = [ "sort created --reverse=no", "linemode ctimev2" ], desc = "Sort by created time (reverse)" },
+	{ on = [ ",", "b" ], run = [ "sort created --reverse", "linemode btimev2" ], desc = "Sort by created time" },
+	{ on = [ ",", "b" ], run = [ "sort created --reverse=no", "linemode btimev2" ], desc = "Sort by created time (reverse)" },
 
   # jump to directory
 	{ on = [ "g", "C" ], run = "cd ~/.local/share/chezmoi", desc = "Jump to Chezmoi" },

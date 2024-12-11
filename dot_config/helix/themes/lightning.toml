@@ -1,61 +1,64 @@
-# lightning theme 
-
-# ui
 "ui.selection" = { bg = "#333333" }
 "ui.selection.primary" = { bg = "#333333" }
 
-"ui.background" = { bg = "#191919" }
-"ui.background.separator" = { fg = "#ff0000"}
+"ui.background" = {}
 
-"ui.cursor" = { fg = "#191919", bg = "#eeee00", underline = { color = "#ff0000", style = "curl"} }
-"ui.cursor.primary.normal" = { fg = "#191919", bg = "#eeee00", modifiers = ["slow_blink"] }
-"ui.cursor.primary.insert" = { fg = "#191919", bg = "#9022ff" }
-"ui.cursor.primary.select" = { fg = "#191919", bg = "#7700ee" }
+"ui.cursor" = { fg = "#191919", bg = "#ffff66" }
+"ui.cursor.primary.normal" = { fg = "#191919", bg = "#ffff66" }
+"ui.cursor.primary.insert" = { fg = "#191919", bg = "#b266ff" }
+"ui.cursor.primary.select" = { fg = "#191919", bg = "#77ff33" }
 "ui.cursor.normal" = { fg = "#191919", bg = "#999900" }
-"ui.cursor.insert" = { fg = "#191919", bg = "#9022ff" }
-"ui.cursor.select" = { fg = "#191919", bg = "#7700ee" }
+"ui.cursor.insert" = { fg = "#191919", bg = "#4c0099" }
+"ui.cursor.select" = { fg = "#191919", bg = "#4d9900" }
 
-"ui.linenr" = { fg = "#777777"}
-"ui.linenr.selected" = { fg = "#eeee00" }
-"ui.gutter" = { bg = "#222222" }
+"ui.linenr" = { fg = "#777777" }
+"ui.linenr.selected" = { fg = "#ffff66" }
+# "ui.gutter" = { bg = "#333333" }
 
-"ui.text" = { fg = "#cccccc"}
+"ui.text" = { fg = "#dddddd"}
+"ui.text.inactive" = { fg = "#555555"}
 
-"ui.statusline" = { fg = "#efefef", bg = "#222222" }
-"ui.statusline.unfocused" = { bg = "#222222" }
-"ui.statusline.normal" = { fg = "#1a1a1a", bg = "#eeee00" }
-"ui.statusline.insert" = { fg = "#1a1a1a", bg = "#9022ff" }
-"ui.statusline.select" = { fg = "#1a1a1a", bg = "#bb00bb" }
+"ui.statusline" = { fg = "#cccccc", bg = "#333333" }
+"ui.statusline.inactive" = { bg = "#222222" }
+"ui.statusline.normal" = { bg = "#333333", fg = "#ffff66", modifiers = [ "bold" ] }
+"ui.statusline.insert" = { bg = "#333333", fg = "#b266ff", modifiers = [ "bold" ] }
+"ui.statusline.select" = { bg = "#333333", fg = "#77ee00", modifiers = [ "bold" ] }
+
+# "ui.bufferline" = { fg = "#ff0000", bg = "#333333" }
+# "ui.bufferline.active" = { fg = "#ff0000", bg = "#333333" }
 
 "ui.virtual.indent-guide" = { fg = "#555555" }
+"ui.virtual.ruler" = { fg = "#555555" }
+"ui.virtual.jump-label" = { fg = "#66ffff" }
+"ui.match" = { fg = "ff6666" }
 
-"ui.window" = { fg ="#777777"}
+"ui.window" = { fg ="#555555"}
+
+# "warning" = { fg = "#ffb366" }
+# "error" = { fg = "#ff6666"}
+# "hint" = { fg = "#66b2ff"}
+
+# "diagnostic.hint" = { fg = "#ffb366" }
+# "diagnostic.warning" = { fg = "#ffb366" }
+# "diagnostic.error" = { fg = "#ff6666"}
+# "diagnostic.hint" = { fg = "#66b2ff"}
+# "diagnostic.unnecesary" = { fg = "#ffb366" }
+# "diagnostic.depecrated" = { fg = "#ffb366" }
 
 # syntax
 "comment" = { fg = "#777777", modifiers = [ "italic" ] }
-"variable" = { fg = "#eeee00" }
-"label" = { fg ="#eeee00" }
+"variable" = { fg = "#ebeb47" }
+"label" = { fg = "#ffff66" }
+"string" = { fg = "#ff666" }
 
-"markup.heading" = { fg = "#7777dd"}
-"markup.link.text" = { fg = "#99aadd", modifiers = [ "" ] }
-"markup.link.url" = { fg = "#99aadd",  underline.style = "line" }
-"markup.bold" = { modifiers = [ "bold" ] }
-"markup.italic" = { modifiers = [ "italic" ] }
-"markup.quote" = { fg = "#ddaa00"}
+
 
 [palette]
-red = "#ee0000"
-orange = "#ee7700"
-green = "#77ee00"
-yellow = "#eeee00"
-blue = "#0077ee"
-magenta = "#7700ee"
-cyan ="#00eeee"
+red = "#ff6666"
+orange = "#ffb366"
+green = "#b3ff66"
+yellow = "#ffff66"
+blue = "#66b2ff"
+magenta = "#b266ff"
+cyan = "#66ffff"
 
-light-red = "#ff2222"
-light-orange = "#ff9022"
-light-green = "#90ff22"
-light-yellow = "#ffff22"
-light-blue ="#2290ff"
-light-magenta = "#9022ff"
-light-cyan = "#22ffff"

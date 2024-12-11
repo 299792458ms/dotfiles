@@ -1,3 +1,5 @@
+"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
 [manager]
 # NOTE: can combined with tmTheme (sublime colorshceme file) for preview code highlight
 # highlight = "path/to/tmTheme"
@@ -5,7 +7,7 @@
 cwd = { fg = "#a9b1d6", italic = true }
 
 # Hovered
-hovered         = { fg = "#1a1b26", bg = "#7aa2f7" }
+hovered         = { fg = "#191919", bg = "blue" }
 preview_hovered = { underline = true }
 
 # Find
@@ -13,28 +15,27 @@ find_keyword  = { fg = "#16161e", bg = "#ff9e64", bold = true }
 find_position = { fg = "#0db9d7", bg = "#192b38", bold = true }
 
 # Marker
-marker_copied   = { fg = "#9ece6a", bg = "#9ece6a" }
-marker_cut      = { fg = "#f7768e", bg = "#e0af68" }
-marker_marked   = { fg = "#bb9af7", bg = "#7dcfff" }
-marker_selected = { fg = "#7aa2f7", bg = "#bb9af7" }
+marker_copied   = { fg = "#191919", bg = "green" }
+marker_cut      = { fg = "#191919", bg = "red" }
+marker_marked   = { fg = "#191919", bg = "magenta" }
+marker_selected = { fg = "#191919", bg = "blue" }
 
 # Tab
-tab_active   = { fg = "#1a1b26", bg = "#bb9af7" }
-tab_inactive = { fg = "#c0caf5", bg = "#1a1b26" }
-tab_width    = 2
+# tab_active   = { fg = "#c0caf5", bg = "#292e42" }
+# tab_inactive = { fg = "#3b4261", bg = "#1a1b26" }
+# tab_width    = 1
 
 # Count
-count_copied   = { fg = "#1a1b26", bg = "#9ece6a" }
-count_cut      = { fg = "#1a1b26", bg = "#e0af68" }
-count_selected = { fg = "#1a1b26", bg = "#3d59a1" }
-
+count_copied   = { fg = "#191919", bg = "green" }
+count_cut      = { fg = "#191919", bg = "red" }
+count_selected = { fg = "#191919", bg = "blue" }
 # Border
 border_symbol = "│"
-border_style  = { fg = "#bb9af7" }
+border_style  = { fg = "#27a1b9" }
 
 [status]
-separator_open  = ""
-separator_close = ""
+separator_open  = ""
+separator_close = ""
 separator_style = { fg = "#3b4261", bg = "#3b4261" }
 
 # Mode
@@ -61,7 +62,7 @@ inactive = { fg = "#c0caf5" }
 
 # Input
 [input]
-border   = { fg = "#bb9af7" }
+border   = { fg = "#0db9d7" }
 title    = {}
 value    = { fg = "#9d7cd8" }
 selected = { bg = "#283457" }
