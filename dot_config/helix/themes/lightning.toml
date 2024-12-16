@@ -1,64 +1,80 @@
+
+"ui.background" = { bg = "{}"}
+"ui.text" = { fg = "fg" }
+"ui.text.inactive" = { fg = "#555555" }
+
 "ui.selection" = { bg = "#333333" }
 "ui.selection.primary" = { bg = "#333333" }
 
-"ui.background" = {}
-
-"ui.cursor" = { fg = "#191919", bg = "#ffff66" }
-"ui.cursor.primary.normal" = { fg = "#191919", bg = "#ffff66" }
+# cursor
+"ui.cursor" = { fg = "{}", bg = "#ffff66"}
+"ui.cursor.primary.normal" = { fg = "{}", bg = "#ffff66" }
 "ui.cursor.primary.insert" = { fg = "#191919", bg = "#b266ff" }
 "ui.cursor.primary.select" = { fg = "#191919", bg = "#77ff33" }
 "ui.cursor.normal" = { fg = "#191919", bg = "#999900" }
 "ui.cursor.insert" = { fg = "#191919", bg = "#4c0099" }
 "ui.cursor.select" = { fg = "#191919", bg = "#4d9900" }
 
+# line numbers
 "ui.linenr" = { fg = "#777777" }
 "ui.linenr.selected" = { fg = "#ffff66" }
 # "ui.gutter" = { bg = "#333333" }
 
-"ui.text" = { fg = "#dddddd"}
-"ui.text.inactive" = { fg = "#555555"}
-
-"ui.statusline" = { fg = "#cccccc", bg = "#333333" }
-"ui.statusline.inactive" = { bg = "#222222" }
+# statusline
+"ui.statusline" = { fg = "#dddddd", bg = "#333333" }
+"ui.statusline.inactive" = { fg = "#777777", bg = "#222222" }
 "ui.statusline.normal" = { bg = "#333333", fg = "#ffff66", modifiers = [ "bold" ] }
 "ui.statusline.insert" = { bg = "#333333", fg = "#b266ff", modifiers = [ "bold" ] }
 "ui.statusline.select" = { bg = "#333333", fg = "#77ee00", modifiers = [ "bold" ] }
 
-# "ui.bufferline" = { fg = "#ff0000", bg = "#333333" }
-# "ui.bufferline.active" = { fg = "#ff0000", bg = "#333333" }
+# bufferline
+"ui.bufferline" = { fg = "#777777", bg = "#333333" }
+"ui.bufferline.active" = { fg = "#dddddd", bg = "#333333" }
 
 "ui.virtual.indent-guide" = { fg = "#555555" }
-"ui.virtual.ruler" = { fg = "#555555" }
-"ui.virtual.jump-label" = { fg = "#66ffff" }
+"ui.virtual.ruler" = { bg = "#555555" }
+"ui.virtual.jump-label" = { fg = "#66b2ff" }
 "ui.match" = { fg = "ff6666" }
+"ui.window" = { fg = "#555555" }
 
-"ui.window" = { fg ="#555555"}
 
-# "warning" = { fg = "#ffb366" }
-# "error" = { fg = "#ff6666"}
-# "hint" = { fg = "#66b2ff"}
+"diagnostic.warning" = { bg = "#ffb366", fg = "#19191900" }
+"diagnostic.error" = { fg = "#ff6666"}
+"diagnostic.hint" = { fg = "#66b2ff" }
+"diagnostic.unnecesary" = { fg = "#ffb366" }
+"diagnostic.depecrated" = { fg = "#ffb366" }
 
-# "diagnostic.hint" = { fg = "#ffb366" }
-# "diagnostic.warning" = { fg = "#ffb366" }
-# "diagnostic.error" = { fg = "#ff6666"}
-# "diagnostic.hint" = { fg = "#66b2ff"}
-# "diagnostic.unnecesary" = { fg = "#ffb366" }
-# "diagnostic.depecrated" = { fg = "#ffb366" }
+"warning" = { fg = "ffb366" }
+"error" = { fg = "#ff6666"}
+"hint" = { fg = "#66b2ff"}
 
 # syntax
 "comment" = { fg = "#777777", modifiers = [ "italic" ] }
 "variable" = { fg = "#ebeb47" }
 "label" = { fg = "#ffff66" }
-"string" = { fg = "#ff666" }
+"string" = { fg = "#66b2ff" }
+"keyword" = { fg = "#ff6666" }
+"attribute" = { fg = "green" }
+"types" = { fg = "#ff6666" }
+# "constructor" = { fg = "#ff6666" }
+"constant" = { fg = "#66ffff"}
 
 
+
+"diff.plus" = { fg = "#b3ff66" }
+"diff.minus" = { fg = "#ff6666" }
+"diff.delta" = { fg = "#66b2ff" }
 
 [palette]
+background= "{}"
+foreground = "#dddddd"
+fg = "#dddddd"
+fgdim = "#777777"
 red = "#ff6666"
 orange = "#ffb366"
 green = "#b3ff66"
 yellow = "#ffff66"
-blue = "#66b2ff"
-magenta = "#b266ff"
+blue = "#66b3ff"
+magenta = "#b366ff"
 cyan = "#66ffff"
 

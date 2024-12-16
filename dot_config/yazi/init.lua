@@ -8,9 +8,6 @@ require("full-border"):setup {
 -- }
 
 
-
--- check for new releaze of yazi, name for created timed will change
--- custom linemodes
 function Linemode:mtimev2()
 	local time = math.floor(self._file.cha.modified or 0)
 

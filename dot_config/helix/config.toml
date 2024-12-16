@@ -1,34 +1,40 @@
 theme = "lightning"
 
 [editor]
-mouse = true
-cursorline = false
-cursorcolumn = false
-line-number = "absolute"
-color-modes = true
-gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
-# rulers = [80]
+  bufferline = "multiple"
+  mouse = true
+  cursorline = false
+  cursorcolumn = false
+  line-number = "absolute"
+  color-modes = true
+  gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+  # rulers = [80]
+  popup-border = "all"
+  auto-format = false
 
 [editor.cursor-shape]
-insert = "block"
+  insert = "block"
 
 [editor.indent-guides]
-render = true
-character = "┆" # Some characters that work well: "▏", "┆", "┊", "⸽","╎"
-skip-levels = 0
+  render = true
+  character = "┆" # Some characters that work well: "▏", "┆", "┊", "⸽","╎"
+  skip-levels = 0
 
 [editor.statusline]
-left = ["mode","file-name", "spinner","version-control"]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
-separator = "│"
-mode.normal = "NOR"
-mode.insert = "INS"
-mode.select = "SEL"
+  left = ["mode","file-name", "file-modification-indicator", "spinner", "version-control"]
+  right = ["diagnostics", "selections",  "position", "total-line-numbers", "file-encoding", "file-line-ending", "file-type"]
+  separator = "│"
+  mode.normal = "NOR"
+  mode.insert = "INS"
+  mode.select = "SEL"
+
+[editor.lsp]
+  display-messages = true
 
 [editor.soft-wrap]
-enable = true
-wrap-at-text-width = false
-wrap-indicator = ''
+  enable = true
+  wrap-at-text-width = false
+  wrap-indicator = ''
 
 [keys]
   [keys.normal]
@@ -36,7 +42,15 @@ wrap-indicator = ''
     A-l = "jump_view_right"
     A-j = "jump_view_down"
     A-k = "jump_view_up"
-    C-i = "insert_mode"
+    # C-i = "insert_mode"
+
+    tab = "move_parent_node_end"
+    S-tab = "move_parent_node_start"
 
   [keys.insert]
     C-n = "normal_mode"
+    S-tab = "move_parent_node_start"
+
+  [keys.select]
+    tab = "extend_parent_node_end"
+    S-tab = "extend_parent_node_start"

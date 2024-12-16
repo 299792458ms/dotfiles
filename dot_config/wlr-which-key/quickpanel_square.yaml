@@ -22,8 +22,8 @@ menu:
   "m":
     desc: monitors
     submenu:
-      "r": { desc: hdmi-right, cmd: kanshictl switch 'hdmi-hotplug-right' }
-      "l": { desc: hdmi-left, cmd: kanshictl switch 'hdmi-hotplug-left' }
+      "r": { desc: hdmi-right, cmd: kanshictl switch 'hdmi-right' }
+      "l": { desc: hdmi-left, cmd: kanshictl switch 'hdmi-left' }
       "s": { desc: switcheroo, cmd: kanshictl switch switcheroo }
   "c":
     desc: clipboard

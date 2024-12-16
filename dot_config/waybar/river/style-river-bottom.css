@@ -1,110 +1,111 @@
 @import "../colors/lightning.css";
 
 * {
-    font-size: 20px;
-    font-family: "Jet Brains Mono Nerd Font";
-    font-weight: bold;
+  font-size: 20px;
+  font-family: "Jet Brains Mono Nerd Font";
+  font-weight: bold;
 }
 
 window#waybar {
-    background-color: @bg;
-    border-top: 3px solid @dimfg;
-    color: #d8dee9;
+  background-color: @bg;
+  border-top: 3px solid @dimfg;
+  color: #d8dee9;
 }
 
 tooltip {
-    color: @fg;
-    background-color: @bg;
-    text-shadow: none;
-    border: solid 2px @dimfg;
-    border-radius: 0;
+  color: @fg;
+  background-color: @bg;
+  text-shadow: none;
+  border: solid 2px @dimfg;
+  border-radius: 0;
 }
 
 #tags {
-    margin-left: 0.5rem;
-    margin-right: 0;
+  margin-left: 0.5rem;
+  margin-right: 0;
+  transition: transform 0.3s ease
 }
 
 #tags button {
-    color: @dimfg;
-    padding: 0 5px;
-    border: none;
-    /* transition: 0.23s; */
-    font-size: 25px;
-    padding: 0 5px 0 5px;
+  color: @dimfg;
+  padding: 0 5px;
+  border: none;
+  /* transition: 0.23s; */
+  font-size: 25px;
+  padding: 0 5px 0 5px;
 }
 
 #tags button.occupied {
-    color: @fg;
+  color: @fg;
 }
 
 #tags button.focused {
-    color: @dimfg;
-    /* background: @magenta; */
-    border-radius: 0;
-    border-top: 3px solid @yellow;
-    margin-bottom: 3px;
+  color: @dimfg;
+  /* background: @magenta; */
+  border-radius: 0;
+  border-top: 3px solid @yellow;
+  margin-bottom: 3px;
 }
 
 #tags button.focused.occupied {
-    color: @fg;
-    border-radius: 0;
-    border-top: 3px solid @yellow;
-    margin-bottom: 3px;
+  color: @fg;
+  border-radius: 0;
+  border-top: 3px solid @yellow;
+  margin-bottom: 3px;
 }
 
 #tags button.urgent {
-    color: @critical;
-    border-radius: 0;
-    transition: none;
-    animation: blink-critical 2s infinite;
+  color: @critical;
+  border-radius: 0;
+  transition: none;
+  animation: blink-critical 2s infinite;
 }
 
 #tags button.urgent.focused {
-    color: @red;
-    border-radius: 0;
-    border-top: 3px solid @red;
-    margin-bottom: 3px;
+  color: @red;
+  border-radius: 0;
+  border-top: 3px solid @red;
+  margin-bottom: 3px;
 }
 
 #tags button:hover {
-    box-shadow: none;
-    text-shadow: none;
-    background:none;
-    transition: none;
-    /* color: @cyan; */
-    /* border-color: @cyan; */
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  transition: none;
+  /* color: @cyan; */
+  /* border-color: @cyan; */
 }
 
 #mode {
-    padding: 3px 6px 0 6px;
-    color: @fg;
-    border-radius: 0;
+  padding: 3px 6px 0 6px;
+  color: @fg;
+  border-radius: 0;
 }
 
 #mode.normal {
-    color: @yellow;
-    background: @inv;
-} 
+  color: @yellow;
+  background: @inv;
+}
 
-#mode.resize{
-    color: @magenta;
-    background: @inv;
-} 
+#mode.resize {
+  color: @magenta;
+  background: @inv;
+}
 
-#mode.move{
-    color: @green;
-    background: @inv;
-} 
+#mode.move {
+  color: @green;
+  background: @inv;
+}
 
 #mode.locked {
-    color: @inv
+  color: @inv
 }
 
 /* left modules */
 #custom-logo {
-    color: @yellow;
-    padding: 3px 10px 0 10px;
+  color: @yellow;
+  padding: 3px 10px 0 10px;
 }
 
 /* right modules*/
@@ -126,142 +127,151 @@ tooltip {
 #custom-lock,
 #custom-suspend,
 #custom-reboot {
-    padding-top: 3px;
-    padding-left: 0.5rem;
-    margin: 0;
-    color: @fg;
-    border-radius: 0;
-    /* margin: 0 2px 0 2px; */
+  padding-top: 3px;
+  padding-left: 0.5rem;
+  margin: 0;
+  color: @fg;
+  border-radius: 0;
+  transition: transform 0.3s ease
+}
+
+#custom-separator {
+  padding-top: 3px;
+  padding-left: 0.5rem;
+  margin: 0;
+  color: @dimfg;
+  border-radius: 0;
 }
 
 #idle_inhibitor.deactivated {
-    color: @dimfg;
+  color: @dimfg;
 }
 
 #idle_inhibitor.activated {
-    color: @fg;
-    /* border-top: 3px solid @fg; */
-    /* margin-bottom: 3px; */
+  color: @fg;
+  /* border-top: 3px solid @fg; */
+  /* margin-bottom: 3px; */
 }
 
 #power-profiles-daemon.performance {
-    color: @red;
-    /* border-top: 3px solid @red; */
-    /* margin-bottom: 3px; */
+  color: @red;
+  /* border-top: 3px solid @red; */
+  /* margin-bottom: 3px; */
 }
 
 #power-profiles-daemon.balanced {
-    color: @dimfg;
+  color: @dimfg;
 }
 
 #power-profiles-daemon.power-saver {
-    color: @green;
-    /* border-top: 3px solid @green; */
-    /* margin-bottom: 3px; */
+  color: @green;
+  /* border-top: 3px solid @green; */
+  /* margin-bottom: 3px; */
 }
 
 #bluetooth.off,
 #bluetooth.disabled {
-    color: @dimfg;
+  color: @dimfg;
 }
 
 #network.disconnected {
-    color: @warning;
+  color: @warning;
 }
 
 #network.disabled {
-    color: @warning;
+  color: @warning;
 }
 
 #pulseaudio.pa1.muted {
-    color: @dimfg;
-    border: none;
+  color: @dimfg;
+  border: none;
 }
 
 #pulseaudio.pa1.bluetooth {
-    color: @blue;
+  color: @blue;
 }
 
 #pulseaudio.pa1.bluetooth.muted {
-    color: @dimfg;
+  color: @dimfg;
 }
 
 #pulseaudio.pa2.source-muted {
-    color: @dimfg;
+  color: @dimfg;
 }
 
 #battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #battery.critical.charging,
 #battery.warning.charging,
 #battery.good.charging,
 #battery.good.plugged {
-    color: @green;
-    /* border-top: 3px solid @green; */
-    /* margin-bottom: 3px; */
+  color: @green;
+  /* border-top: 3px solid @green; */
+  /* margin-bottom: 3px; */
 }
 
-#battery.limit.charging, #battery.limit.plugged {
-    color: @limit;
-    /* border-top: 3px solid @limit; */
-    /* margin-bottom: 3px; */
-    animation-name: blink-limit;
-    animation-duration: 3s;
+#battery.limit.charging,
+#battery.limit.plugged {
+  color: @limit;
+  /* border-top: 3px solid @limit; */
+  /* margin-bottom: 3px; */
+  animation-name: blink-limit;
+  animation-duration: 3s;
 }
 
 #battery.warning.discharging {
-    color: @warning;
-    animation-name: blink-warning;
-    animation-duration: 3s;
+  color: @warning;
+  animation-name: blink-warning;
+  animation-duration: 3s;
 }
 
 #battery.critical.discharging {
-    color: @critical;
-    border-radius: 0;
-    transition: none;
-    animation-name: blink-critical;
-    animation-duration: 2s;
+  color: @critical;
+  border-radius: 0;
+  transition: none;
+  animation-name: blink-critical;
+  animation-duration: 2s;
 }
 
 #tray.menu {
-    color: @fg;
-    background-color: @bg;
+  color: @fg;
+  background-color: @bg;
 }
 
 #custom-power {
-    color: @red;
-    background-color: rgba(0,0,0,0);
-    padding-right: 10px;
+  color: @red;
+  background-color: rgba(0, 0, 0, 0);
+  padding-right: 10px;
 }
 
 #clock {
-    color: @fg;
-    padding: 3px 10px 0 10px;
-    font-weight: bolder;
+  color: @fg;
+  padding: 3px 10px 0 10px;
+  font-weight: bolder;
 }
 
 /* blinking animations */
 @keyframes blink-warning {
-    50% {
-        opacity: 0.5;
-        color: @warning;
-    }
+  50% {
+    opacity: 0.5;
+    color: @warning;
+  }
 }
 
 @keyframes blink-critical {
-    50% {
-        opacity: 0.5;
-        color: @critical;
-    }
+  50% {
+    opacity: 0.5;
+    color: @critical;
+  }
 }
 
 @keyframes blink-limit {
-    50% {
-        opacity: 0.5;
-        color: @limit;
-    }
+  50% {
+    opacity: 0.5;
+    color: @limit;
+  }
 }

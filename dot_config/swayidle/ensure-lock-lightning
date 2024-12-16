@@ -1,0 +1,3 @@
+lock "pidof hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-lightning.conf"
+before-sleep "pidof hyprlock || hyprlock -c ~/.config/hypr/hyprlock/hl-lightning.conf"
+

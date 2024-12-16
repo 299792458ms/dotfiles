@@ -1,5 +1,3 @@
-# shikane.toml
-
 [[profile]]
 name = "laptop-builtin"
 exec = ["notify-send shikane \"profile $SHIKANE_PROFILE_NAME has been applied\" -u low -i /usr/share/icons/Papirus-Dark/16x16/devices/laptop.svg"]

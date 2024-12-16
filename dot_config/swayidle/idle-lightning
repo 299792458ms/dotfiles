@@ -1,0 +1,2 @@
+timeout 180 "brightnessctl -s; brightnessctl s 10%" resume "brightnessctl -r"
+timeout 600 "systemctl suspend"

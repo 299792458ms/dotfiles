@@ -9,30 +9,46 @@
   "fixed-center": true,
   "start_hidden": false,
   "modules-left": [
-    // "custom/logo",
+    "custom/logo",
     // "clock",
     "river/tags",
-    "river/mode",
-    "tray"
+    "river/mode"
+    // "tray"
   ],
   "modules-right": [
-    // 12custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
+    // "custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB and not working anymore
+    // "custom/separator",
     "tray",
     "idle_inhibitor",
+    "custom/separator",
     "power-profiles-daemon",
+    "custom/separator",
     "pulseaudio#pa1",
+    "custom/separator",
     "pulseaudio#pa2",
+    "custom/separator",
     "bluetooth",
+    "custom/separator",
     "network",
+    "custom/separator",
     "battery",
+    "custom/separator",
     "backlight",
+    "custom/separator",
     // "cpu",
+    // "custom/separator",
     // "memory",
+    // "custom/separator",
     "clock"
+    // "custom/separator",
     // "group/powermenu"
   ],
   "custom/logo": {
-    "format": "󰣇",
+    "format": "",
+    "tooltip": false
+  },
+  "custom/separator": {
+    "format": "|",
     "tooltip": false
   },
   "river/tags": {
@@ -110,7 +126,7 @@
       "updated": ""
     },
     "exec-if": "which waybar-updates",
-    "exec": "waybar-updates -l 100"
+    "exec": "waybar-updates"
   },
   "idle_inhibitor": {
     "format": "{icon}",

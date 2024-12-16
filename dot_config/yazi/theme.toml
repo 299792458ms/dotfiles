@@ -29,9 +29,10 @@ marker_selected = { fg = "#191919", bg = "blue" }
 count_copied   = { fg = "#191919", bg = "green" }
 count_cut      = { fg = "#191919", bg = "red" }
 count_selected = { fg = "#191919", bg = "blue" }
+
 # Border
 border_symbol = "│"
-border_style  = { fg = "#27a1b9" }
+border_style  = { fg = "yellow" }
 
 [status]
 separator_open  = ""

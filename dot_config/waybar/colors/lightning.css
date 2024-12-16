@@ -1,16 +1,34 @@
-@define-color  bg        #191919;
-@define-color  fg        #cccccc;
-@define-color  dimfg     #777777;
-@define-color  red       #ff6666;
-@define-color  orange    #ffb366;
-@define-color  green     #b3ff66;
-@define-color  yellow    #ffff66;
-@define-color  blue      #66b2ff;
-@define-color  magenta   #b266ff;
-@define-color  cyan      #66ffff;
+@define-color bg #1b1b1b;
+@define-color fg #dddddd;
+@define-color dimfg #777777;
+@define-color red #ff6666;
+@define-color orange #ffb366;
+@define-color green #b3ff66;
+@define-color yellow #ffff66;
+@define-color blue #66b2ff;
+@define-color magenta #b266ff;
+@define-color cyan #66ffff;
 
-@define-color  warning   #ffb366;
-@define-color  critical  #ff6666;
-@define-color  limit     #b266ff;
+@define-color warning #ffb366;
+@define-color critical #ff6666;
+@define-color limit #b266ff;
 
-@define-color  inv       rgba(0,0,0,0);
+@define-color inv rgba(0, 0, 0, 0);
+
+
+/* :root {
+  --bg: #191919;
+  --fg: "#dddddd";
+  --dim-fg: dimfg #777777;
+  --red: #ff6666;
+  --orange: #ffb366;
+  --green: #b3ff66;
+  --yellow: #ffff66;
+  --blue: #66b2ff;
+  --magenta: "#b266ff";
+  --cyan: "66ffff";
+  --warning: from(var(--orange));
+  --critical: from(var(--red));
+  --limit: from(var(--magenta));
+  --inv: rgba(0, 0, 0, 0);
+} */
