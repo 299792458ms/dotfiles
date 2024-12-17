@@ -1,14 +1,15 @@
 [Default Applications]
-text/plain=nvim.desktop
+text/plain=helix.desktop
 image/jpeg=imv-dir.desktop
 image/png=imv-dir.desktop
 application/pdf=org.gnome.Evince.desktop
 application/toml=helix.desktop
 application/xml=helix.desktop
 image/svg+xml=imv-dir.desktop
+text/markdown=helix.desktop
 
 [Added Associations]
-text/plain=nvim.desktop;
+text/plain=helix.desktop;
 image/jpeg=org.gnome.eog.desktop;imv-dir.desktop;
 image/png=org.gnome.eog.desktop;imv-dir.desktop;
 application/pdf=org.gnome.Evince.desktop;libreoffice-draw.desktop;
@@ -16,3 +17,4 @@ application/toml=helix.desktop;
 application/xml=helix.desktop;
 image/svg+xml=imv-dir.desktop;
 application/x-perf-data=helix.desktop;
+text/markdown=helix.desktop;

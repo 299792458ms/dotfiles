@@ -2,33 +2,57 @@
 {
   "reload_style_on_change": true,
   "layer": "top",
-  "height": 35, // 18 px font -> 31 height // 16px font -> 28 height
+  "exclusive": true,
+  "height": 38, // 18 px font -> 31 height // 16px font -> 28 height
   "spacing": 0,
+  "position": "bottom",
+  "fixed-center": true,
   "start_hidden": false,
   "modules-left": [
     "custom/logo",
-    "river/tags"
+    // "clock",
+    "river/tags",
+    "river/mode"
+    // "tray"
   ],
   "modules-right": [
-    //"custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB
+    // "custom/updates", // consumes 20-50 MB idle and spikes up to 100 MB and not working anymore
+    // "custom/separator",
     "tray",
     "idle_inhibitor",
+    "custom/separator",
     "power-profiles-daemon",
+    "custom/separator",
     "pulseaudio#pa1",
+    "custom/separator",
     "pulseaudio#pa2",
+    "custom/separator",
     "bluetooth",
+    "custom/separator",
     "network",
+    "custom/separator",
     "battery",
+    "custom/separator",
     "backlight",
+    "custom/separator",
+    // "cpu",
+    // "custom/separator",
+    // "memory",
+    // "custom/separator",
     "clock"
+    // "custom/separator",
     // "group/powermenu"
   ],
   "custom/logo": {
-    "format": "󰣇",
+    "format": "",
+    "tooltip": false
+  },
+  "custom/separator": {
+    "format": "|",
     "tooltip": false
   },
   "river/tags": {
-    "num-tags": 32,
+    "num-tags": 12,
     "set-tags": [
       1,
       2,
@@ -68,9 +92,12 @@
       "8",
       "9",
       "10",
-      "󰝚",
-      "󰁥"
+      "µ",
+      "κ"
     ]
+  },
+  "river/mode": {
+    "format": "{}"
   },
   "clock": {
     // "format": "{:%H:%M}",
@@ -99,23 +126,23 @@
       "updated": ""
     },
     "exec-if": "which waybar-updates",
-    "exec": "waybar-updates -l 100"
+    "exec": "waybar-updates"
   },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "idl",
-      "deactivated": "idl"
+      "activated": "idl:on",
+      "deactivated": "idl:off"
     },
     "tooltip": false
   },
   "power-profiles-daemon": {
     "format": "{icon}",
     "format-icons": {
-      "default": "ppd",
-      "performance": "ppd",
-      "balanced": "ppd",
-      "power-saver": "ppd"
+      "default": "ppd:bal",
+      "performance": "ppd:per",
+      "balanced": "ppd:bal",
+      "power-saver": "ppd:sav"
     },
     "tooltip": false,
     "tooltip-format": "<tt><small>{profile}</small></tt>"
@@ -159,7 +186,8 @@
     "on-click": "~/scripts/waybar/toggle-bluetooth.sh",
     "on-click-right": "footclient -T 'bluetooth420' -e bluetui",
     "tooltip": true,
-    "tooltip-format": "{device_alias} {device_battery_percentage}%"
+    "tooltip-format": "{}",
+    "tooltip-format-connected-battery": "{device_alias} {device_battery_percentage}%"
   },
   "network": {
     "format": "{icon}",
@@ -185,6 +213,7 @@
       "critical": 10
     },
     "format": "bat:{capacity}%",
+    "format-charging": "chr:{capacity}%",
     "interval": 120,
     "tooltip": true
   },
@@ -195,6 +224,14 @@
     "on-scroll-up": "brightnessctl s 5%+",
     "on-scroll-down": "brightnessctl s 5%-",
     "tooltip": false
+  },
+  "cpu": {
+    "format": "cpu:{usage}%",
+    "interval": 1
+  },
+  "memory": {
+    "format": "mem:{percentage}%",
+    "interval": 1
   },
   "tray": {
     "spacing": 20

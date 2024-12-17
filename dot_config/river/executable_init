@@ -7,7 +7,7 @@ termclient=footclient
 browser=librewolf
 termfilemanager=yazi
 filemanager=nautilus -w
-menu="fuzzel --config ~/.config/fuzzel/fuzzel-square.ini"
+menu=fuzzel
 notes=logseq
 system_monitor=htop
 
@@ -24,35 +24,23 @@ export PATH="$PATH:/home/alec/.local/bin"
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river &
 kanshi &
 foot -s &
-waybar -c ~/.config/waybar/river/config-river-bottom.jsonc -s ~/.config/waybar/river/style-river-bottom.css &
-
-# wallpapers
-    # swaybg -m fill -i ~/Pictures/wallpapers/digital/motherboards.jpg &
-    # swaybg -m fill -i ~/Pictures/wallpapers/digital_space/ds08.png &
-    # swaybg -m fill -i ~/Pictures/wallpapers/digital_space/ds04.png &
-    swaybg -m fill -i ~/Pictures/wallpapers/geometric/gm05.jpg &
-
+waybar -c ~/.config/waybar/river/config.jsonc -s ~/.config/waybar/river/style.css &
+swaybg -m fill -i ~/Pictures/wallpapers/geometric/gm05.jpg &
 gammastep &
 wlsunset -l -33.4 -L -70.1 &
 swayidle -w -C ~/.config/swayidle/ensure-lock-lightning &
 swayidle -C ~/.config/swayidle/idle-lightning &
-mako -c ~/.config/mako/config-square &
+mako &
 udiskie -a &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 cliphist wipe && wl-paste --watch cliphist store &
 wlclock --background-colour \#19191900 --border-colour \#00000000 --clock-colour \#dddddd  --layer bottom --position top-right --margin 64 64 0 0 --hand-width 1 &
 
 # ··· OPTIONS ···
-# riverctl background-color 0x1A1B26FF
-# riverctl border-color-focused 0xAD8EE6FF
-# riverctl border-color-unfocused 0x5C6691FF
-# riverctl border-color-urgent 0xF7768EFF
-
-riverctl background-color 0x191919FF
+riverctl background-color 0x1b1b1b1ff
 riverctl border-color-focused 0xffff66ff
-riverctl border-color-unfocused 0x777777FF
-riverctl border-color-urgent 0xff6666FF
-
+riverctl border-color-unfocused 0x777777ff
+riverctl border-color-urgent 0xff6666ff
 riverctl border-width 3
 riverctl focus-follows-cursor normal
 riverctl default-layout rivertile
@@ -82,40 +70,31 @@ riverctl input pointer-1267-12734-ELAN06FA:00_04F3:31BE_Touchpad drag enabled
 
 # ··· KEYBINDS ···
 
-# launch
-riverctl map normal $mod B spawn "$browser"
-riverctl map normal $mod D spawn "$menu"
-riverctl map normal $mod Y spawn "$termclient -e $termfilemanager"
-riverctl map normal $mod I spawn "$termclient -e $system_monitor"
-riverctl map normal $mod Return spawn "$termclient"
-riverctl map normal $mod+Shift Return spawn "$term"
-riverctl map normal $mod T spawn "$termclient"
-riverctl map normal $mod+Shift T spawn "$term"
-riverctl map normal $mod+Alt T spawn "$termclient -T floaty-terminal"
-riverctl map normal $mod Insert spawn "$termclient -T 'wifi420' -e impala"
-riverctl map normal $mod Delete spawn "$termclient -T 'bluetooth420' -e bluetui"
-
 # river
 riverctl map normal $mod+Shift Backspace exit
 riverctl map normal $mod+Alt+Control L spawn "loginctl lock-session"
 
-# panels
-riverctl map normal $mod O spawn "nwg-bar -t logout.json -s logout_square.css"
-riverctl map normal $mod Bar spawn "wlr-which-key ~/.config/wlr-which-key/quickpanel_square.yaml"
-
 # layout
-riverctl map normal $mod Comma send-layout-cmd rivertile "main-ratio -0.05"
-riverctl map normal $mod Period send-layout-cmd rivertile "main-ratio +0.05"
-riverctl map normal $mod+Shift Comma send-layout-cmd rivertile "main-count +1"
-riverctl map normal $mod+Shift Period send-layout-cmd rivertile "main-count -1"
+riverctl map normal $mod U send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal $mod I send-layout-cmd rivertile "main-ratio +0.05"
+riverctl map normal $mod+Shift U send-layout-cmd rivertile "main-count +1"
+riverctl map normal $mod+Shift I send-layout-cmd rivertile "main-count -1"
 
 # windows
 riverctl map normal $mod C close
 riverctl map normal $mod F toggle-fullscreen
 riverctl map normal $mod V toggle-float
 riverctl map normal $mod G zoom
+riverctl map normal $mod Left focus-view left
+riverctl map normal $mod Down focus-view down
+riverctl map normal $mod Up focus-view up
+riverctl map normal $mod Right focus-view right
 riverctl map normal $mod Tab focus-view next
 riverctl map normal $mod+Shift Tab focus-view previous
+riverctl map normal $mod+Shift Left swap left
+riverctl map normal $mod+Shift Down swap down
+riverctl map normal $mod+Shift Up swap up
+riverctl map normal $mod+Shift Right swap right
 riverctl map-pointer normal $mod BTN_LEFT move-view
 riverctl map-pointer normal $mod BTN_RIGHT resize-view
 riverctl map-pointer normal $mod BTN_MIDDLE toggle-float
@@ -176,11 +155,27 @@ riverctl map normal $mod+Alt Up send-to-output -current-tags up
 riverctl map normal $mod+Alt Down send-to-output -current-tags down
 riverctl map normal $mod+Alt Right send-to-output -current-tags right
 
+# launch
+riverctl map normal $mod B spawn "$browser"
+riverctl map normal $mod D spawn "$menu"
+riverctl map normal $mod Y spawn "$termclient -e $termfilemanager"
+riverctl map normal $mod+Control Y spawn "$filemanager"
+riverctl map normal $mod Return spawn "$termclient"
+riverctl map normal $mod+Shift Return spawn "$term"
+riverctl map normal $mod T spawn "$termclient"
+riverctl map normal $mod+Shift T spawn "$term"
+riverctl map normal $mod+Alt T spawn "$termclient -T floaty-terminal"
+riverctl map normal $mod Insert spawn "$termclient -T 'wifi420' -e impala"
+riverctl map normal $mod Delete spawn "$termclient -T 'bluetooth420' -e bluetui"
+
+# panels
+riverctl map normal $mod O spawn "nwg-bar -t logout.json -s logout_square.css"
+riverctl map normal $mod Space spawn "wlr-which-key"
 
 # tags
 for i in $(seq 1 9)
 do
-    tags=$((1 << ($i - 1)))
+    tags=$(( 1 << ($i) - 1 ))
     riverctl map normal $mod $i set-focused-tags $tags
     riverctl map normal $mod+Shift $i set-view-tags $tags
     riverctl map normal $mod+Alt $i toggle-focused-tags $tags
@@ -202,20 +197,26 @@ music_tag=$((1 << 10 ))
 riverctl map normal $mod Apostrophe spawn "~/scripts/launch/tags/river/music-tag.sh"
 riverctl map normal $mod+Shift Apostrophe set-view-tags ${music_tag}
 riverctl map normal $mod+Alt Apostrophe toggle-focused-tags ${music_tag}
+all_but_music_tag=$(( ((1 << 32) - 1) ^ $music_tag ))
+riverctl spawn-tagmask ${all_but_music_tag}
+
 
 # mail
 mail_tag=$((1 << 11 ))
 riverctl map normal $mod Questiondown spawn "~/scripts/launch/tags/river/mail-tag.sh"
 riverctl map normal $mod+Shift Questiondown set-view-tags ${mail_tag}
 riverctl map normal $mod+Alt Questiondown toggle-focused-tags ${mail_tag}
+all_but_mail_tag=$(( ((1 << 32) - 1) ^ $mail_tag ))
+riverctl spawn-tagmask ${all_but_mail_tag}
 
-all_regular=$(( ((1 << 32) - 1) ^ $mail_tag ^ $music_tag ))
-riverctl spawn-tagmask ${all_regular}
-riverctl map normal $mod+Space set-focused-tags $all_regular
 
 # all tags
 all_tags=$(((1 << 32) - 1))
 riverctl map normal $mod A set-focused-tags $all_tags
+
+# all regular
+all_regular_tags=$(( ((1 << 32) - 1) ^ ($mail_tag ^ $music_tag) ))
+riverctl map normal $mod X set-focused-tags $all_regular_tags
 
 # window manager inception³
 riverctl declare-mode passthrough
@@ -239,6 +240,9 @@ do
     riverctl map $mode None Print spawn '~/scripts/screenshots/river/allmonitors.sh'
     riverctl map $mode $mod Print spawn '~/scripts/screenshots/river/allmonitors-edit.sh'
     riverctl map $mode None+Control Print spawn '~/scripts/screenshots/river/area.sh'
+    riverctl map $mode $mod+Control Print spawn '~/scripts/screenshots/river/area-edit.sh'
+    riverctl map $mode None+Shift Print spawn '~/scripts/screenshots/river/single-monitor.sh'
+    riverctl map $mode $mod+Shift Print spawn '~/scripts/screenshots/river/single-monitor-edit.sh'
 
     # music
     riverctl map $mode $mod Q spawn 'mpc prev'

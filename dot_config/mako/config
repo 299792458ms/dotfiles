@@ -5,13 +5,13 @@ default-timeout=6000
 
 # style
 font=Jet Brains Mono Nerd Font 13
-background-color=#1A1B26FF
-text-color=#C0CAF5FF
-border-color=#AD8EE6FF
+background-color=#191919ff
+text-color=#efefefff
+border-color=#ffff66ff
 width=300
 height=300
 border-size=3
-border-radius=8
+border-radius=0
 anchor=top-center
 padding=5
 margin=5
@@ -26,6 +26,6 @@ icons=0
 [urgency=normal]
 
 [urgency=critical]
-border-color=#F7768EFF
+border-color=#ff6666
 default-timeout=0
 
