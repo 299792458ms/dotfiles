@@ -16,9 +16,11 @@ export XDG_SESSION_TYPE='wayland'
 export XDG_SESSION_DESKTOP='river'
 export XDG_CURRENT_DESKTOP='river'
 export QT_QPA_PLATFORM='wayland'
+export GDK_BACKEND='wayland'
 export SDL_VIDEODRIVER='wayland'
 export _JAVA_AWT_WM_NONREPARENTING='1'
 export PATH="$PATH:/home/alec/.local/bin"
+export LIBSEAT_BACKEND='logind'
 
 # ··· ROUTINE ···
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river &
@@ -26,7 +28,7 @@ kanshi &
 foot -s &
 waybar -c ~/.config/waybar/river/config.jsonc -s ~/.config/waybar/river/style.css &
 swaybg -m fill -i ~/Pictures/wallpapers/geometric/gm05.jpg &
-gammastep &
+# gammastep &
 wlsunset -l -33.4 -L -70.1 &
 swayidle -w -C ~/.config/swayidle/ensure-lock-lightning &
 swayidle -C ~/.config/swayidle/idle-lightning &
@@ -37,10 +39,10 @@ cliphist wipe && wl-paste --watch cliphist store &
 wlclock --background-colour \#19191900 --border-colour \#00000000 --clock-colour \#dddddd  --layer bottom --position top-right --margin 64 64 0 0 --hand-width 1 &
 
 # ··· OPTIONS ···
-riverctl background-color 0x1b1b1b1ff
-riverctl border-color-focused 0xffff66ff
+riverctl background-color 0x1b1b1bff
+riverctl border-color-focused 0xd9d926ff
 riverctl border-color-unfocused 0x777777ff
-riverctl border-color-urgent 0xff6666ff
+riverctl border-color-urgent 0xd92626
 riverctl border-width 3
 riverctl focus-follows-cursor normal
 riverctl default-layout rivertile

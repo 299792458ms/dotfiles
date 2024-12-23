@@ -8,7 +8,7 @@ theme = "lightning"
   line-number = "absolute"
   color-modes = true
   gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
-  # rulers = [80]
+  rulers = [80]
   popup-border = "all"
   auto-format = false
 

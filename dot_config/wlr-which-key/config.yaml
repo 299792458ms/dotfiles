@@ -1,0 +1,34 @@
+font: JetBrainsMono Nerd Font 14
+background: "#191919"
+color: "#dddddd"
+border: "#ffff66"
+separator: ": "
+border_width: 3
+corner_r: 0
+padding: 15
+anchor: center
+margin_right: 0
+margin_bottom: 0
+margin_left: 0
+margin_top: 0
+
+menu: 
+  "p":
+    desc: powerprofiles
+    submenu:
+      "b": { desc: balanced, cmd: powerprofilesctl set balanced && notify-send "Power Control" "Balanced profile set" -u low }
+      "p": { desc: performance, cmd: powerprofilesctl set performance && notify-send "Power Control" "Performance profile set" -u low }
+      "s": { desc: power-saver, cmd: powerprofilesctl set power-saver && notify-send "Power Control" "Power-saver profile set" -u low }
+  "m":
+    desc: monitors
+    submenu:
+      "r": { desc: hdmi-right, cmd: kanshictl switch 'hdmi-right' }
+      "l": { desc: hdmi-left, cmd: kanshictl switch 'hdmi-left' }
+      "s": { desc: switcheroo, cmd: kanshictl switch switcheroo }
+  "c":
+    desc: clipboard
+    submenu:
+      "c": { desc: copy, cmd: cliphist list | fuzzel --dmenu --config ~/.config/fuzzel/clipboard-square.ini | cliphist decode | wl-copy }
+      "d": { desc: delete, cmd: cliphist list | fuzzel --dmenu --config ~/.config/fuzzel/clipboard-square.ini | cliphist delete }
+      "w": { desc: wipe, cmd: cliphist wipe }
+
