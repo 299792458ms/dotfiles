@@ -12,9 +12,9 @@ All programs are listed by their package name and are available for Arch in Extr
 
 ## Network & Communications
 
-- [**librewolf](https://codeberg.org/librewolf): Privacy focused fork of Firefox.
-- [**fractal](https://gitlab.gnome.org/World/fractal): Matrix client designed for Gnome.
-- [geary**](https://gitlab.gnome.org/GNOME/geary): Nice and Simple GTK3 email client.
+- [librewolf](https://codeberg.org/librewolf): Privacy focused fork of Firefox.
+- [fractal](https://gitlab.gnome.org/World/fractal): Matrix client designed for Gnome.
+- [geary](https://gitlab.gnome.org/GNOME/geary): Nice and Simple GTK3 email client.
 - [aerc](https://git.sr.ht/~rjarry/aerc): TUI Email client.
 - [gnome-podcasts](https://gitlab.gnome.org/World/podcasts): Nice GTK app for your podcasts.
 
@@ -30,133 +30,137 @@ All programs are listed by their package name and are available for Arch in Extr
 
 ## Volume/Media Control
 
-- [**wireplumber**](https://pipewire.pages.freedesktop.org/wireplumber/)[^7]: Control Pipewire audio.
-- [**mpc**](https://www.musicpd.org/clients/mpc/): Control Music Player Daemon from the terminal.
-- [**pavucontrol**](https://gitlab.freedesktop.org/pulseaudio/pavucontrol): Volume input/output control center for Pulseaudio
-- [**pwvucontrol**](https://gitlab.freedesktop.org/pulseaudio/pavucontrol): Volume input/output control center for Pipewire
+- [mpc](https://www.musicpd.org/clients/mpc/): Control Music Player Daemon from the terminal.
+- [pavucontrol](https://gitlab.freedesktop.org/pulseaudio/pavucontrol): Volume input/output control center for Pulseaudio
+- [pwvucontrol](https://gitlab.freedesktop.org/pulseaudio/pavucontrol): Volume input/output control center for Pipewire
 
 ## Monitors/Displays[^2]
 
-- [**nwg-displays**](https://github.com/nwg-piotr/nwg-displays)[^1]: GUI tool to set display settings on Hyprland and Sway that can export default monitor workspace rules
-- [**shikane**](https://gitlab.com/w0lff/shikane): A daemon inspired in kanshi that automatically switches between pre-determined profiles for any given state of connected monitors.
+- [nwg-displays](https://github.com/nwg-piotr/nwg-displays)[^1]: GUI tool to set display settings on Hyprland and Sway that can export default monitor workspace rules
+- [shikane](https://gitlab.com/w0lff/shikane): A daemon inspired in kanshi that automatically switches between pre-determined profiles for any given state of connected monitors.
+- [kanshi](https://git.sr.ht/~emersion/kanshi): Dynamic output daemon.
 
 ## Music
 
-- [**mpd**](https://github.com/MusicPlayerDaemon/MPD): Play sum phat beets man.
-- [**ncmpcpp**](https://github.com/ncmpcpp/ncmpcpp): TUI music player for MPD.
-- [**ymuse**](https://yktoo.com/en/software/ymuse/): Play those phat beets on *mpd* graphically.
-- **zotify**: yes.
+- [mpd](https://github.com/MusicPlayerDaemon/MPD): Play sum phat beets man.
+- [ncmpcpp](https://github.com/ncmpcpp/ncmpcpp): TUI music player for MPD.
+- [ymuse](https://yktoo.com/en/software/ymuse/): Play those phat beets on *mpd* graphically.
+- zotify: yes.
 
 ## CLI & TUI Utilities
 
-- [**zsh**](https://www.zsh.org/)[^3]: Interactive shell that integrates features of bash, ksh and tcsh. 
-- [**foot**](https://codeberg.org/dnkl/foot): Fast and light weight terminal for wayland.
-- [**neovim**](https://github.com/neovim/neovim)[^1]: Modern version of vim.
-- [**helix**](https://github.com/helix-editor/helix): Editor inpired in Neovim and Kakoune.
-- [**starship**](https://github.com/starship/starship): Fast and customizable shell prompt (it will make you shell a little slower anyway).
-- [**bat**](https://github.com/sharkdp/bat): Cat on steroids. No cats were harmed...
-- [**zoxide**](https://github.com/ajeetdsouza/zoxide): Jump fast between directories.
-- [**fzf**](https://github.com/junegunn/fzf): Fuzzy search files.
-- [**ripgrep**](https://github.com/BurntSushi/ripgrep): Better *grep*.
-- [**fd**](https://github.com/sharkdp/fd): Simple, fast and user-friendly alternative to *find*.
-- [**eza**](https://github.com/eza-community/eza): Better *ls* and *tree*.
-- [**lsix**](https://github.com/hackerb9/lsix): An image previewer for terminals with sixel support.
-- [**tldr**](https://tldr.sh/): Summarized Manual Pages.
-- [**udiskie**](https://github.com/coldfix/udiskie): Daemon that manages external drives.
-- [**imv**](https://git.sr.ht/~exec64/imv/): Fast and simple cli image viewer.
-- [**diskonaut**](https://github.com/imsnif/diskonaut): Display disk usage by directories relative size.
-- [**cyme**](https://github.com/tuna-f1sh/cyme): Replacement for lsusb.
-- [**jq**](https://jqlang.github.io/jq/): Command-line JSON processor.
+- [zsh](https://www.zsh.org/)[^3]: Interactive shell that integrates features of bash, ksh and tcsh. 
+- [foot](https://codeberg.org/dnkl/foot): Fast and light weight terminal for wayland.
+- [neovim](https://github.com/neovim/neovim)[^1]: Modern version of vim.
+- [helix](https://github.com/helix-editor/helix): Editor inpired in Neovim and Kakoune.
+- [starship](https://github.com/starship/starship): Fast and customizable shell prompt (it will make you shell a little slower anyway).
+- [bat](https://github.com/sharkdp/bat): Cat on steroids. No cats were harmed...
+- [zoxide](https://github.com/ajeetdsouza/zoxide): Jump fast between directories.
+- [fzf](https://github.com/junegunn/fzf): Fuzzy search files.
+- [ripgrep](https://github.com/BurntSushi/ripgrep): Better *grep*.
+- [fd](https://github.com/sharkdp/fd): Simple, fast and user-friendly alternative to *find*.
+- [eza](https://github.com/eza-community/eza): Better *ls* and *tree*.
+- [lsix](https://github.com/hackerb9/lsix): An image previewer for terminals with sixel support.
+- [tldr](https://tldr.sh/): Summarized Manual Pages.
+- [udiskie](https://github.com/coldfix/udiskie): Daemon that manages external drives.
+- [imv](https://git.sr.ht/~exec64/imv/): Fast and simple cli image viewer.
+- [diskonaut](https://github.com/imsnif/diskonaut): Display disk usage by directories relative size.
+- [cyme](https://github.com/tuna-f1sh/cyme): Replacement for lsusb.
+- [jq](https://jqlang.github.io/jq/): Command-line JSON processor.
 
 ## GUI Utilities
 
-- [**galculator**](https://github.com/galculator/galculator): Has scientific mode and that is all I need.
-- [**mousai**](https://github.com/SeaDve/Mousai): GTK Shazam basically.
-- [**curtail**](https://github.com/Huluti/Curtail): Image compressor.
-- [**mousam**](https://github.com/amit9838/mousam): Functional yet simple weather app.
+- [galculator](https://github.com/galculator/galculator): Has scientific mode and that is all I need.
+- [mousai](https://github.com/SeaDve/Mousai): GTK Shazam basically.
+- [curtail](https://github.com/Huluti/Curtail): Image compressor.
+- [mousam](https://github.com/amit9838/mousam): Functional yet simple weather app.
 
 ## Screenshots
 
-- [**grim**](https://sr.ht/~emersion/grim/): Super simple screenshot for Wayland
-- [**slurp**](https://github.com/emersion/slurp): Tool for selecting areas on a Wayland compositor
-- [**hyprshot**](https://github.com/Gustash/Hyprshot)[^1]: Fantastic screenshot tool for hyprland, it uses grim and slurp (you could script grim and slurp to achieve the same but this is way easier).
-- [**hyprshot-gui-git**](https://github.com/ThatOneCalculator/hyprshot-gui)[^1]: Hyprshot but has a nice graphical interface to manage the options.[^8] 
+- [grim](https://sr.ht/~emersion/grim/): Super simple screenshot for Wayland
+- [slurp](https://github.com/emersion/slurp): Tool for selecting areas on a Wayland compositor
+- [hyprshot](https://github.com/Gustash/Hyprshot)[^1]: Fantastic screenshot tool for hyprland, it uses grim and slurp (you could script grim and slurp to achieve the same but this is way easier).
+- [hyprshot-gui-git](https://github.com/ThatOneCalculator/hyprshot-gui)[^1]: Hyprshot but has a nice graphical interface to manage the options.[^8] 
 
-## Screenlock & Idle Managers
+## Screenlockers
 
-- [**hyprlock**](https://github.com/hyprwm/hyprlock/): Fancy screenlocker with many options and space to get creative.
-- [**hypridle-git**](https://github.com/hyprwm/hypridle)[^1]: Hyprland's idle daemon
-- [**swayidle**](https://github.com/swaywm/swayidle): Sway's idle daemon
-- [**swaylock**](https://github.com/swaywm/swaylock)[^1]: Screenlocker that works the same as i3's.
+- [hyprlock](https://github.com/hyprwm/hyprlock/): Fancy screenlocker with many options and space to get creative.
+- [swaylock](https://github.com/swaywm/swaylock)[^1]: Screenlocker that works the same as i3's.
+- [gtklock](https://github.com/jovanlanik/gtklock): Screen locker inspired on gtkgreet.
+
+## Idle Managers
+
+- [hypridle-git](https://github.com/hyprwm/hypridle)[^1]: Hyprland's idle daemon
+- [swayidle](https://github.com/swaywm/swayidle): Sway's idle daemon
 
 ## Notification Daemons
 
-- [**swaync**](https://github.com/ErikReider/SwayNotificationCenter): Notification daemon that comes with a slick _notification center_ panel.
-- [**mako**](https://github.com/emersion/mako): Simple and lightweight notification daemon.
+- [swaync](https://github.com/ErikReider/SwayNotificationCenter): Notification daemon that comes with a slick _notification center_ panel.
+- [mako](https://github.com/emersion/mako): Simple and lightweight notification daemon.
 
 ## Wallpaper
 
-- [**hyprpaper**](https://github.com/hyprwm/hyprpaper)[^4]: Set wallpapers and change them through the command-line.
-- [̣**wbg**](https://codeberg.org/dnkl/wbg)[^1]: Very simple wallpaper utility meant only to se wallpaper once.
-- [**swaybg**](https://github.com/swaywm/swaybg): Sway's wallpaper utility.
+- [hyprpaper](https://github.com/hyprwm/hyprpaper)[^4]: Set wallpapers and change them through the command-line.
+- [̣wbg](https://codeberg.org/dnkl/wbg)[^1]: Very simple wallpaper utility meant only to se wallpaper once.
+- [swaybg](https://github.com/swaywm/swaybg): Sway's wallpaper utility.
 
 ## Bars, Panels & Menus
 
-- [**nwg-bar**](https://github.com/nwg-piotr/nwg-bar): Simple logout bar, but you can use it as anything. (Time ago I used it to make a panel to open common files)
-- [**waybar**](https://github.com/Alexays/Waybar): Most popular status bar out there, modular, many options and super themable.
-- [**wofi**](https://sr.ht/~scoopta/wofi/)[^1]: Not actively maintained by its developer, but its was my favourite menu for a long time.
-- [**fuzzel**](https://codeberg.org/dnkl/fuzzel): Fast fuzzy search menu with icons.
-- [**wlr-which-key**](https://github.com/MaxVerevkin/wlr-which-key): Keymap manager for wlroots compositors. I use it as a menu for controling mnitors.
+- [nwg-bar](https://github.com/nwg-piotr/nwg-bar): Simple logout bar, but you can use it as anything. (Time ago I used it to make a panel to open common files)
+- [waybar](https://github.com/Alexays/Waybar): Most popular status bar out there, modular, many options and super themable.
+- [wofi](https://sr.ht/~scoopta/wofi/)[^1]: Not actively maintained by its developer, but its was my favourite menu for a long time.
+- [fuzzel](https://codeberg.org/dnkl/fuzzel): Fast fuzzy search menu with icons.
+- [wlr-which-key](https://github.com/MaxVerevkin/wlr-which-key): Keymap manager for wlroots compositors. I use it as a menu for controling mnitors.
 
 ## File Managers
 
-- [**nautilus**](https://apps.gnome.org/en/Nautilus/): Gnome's GUI file manager, some people hate it because its _bloated:_, but I like it.
-    - [**nautilus-admin-gtk4**](https://github.com/MacTavishAO/nautilus-admin-gtk4): Open files with elevated priviledges.
-    - [**nautilus-image-converter**](https://gitlab.gnome.org/coreyberla/nautilus-image-converter): Resize and rotate images in Nautilus
-    - [**nautilus-open-any-terminal**](https://github.com/Stunkymonkey/nautilus-open-any-terminal): Open terminals in selected directory.
-- [**yazi**](https://yazi-rs.github.io/): Lightning fast TUI file manager. Its great out-of-the-box with great default too(unless you use Emacs).
-    - [**unarchiver**](https://github.com/MacPaw/XADMaster): For managing archives.
-    - [**nerd-fonts**](https://github.com/ryanoasis/nerd-fonts): For icon support.
-    - [**ffmpegthubmnailer**](https://github.com/dirkvdb/ffmpegthumbnailer): For video thumbnails
-    - [**p7zip(7-zip)**](https://github.com/p7zip-project/p7zip): For archive extraction and preview
-    - [**jq**](https://jqlang.github.io/jq/): For JSON preview
-    - [**poppler**](https://gitlab.freedesktop.org/poppler/poppler): For PDF preview
-    - [**fd**](https://github.com/sharkdp/fd): For file searching.
-    - [**ripgrep**](https://github.com/BurntSushi/ripgrep): For file content searching
-    - [**fzf**](https://github.com/junegunn/fzf): For quick subtree navigation
-    - [**zoxide**](https://github.com/ajeetdsouza/zoxide): For historical directories navigation.
-    - [**wl-clipboard**](https://github.com/bugaevc/wl-clipboard): For system clipboard support.
+- [nautilus](https://apps.gnome.org/en/Nautilus/): Gnome's GUI file manager, some people hate it because its _bloated:_, but I like it.
+    - [nautilus-admin-gtk4](https://github.com/MacTavishAO/nautilus-admin-gtk4): Open files with elevated priviledges.
+    - [nautilus-image-converter](https://gitlab.gnome.org/coreyberla/nautilus-image-converter): Resize and rotate images in Nautilus
+    - [nautilus-open-any-terminal](https://github.com/Stunkymonkey/nautilus-open-any-terminal): Open terminals in selected directory.
+- [yazi](https://yazi-rs.github.io/): Lightning fast TUI file manager. Its great out-of-the-box with great default too(unless you use Emacs).
+    - [unarchiver](https://github.com/MacPaw/XADMaster): For managing archives.
+    - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts): For icon support.
+    - [ffmpegthubmnailer](https://github.com/dirkvdb/ffmpegthumbnailer): For video thumbnails
+    - [p7zip(7-zip)](https://github.com/p7zip-project/p7zip): For archive extraction and preview
+    - [jq](https://jqlang.github.io/jq/): For JSON preview
+    - [poppler](https://gitlab.freedesktop.org/poppler/poppler): For PDF preview
+    - [fd](https://github.com/sharkdp/fd): For file searching.
+    - [ripgrep](https://github.com/BurntSushi/ripgrep): For file content searching
+    - [fzf](https://github.com/junegunn/fzf): For quick subtree navigation
+    - [zoxide](https://github.com/ajeetdsouza/zoxide): For historical directories navigation.
+    - [wl-clipboard](https://github.com/bugaevc/wl-clipboard): For system clipboard support.
 
 ## Clipboard
 
-- [**wl-clipboard**](https://github.com/bugaevc/wl-clipboard): Clipboard for wayland.
-- [**cliphist**](https://github.com/sentriz/cliphist): Simple and small clipboard manager.
+- [wl-clipboard](https://github.com/bugaevc/wl-clipboard): Clipboard for wayland.
+- [cliphist](https://github.com/sentriz/cliphist): Simple and small clipboard manager.
 
 ## Media
 
-- [**mpv**](https://mpv.io/): Watch your bought and legally downloaded movies from the terminal.
-- [**celulloid**](https://celluloid-player.github.io/): Mpv GTK frontend.
-- [**eog**](https://wiki.gnome.org/Apps/EyeOfGnome): Gnome's image viewer.
-- [**imv**](https://sr.ht/~exec64/imv/): Nice and quick image viewer.
+- [mpv](https://mpv.io/): Watch your bought and legally downloaded movies from the terminal.
+- [celulloid](https://celluloid-player.github.io/): Mpv GTK frontend.
+- [eog](https://wiki.gnome.org/Apps/EyeOfGnome): Gnome's image viewer.
+- [imv](https://sr.ht/~exec64/imv/): Nice and quick image viewer.
 
 ## Theming
 
-- [**gradience**](https://github.com/GradienceTeam/Gradience): Set themes for GTK3(adw-gtk-theme needed) and GTK4.
-- [**papirus-icon-theme-git**](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-- [**nwg-look**](https://github.com/nwg-piotr/nwg-look)
+- [gradience](https://github.com/GradienceTeam/Gradience): Set themes for GTK3(adw-gtk-theme needed) and GTK4.
+- [papirus-icon-theme-git](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+- [nwg-look](https://github.com/nwg-piotr/nwg-look)
 
 ## Fonts
 
-- [**ttf-jetbrains-mono-nerd**](https://github.com/ryanoasis/nerd-fonts)[^6]
-- [**noto-fonts-emoji**](https://fonts.google.com/noto/specimen/Noto+Emoji)
-- [**noto-fonts-cjk**](https://github.com/notofonts/noto-cjk): Korean, Japanese & Chinese Fonts
+- [ttf-jetbrains-mono-nerd](https://github.com/ryanoasis/nerd-fonts)[^6]
+- [noto-fonts-emoji](https://fonts.google.com/noto/specimen/Noto+Emoji)
+- [noto-fonts-cjk](https://github.com/notofonts/noto-cjk): Korean, Japanese & Chinese Fonts
 
 ## Silly Stuff
 
-- [**fastfetch**](https://github.com/fastfetch-cli/fastfetch): Fetchs info fast. +69% performance boost. 
-- [**lolcat**](https://github.com/busyloop/lolcat): Makes output like a rainbow, +420 happiness.
-- [**pokeget**](https://github.com/talwat/pokeget-rs): Thing that shows pokemon, +1996 nostalgia.
-- [**cbonsai**](https://gitlab.com/jallbrit/cbonsai): Tool that displays lil' trees. +20% focus improvement.
+- [fastfetch](https://github.com/fastfetch-cli/fastfetch): Fetchs info fast. +69% performance boost. 
+- [lolcat](https://github.com/busyloop/lolcat): Makes output like a rainbow, +420 happiness.
+- [pokeget](https://github.com/talwat/pokeget-rs): Thing that shows pokemon, +1996 nostalgia.
+- [cbonsai](https://gitlab.com/jallbrit/cbonsai): Tool that displays lil' trees. +20% focus improvement.
 
 [//]: # (footnotes)
 

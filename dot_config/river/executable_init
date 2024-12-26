@@ -30,8 +30,7 @@ waybar -c ~/.config/waybar/river/config.jsonc -s ~/.config/waybar/river/style.cs
 swaybg -m fill -i ~/Pictures/wallpapers/geometric/gm05.jpg &
 # gammastep &
 wlsunset -l -33.4 -L -70.1 &
-swayidle -w -C ~/.config/swayidle/ensure-lock-lightning &
-swayidle -C ~/.config/swayidle/idle-lightning &
+swayidle -w &
 mako &
 udiskie -a &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -40,9 +39,9 @@ wlclock --background-colour \#19191900 --border-colour \#00000000 --clock-colour
 
 # ··· OPTIONS ···
 riverctl background-color 0x1b1b1bff
-riverctl border-color-focused 0xd9d926ff
+riverctl border-color-focused 0xf6f655ff
 riverctl border-color-unfocused 0x777777ff
-riverctl border-color-urgent 0xd92626
+riverctl border-color-urgent 0xf65555ff
 riverctl border-width 3
 riverctl focus-follows-cursor normal
 riverctl default-layout rivertile
