@@ -9,7 +9,7 @@ require("full-border"):setup {
 
 
 function Linemode:mtimev2()
-	local time = math.floor(self._file.cha.modified or 0)
+	local time = math.floor(self._file.cha.mtime or 0)
 
 		time = time and os.date("%g-%m-%d %H:%M", time) or ""
 
@@ -17,7 +17,7 @@ function Linemode:mtimev2()
 end
 
 function Linemode:btimev2()
-	local time = math.floor(self._file.cha.created or 0)
+	local time = math.floor(self._file.cha.btime or 0)
 
 		time = time and os.date("%g-%m-%d %H:%M", time) or ""
 

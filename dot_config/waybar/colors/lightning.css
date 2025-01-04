@@ -1,7 +1,7 @@
 @define-color bg #1b1b1b;
 @define-color fg #cccccc;
 @define-color dimfg #777777;
-@define-color red #f6f655;
+@define-color red #f65555;
 @define-color orange #f6a655;
 @define-color green #a6f655;
 @define-color yellow #f6f655;
@@ -9,9 +9,9 @@
 @define-color magenta #f655f6;
 @define-color cyan #55f6f6;
 
-@define-color warning #f6f655;
-@define-color critical #f6f655;
-@define-color limit #f655f6;
+@define-color warning #f6a655;
+@define-color critical #f65555;
+@define-color limit #55f6f6;
 
 @define-color inv rgba(0, 0, 0, 0);
 

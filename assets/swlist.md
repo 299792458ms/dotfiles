@@ -26,7 +26,9 @@ All programs are listed by their package name and are available for Arch in Extr
 ## Brightness/Backlight
 
 - [brillo](https://gitlab.com/cameronnemo/brillo)[^1]: Control brightness adapted logarithmically to human eye and optionally add smooth transitions.
-- [gammastep](https://gitlab.com/chinstrap/gammastep): Gamma control to protect your eyes from blue light.
+- [gammastep](https://gitlab.com/chinstrap/gammastep): Adjusts color temperature according to the time of the day/night.
+- [wlsunset](https://git.sr.ht/~kennylevinsen/wlsunset): Does the same as gammastep. I've been using this over gammastep for two reasons; to test it out, just noticed its a smaller program.
+
 
 ## Volume/Media Control
 
@@ -103,6 +105,8 @@ All programs are listed by their package name and are available for Arch in Extr
 - [hyprpaper](https://github.com/hyprwm/hyprpaper)[^4]: Set wallpapers and change them through the command-line.
 - [̣wbg](https://codeberg.org/dnkl/wbg)[^1]: Very simple wallpaper utility meant only to se wallpaper once.
 - [swaybg](https://github.com/swaywm/swaybg): Sway's wallpaper utility.
+- [waypaper](https://github.com/anufrievroman/waypaper): Wallpaper daemon frontend that works for swaybg, hyprpaper, sww and the likes.
+
 
 ## Bars, Panels & Menus
 
@@ -145,7 +149,7 @@ All programs are listed by their package name and are available for Arch in Extr
 
 ## Theming
 
-- [gradience](https://github.com/GradienceTeam/Gradience): Set themes for GTK3(adw-gtk-theme needed) and GTK4.
+- ~~[gradience](https://github.com/GradienceTeam/Gradience): Set themes for GTK3(adw-gtk-theme needed) and GTK4.~~ ORPHANED
 - [papirus-icon-theme-git](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - [nwg-look](https://github.com/nwg-piotr/nwg-look)
 

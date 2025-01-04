@@ -8,8 +8,6 @@ browser=librewolf
 termfilemanager=yazi
 filemanager=nautilus -w
 menu=fuzzel
-notes=logseq
-system_monitor=htop
 
 # ··· ENVIRONMENT VARIABLES ···
 export XDG_SESSION_TYPE='wayland'
@@ -20,22 +18,6 @@ export GDK_BACKEND='wayland'
 export SDL_VIDEODRIVER='wayland'
 export _JAVA_AWT_WM_NONREPARENTING='1'
 export PATH="$PATH:/home/alec/.local/bin"
-export LIBSEAT_BACKEND='logind'
-
-# ··· ROUTINE ···
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river &
-kanshi &
-foot -s &
-waybar -c ~/.config/waybar/river/config.jsonc -s ~/.config/waybar/river/style.css &
-swaybg -m fill -i ~/Pictures/wallpapers/geometric/gm05.jpg &
-# gammastep &
-wlsunset -l -33.4 -L -70.1 &
-swayidle -w &
-mako &
-udiskie -a &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-cliphist wipe && wl-paste --watch cliphist store &
-wlclock --background-colour \#19191900 --border-colour \#00000000 --clock-colour \#dddddd  --layer bottom --position top-right --margin 64 64 0 0 --hand-width 1 &
 
 # ··· OPTIONS ···
 riverctl background-color 0x1b1b1bff
@@ -46,7 +28,21 @@ riverctl border-width 3
 riverctl focus-follows-cursor normal
 riverctl default-layout rivertile
 riverctl default-attach-mode top
-rivertile -view-padding 4 -outer-padding 4 -main-ratio 0.5 -main-location left &
+rivertile -view-padding 5 -outer-padding 5 -main-ratio 0.5 -main-location left &
+
+# ··· STARTUP ···
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river &
+kanshi &
+waybar -c ~/.config/waybar/river/config.jsonc -s ~/.config/waybar/river/style.css &
+swaybg -m fill -i ~/Pictures/wallpapers/geometric/gm05.jpg &
+wlsunset -l -33.4 -L -70.1 &
+swayidle -w &
+mako &
+udiskie -a &
+wlclock --background-colour \#19191900 --border-colour \#00000000 --clock-colour \#dddddd  --layer bottom --position top-right --margin 64 64 0 0 --hand-width 1 &
+foot -s &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+cliphist wipe && wl-paste --watch cliphist store &
 
 # ···INPUT ···
 
@@ -159,15 +155,16 @@ riverctl map normal $mod+Alt Right send-to-output -current-tags right
 # launch
 riverctl map normal $mod B spawn "$browser"
 riverctl map normal $mod D spawn "$menu"
-riverctl map normal $mod Y spawn "$termclient -e $termfilemanager"
+riverctl map normal $mod Y spawn "$termclient $termfilemanager"
+riverctl map normal $mod+Shift Y spawn "yazi"
 riverctl map normal $mod+Control Y spawn "$filemanager"
 riverctl map normal $mod Return spawn "$termclient"
 riverctl map normal $mod+Shift Return spawn "$term"
 riverctl map normal $mod T spawn "$termclient"
 riverctl map normal $mod+Shift T spawn "$term"
 riverctl map normal $mod+Alt T spawn "$termclient -T floaty-terminal"
-riverctl map normal $mod Insert spawn "$termclient -T 'wifi420' -e impala"
-riverctl map normal $mod Delete spawn "$termclient -T 'bluetooth420' -e bluetui"
+riverctl map normal $mod Insert spawn "$termclient -T 'wifi420' impala"
+riverctl map normal $mod Delete spawn "$termclient -T 'bluetooth420' bluetui"
 
 # panels
 riverctl map normal $mod O spawn "nwg-bar -t logout.json -s logout_square.css"
@@ -268,6 +265,7 @@ riverctl rule-add -app-id 'hyprland-share-picker' float
 riverctl rule-add -app-id 'galculator' float
 riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
 riverctl rule-add -app-id 'imv' float
+riverctl rule-add -app-id 'mpv' float
 riverctl rule-add -title 'Open File' float
 riverctl rule-add -title 'Open Folder' float
 riverctl rule-add -title 'File Upload' float
@@ -288,15 +286,14 @@ riverctl rule-add -title 'Extension: (Bitwarden Password Manager) - Bitwarden �
 # size
 riverctl rule-add -app-id 'org.twosheds.iwgtk' dimensions 550 700
 riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' dimensions 700 500
+riverctl rule-add -app-id 'mpv' dimensions 1100 800
 riverctl rule-add -title 'wifi420' dimensions 850 900
 riverctl rule-add -title 'bluetooth420' dimensions 750 900
 riverctl rule-add -title 'floaty-terminal' dimensions 650 500
 
 # position
-riverctl rule-add -title 'wifi420' position 535 72 # for waybar bottom position
-riverctl rule-add -title 'bluetooth420' position 585 72 # for waybar bottom position
-
-# calculate window position for waybar top some time later
+riverctl rule-add -title 'wifi420' position 535 72
+riverctl rule-add -title 'bluetooth420' position 585 72
 
 # location
 riverctl rule-add -app-id 'music420' tags $((1 << 10))

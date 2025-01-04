@@ -1,0 +1,8 @@
+# /etc/greetd/config.toml
+[terminal]
+vt = 1
+
+[default_session]
+command = "tuigreet -r -t --asterisks --cmd river"
+user = "greeter"
+

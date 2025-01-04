@@ -1,10 +1,8 @@
 "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
 [manager]
-# NOTE: can combined with tmTheme (sublime colorshceme file) for preview code highlight
-# highlight = "path/to/tmTheme"
 
-cwd = { fg = "#a9b1d6", italic = true }
+cwd = { fg = "#777777", italic = true }
 
 # Hovered
 hovered         = { fg = "#191919", bg = "blue" }
@@ -35,8 +33,8 @@ border_symbol = "│"
 border_style  = { fg = "yellow" }
 
 [status]
-separator_open  = ""
-separator_close = ""
+separator_open  = ""
+separator_close = ""
 separator_style = { fg = "#3b4261", bg = "#3b4261" }
 
 # Mode
@@ -130,3 +128,9 @@ rules = [
 	{ name = "*/", fg = "#7aa2f7" }
 ]
     
+# [icon]
+# globs = []
+# dirs  = []
+# files = []
+# exts  = []
+# conds = []
