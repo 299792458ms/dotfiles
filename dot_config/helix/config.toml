@@ -34,7 +34,7 @@ theme = "lightning"
 [editor.soft-wrap]
   enable = true
   wrap-at-text-width = false
-  wrap-indicator = ''
+  # wrap-indicator = ''
 
 [keys]
   [keys.normal]

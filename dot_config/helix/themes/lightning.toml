@@ -7,9 +7,9 @@
 "ui.selection.primary" = { bg = "#333333" }
 
 # cursor
-"ui.cursor" = { fg = "#background", bg = "#f6f655"}
+"ui.cursor" = { fg = "#1b1b1b", bg = "#f6f655"}
 "ui.cursor.primary.normal" = { fg = "#1b1b1b", bg = "#f6f655" }
-"ui.cursor.primary.insert" = { fg = "#1b1b1b", bg = "#5555f6" }
+"ui.cursor.primary.insert" = { fg = "#1b1b1b", bg = "#9c9cff" }
 "ui.cursor.primary.select" = { fg = "#1b1b1b", bg = "#a6f655" }
 "ui.cursor.normal" = { fg = "#1b1b1b", bg = "#999933" }
 "ui.cursor.insert" = { fg = "#1b1b1b", bg = "#336699" }
@@ -24,7 +24,7 @@
 "ui.statusline" = { fg = "#cccccc", bg = "#333333" }
 "ui.statusline.inactive" = { fg = "#777777", bg = "#222222" }
 "ui.statusline.normal" = { bg = "#333333", fg = "#f6f655", modifiers = [ "bold" ] }
-"ui.statusline.insert" = { bg = "#333333", fg = "#5555f6", modifiers = [ "bold" ] }
+"ui.statusline.insert" = { bg = "#333333", fg = "#7575FF", modifiers = [ "bold" ] }
 "ui.statusline.select" = { bg = "#333333", fg = "#a6f655", modifiers = [ "bold" ] }
 
 # bufferline
@@ -39,19 +39,19 @@
 
 "diagnostic.warning" = { bg = "#f6a655", fg = "#19191900" }
 "diagnostic.error" = { fg = "#f65555"}
-"diagnostic.hint" = { fg = "#5555f6" }
+"diagnostic.hint" = { fg = "#7575FF" }
 "diagnostic.unnecesary" = { fg = "#f6a655" }
 "diagnostic.depecrated" = { fg = "#f6a655" }
 
 "warning" = { fg = "#f6a655" }
 "error" = { fg = "#f65555"}
-"hint" = { fg = "#5555f6"}
+"hint" = { fg = "#7575FF"}
 
 # syntax
 "comment" = { fg = "#777777", modifiers = [ "italic" ] }
 "variable" = { fg = "#f6f655" }
 "label" = { fg = "#f6f655" }
-"string" = { fg = "#5555f6" }
+"string" = { fg = "#7575FF" }
 "keyword" = { fg = "#f655f6" }
 "attribute" = { fg = "#a6f655" }
 "types" = { fg = "#f65555" }
@@ -59,7 +59,23 @@
 
 "diff.plus" = { fg = "#a6f655" }
 "diff.minus" = { fg = "#f65555" }
-"diff.delta" = { fg = "#5555f6" }
+"diff.delta" = { fg = "#7575FF" }
+
+"markup.bold" = { fg = "#cccccc", modifiers = ["bold"] }
+"markup.italic" = { fg = "#cccccc", modifiers = ["italic"] }
+"markup.heading" = { fg = "#f6f655", modifiers = ["bold"] }
+"markup.heading.completion" = { bg = "#222222", fg = "#cccccc" }
+"markup.heading.hover" = { bg = "#363d59" }
+"markup.link" = { fg = "#7575FF" }
+"markup.link.label" = { fg = "#55f6f6" }
+"markup.link.text" = { fg = "#55f6f6" }
+"markup.link.url" = { fg = "#7575FF", underline = { style = "line" } }
+"markup.list" = { fg = "#a6f655" }
+"markup.normal.completion" = { fg = "#565f89" }
+"markup.normal.hover" = { fg = "#a9b1d6" }
+"markup.raw" = { fg = "#B26EF7" }
+"markup.raw.inline" = { bg = "#303050", fg = "#ccccccff" }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
 
 [palette]
 background= "{}"
@@ -70,7 +86,8 @@ red = "#f65555"
 orange ="#f6a655"
 green = "#a6f655"
 yellow = "#f6f655"
-blue = "#5555f6"
-purple = "#a655f6"
+blue = "#7575FF"
+purple = "#B26EF7"
 magenta = "#f655f6"
 cyan = "#55f6f6"
+

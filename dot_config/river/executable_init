@@ -13,7 +13,7 @@ menu=fuzzel
 export XDG_SESSION_TYPE='wayland'
 export XDG_SESSION_DESKTOP='river'
 export XDG_CURRENT_DESKTOP='river'
-export QT_QPA_PLATFORM='wayland'
+# export QT_QPA_PLATFORM='wayland'
 export GDK_BACKEND='wayland'
 export SDL_VIDEODRIVER='wayland'
 export _JAVA_AWT_WM_NONREPARENTING='1'
@@ -40,6 +40,7 @@ swayidle -w &
 mako &
 udiskie -a &
 wlclock --background-colour \#19191900 --border-colour \#00000000 --clock-colour \#dddddd  --layer bottom --position top-right --margin 64 64 0 0 --hand-width 1 &
+# wlclock --background-colour \#19191900 --border-colour \#00000000 --clock-colour \#dddddd  --layer bottom --position bottom-right --margin 0 64 64 0 --hand-width 1 &
 foot -s &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 cliphist wipe && wl-paste --watch cliphist store &
@@ -74,8 +75,8 @@ riverctl map normal $mod+Alt+Control L spawn "loginctl lock-session"
 # layout
 riverctl map normal $mod U send-layout-cmd rivertile "main-ratio -0.05"
 riverctl map normal $mod I send-layout-cmd rivertile "main-ratio +0.05"
-riverctl map normal $mod+Shift U send-layout-cmd rivertile "main-count +1"
-riverctl map normal $mod+Shift I send-layout-cmd rivertile "main-count -1"
+riverctl map normal $mod+Shift U send-layout-cmd rivertile "main-count -1"
+riverctl map normal $mod+Shift I send-layout-cmd rivertile "main-count +1"
 
 # windows
 riverctl map normal $mod C close
@@ -266,6 +267,7 @@ riverctl rule-add -app-id 'galculator' float
 riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
 riverctl rule-add -app-id 'imv' float
 riverctl rule-add -app-id 'mpv' float
+riverctl rule-add -app-id 'waypaper' float
 riverctl rule-add -title 'Open File' float
 riverctl rule-add -title 'Open Folder' float
 riverctl rule-add -title 'File Upload' float
